@@ -1,2 +1,1 @@
-# ProjetWebAB
-Projet Web Brian et Alexandre
+# My project's README
