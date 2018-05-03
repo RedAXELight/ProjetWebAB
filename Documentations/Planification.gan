@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="GalaxSat" company="" webLink="http://" view-date="2018-05-07" view-index="0" gantt-divider-location="417" resource-divider-location="300" version="2.8.7" locale="fr_CH">
+<?xml version="1.0" encoding="UTF-8"?><project name="GalaxSat" company="" webLink="http://" view-date="2018-04-23" view-index="0" gantt-divider-location="417" resource-divider-location="300" version="2.8.7" locale="fr">
     <description/>
     <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Nom" width="258" order="0"/>
@@ -51,10 +51,10 @@
         <task id="4" name="Début" color="#00ff00" meeting="true" start="2018-04-30" duration="0" complete="0" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
             <depend id="0" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="0" name="Analyse" color="#ff0000" meeting="false" start="2018-04-30" duration="5" complete="0" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Analyse" color="#ff0000" meeting="false" start="2018-04-30" duration="5" complete="42" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
-            <task id="51" name="Organisation" meeting="false" start="2018-04-30" duration="1" complete="0" expand="true"/>
-            <task id="61" name="Planification" meeting="false" start="2018-04-30" duration="2" complete="0" expand="true"/>
+            <task id="51" name="Organisation" meeting="false" start="2018-04-30" duration="1" complete="100" expand="true"/>
+            <task id="61" name="Planification" meeting="false" start="2018-04-30" duration="2" complete="100" expand="true"/>
             <task id="57" name="Cahier des charges" meeting="false" start="2018-05-02" duration="2" complete="0" expand="true"/>
             <task id="59" name="Stratégie de test" color="#8cb6ce" meeting="false" start="2018-05-03" duration="2" complete="0" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true"/>
         </task>
