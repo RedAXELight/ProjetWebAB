@@ -51,18 +51,18 @@
         <task id="4" name="Début" color="#00ff00" meeting="true" start="2018-04-30" duration="0" complete="0" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
             <depend id="0" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="0" name="Analyse" color="#ff0000" meeting="false" start="2018-04-30" duration="5" complete="42" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Analyse" color="#ff0000" meeting="false" start="2018-04-30" duration="5" complete="98" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
             <task id="51" name="Organisation" meeting="false" start="2018-04-30" duration="1" complete="100" expand="true"/>
             <task id="61" name="Planification" meeting="false" start="2018-04-30" duration="2" complete="100" expand="true"/>
-            <task id="57" name="Cahier des charges" meeting="false" start="2018-05-02" duration="2" complete="0" expand="true"/>
-            <task id="59" name="Stratégie de test" color="#8cb6ce" meeting="false" start="2018-05-03" duration="2" complete="0" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true"/>
+            <task id="57" name="Cahier des charges" meeting="false" start="2018-05-02" duration="2" complete="95" expand="true"/>
+            <task id="59" name="Stratégie de test" color="#8cb6ce" meeting="false" start="2018-05-03" duration="2" complete="100" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="1" name="Conception" color="#ffff00" meeting="false" start="2018-05-07" duration="14" complete="0" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true">
+        <task id="1" name="Conception" color="#ffff00" meeting="false" start="2018-05-07" duration="14" complete="21" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true">
             <depend id="2" type="2" difference="0" hardness="Strong"/>
             <task id="70" name="Analyse de l'environnement" meeting="false" start="2018-05-07" duration="1" complete="0" expand="true"/>
-            <task id="63" name="Maquette graphique" meeting="false" start="2018-05-07" duration="3" complete="0" expand="true"/>
-            <task id="74" name="Conception de la BD" meeting="false" start="2018-05-10" duration="6" complete="0" expand="true"/>
+            <task id="63" name="Maquette graphique" meeting="false" start="2018-05-07" duration="3" complete="20" expand="true"/>
+            <task id="74" name="Conception de la BD" meeting="false" start="2018-05-10" duration="6" complete="50" expand="true"/>
             <task id="68" name="Conception du code" meeting="false" start="2018-05-14" duration="5" complete="0" expand="true"/>
             <task id="72" name="Détermination de l'arborescence" meeting="false" start="2018-05-19" duration="2" complete="0" expand="true"/>
         </task>
