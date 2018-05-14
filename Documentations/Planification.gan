@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="GalaxSat" company="" webLink="http://" view-date="2018-04-23" view-index="0" gantt-divider-location="417" resource-divider-location="300" version="2.8.7" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="GalaxSat" company="" webLink="http://" view-date="2018-04-30" view-index="0" gantt-divider-location="417" resource-divider-location="300" version="2.8.7" locale="fr">
     <description/>
     <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Nom" width="258" order="0"/>
         <field id="tpd4" name="Date de début" width="88" order="1"/>
         <field id="tpd5" name="Date de fin" width="67" order="2"/>
-        <option id="color.recent"><![CDATA[#cccccc #999999 #666666 #00ffff #00ff00 #ffff00 #ff0000]]></option>
+        <option id="color.recent"><![CDATA[#0000ff #cccccc #00ffff #ffffff #009900 #999999 #666666 #00ff00 #ffff00 #ff0000]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -53,26 +53,36 @@
         </task>
         <task id="0" name="Analyse" color="#ff0000" meeting="false" start="2018-04-30" duration="5" complete="98" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
-            <task id="51" name="Organisation" meeting="false" start="2018-04-30" duration="1" complete="100" expand="true"/>
-            <task id="61" name="Planification" meeting="false" start="2018-04-30" duration="2" complete="100" expand="true"/>
-            <task id="57" name="Cahier des charges" meeting="false" start="2018-05-02" duration="2" complete="95" expand="true"/>
-            <task id="59" name="Stratégie de test" color="#8cb6ce" meeting="false" start="2018-05-03" duration="2" complete="100" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true"/>
+            <task id="51" name="Organisation" color="#00ffff" meeting="false" start="2018-04-30" duration="1" complete="100" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true"/>
+            <task id="61" name="Planification" color="#cccccc" meeting="false" start="2018-04-30" duration="2" complete="100" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true"/>
+            <task id="57" name="Cahier des charges" color="#cccccc" meeting="false" start="2018-05-02" duration="2" complete="95" thirdDate="2018-05-02" thirdDate-constraint="0" expand="true"/>
+            <task id="59" name="Stratégie de test" color="#00ffff" meeting="false" start="2018-05-03" duration="2" complete="100" thirdDate="2018-05-03" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="1" name="Conception" color="#ffff00" meeting="false" start="2018-05-07" duration="14" complete="21" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true">
+        <task id="1" name="Conception" color="#ffff00" meeting="false" start="2018-05-07" duration="14" complete="53" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true">
             <depend id="2" type="2" difference="0" hardness="Strong"/>
-            <task id="70" name="Analyse de l'environnement" meeting="false" start="2018-05-07" duration="1" complete="0" expand="true"/>
-            <task id="63" name="Maquette graphique" meeting="false" start="2018-05-07" duration="3" complete="20" expand="true"/>
-            <task id="74" name="Conception de la BD" meeting="false" start="2018-05-10" duration="6" complete="50" expand="true"/>
-            <task id="68" name="Conception du code" meeting="false" start="2018-05-14" duration="5" complete="0" expand="true"/>
+            <task id="70" name="Analyse de l'environnement" color="#cccccc" meeting="false" start="2018-05-07" duration="1" complete="100" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true"/>
+            <task id="63" name="Maquette graphique" color="#00ffff" meeting="false" start="2018-05-07" duration="3" complete="20" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true"/>
+            <task id="74" name="Conception de la BD" color="#00ffff" meeting="false" start="2018-05-10" duration="6" complete="50" thirdDate="2018-05-10" thirdDate-constraint="0" expand="true"/>
+            <task id="68" name="Conception du code" color="#cccccc" meeting="false" start="2018-05-14" duration="5" complete="90" thirdDate="2018-05-14" thirdDate-constraint="0" expand="true"/>
             <task id="72" name="Détermination de l'arborescence" meeting="false" start="2018-05-19" duration="2" complete="0" expand="true"/>
         </task>
         <task id="2" name="Réalisation" color="#00ff00" meeting="false" start="2018-05-21" duration="26" complete="0" thirdDate="2018-05-14" thirdDate-constraint="0" expand="true">
             <depend id="3" type="2" difference="0" hardness="Strong"/>
-            <task id="94" name="Réalisation du code" meeting="false" start="2018-05-21" duration="21" complete="0" expand="true"/>
-            <task id="98" name="Tests" meeting="false" start="2018-06-11" duration="5" complete="0" expand="true"/>
-            <task id="100" name="Erreurs trouvé" meeting="false" start="2018-06-11" duration="5" complete="0" expand="true"/>
+            <task id="94" name="Réalisation du code" color="#009900" meeting="false" start="2018-05-21" duration="19" complete="0" thirdDate="2018-05-21" thirdDate-constraint="0" expand="true">
+                <task id="111" name="Login" meeting="false" start="2018-05-21" duration="1" complete="0" expand="true"/>
+                <task id="116" name="Rôles" meeting="false" start="2018-05-21" duration="2" complete="0" expand="true"/>
+                <task id="113" name="Inscription" meeting="false" start="2018-05-22" duration="2" complete="0" expand="true"/>
+                <task id="128" name="Email" meeting="false" start="2018-05-22" duration="4" complete="0" expand="true"/>
+                <task id="118" name="Ajout d'article" meeting="false" start="2018-05-28" duration="2" complete="0" expand="true"/>
+                <task id="120" name="Suppression d'article" meeting="false" start="2018-05-30" duration="1" complete="0" expand="true"/>
+                <task id="122" name="Modification d'article" meeting="false" start="2018-05-30" duration="3" complete="0" expand="true"/>
+                <task id="126" name="Gestion du panier" meeting="false" start="2018-06-04" duration="5" complete="0" expand="true"/>
+                <task id="129" name="Paiement" meeting="false" start="2018-06-07" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="98" name="Tests" color="#8cb6ce" meeting="false" start="2018-06-11" duration="1" complete="0" thirdDate="2018-06-11" thirdDate-constraint="0" expand="true"/>
+            <task id="100" name="Correction de bugs et optimisation" color="#8cb6ce" meeting="false" start="2018-06-11" duration="5" complete="0" thirdDate="2018-06-11" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="3" name="Mise en service" color="#00ffff" meeting="false" start="2018-06-18" duration="5" complete="0" thirdDate="2018-06-18" thirdDate-constraint="0" expand="true">
+        <task id="3" name="Mise en service" color="#0000ff" meeting="false" start="2018-06-18" duration="5" complete="0" thirdDate="2018-06-18" thirdDate-constraint="0" expand="true">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
             <task id="104" name="Installation" meeting="false" start="2018-06-18" duration="2" complete="0" expand="true"/>
             <task id="108" name="Rapport de mise en service" meeting="false" start="2018-06-20" duration="3" complete="0" expand="true"/>
