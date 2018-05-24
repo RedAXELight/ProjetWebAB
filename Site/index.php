@@ -9,6 +9,9 @@ try {
             case 'vue_accueil':
                 accueil();
                 break;
+            case 'vue_login':
+                login();
+                break;
 
             default:
                 throw new Exception("Action non valide");
