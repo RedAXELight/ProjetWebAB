@@ -1,19 +1,27 @@
 <?php
+/**
+ * User: Brian Rodrigues Fraga
+ * Date: 24.05.2018
+ */
 
+session_start();
 require "controleur/controleur.php";
 
 try {
-    if (isset($_GET['action'])) { //Prend l'action pour l'envoyer vers la fonction correspondante dans le controleur
+    if (isset($_GET['action'])) {
         $action = $_GET['action'];
         switch ($action) {
             case 'vue_accueil':
                 accueil();
                 break;
-
-            default:
+            case 'vue_contact':
+                contact();
+                break;
+            default :
                 throw new Exception("Action non valide");
         }
-    } else accueil();
+    } else
+        accueil();
 } catch (Exception $e) {
     erreur($e->getMessage());
 }
