@@ -14,10 +14,11 @@ try {
             case 'vue_accueil':
                 accueil();
                 break;
-            case 'vue_contact':
-                contact();
+            case 'vue_login':
+                login();
                 break;
-            default :
+
+            default:
                 throw new Exception("Action non valide");
         }
     } else
