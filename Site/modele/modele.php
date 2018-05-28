@@ -1,6 +1,7 @@
 <?php
 /**
  * User: Brian Rodrigues Fraga
+ * User: Alexandre.baseia
  * Date: 24.05.2018
  */
 
@@ -11,16 +12,14 @@
 
 function getBD()
 {
-  // connexion au server de BD MySQL et à la BD
-  $connexion = new PDO('mysql:host=localhost; dbname=cubesat', 'root', '');
-  // permet d'avoir plus de détails sur les erreurs retournées
-  $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  return $connexion;
+    // connexion au server de BD MySQL et à la BD
+    $connexion = new PDO('mysql:host=localhost; dbname=cubesat', 'root', '');
+    // permet d'avoir plus de détails sur les erreurs retournées
+    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $connexion;
 }
 
 // -----------------------------------------------------
-
-
 
 //-------------------------USERS-------------------------------
 
@@ -30,14 +29,10 @@ function getLogin($post)
     // connexion à la BD snows
     $connexion = getBD();
     // Requête pour sélectionner la personne loguée
-    if ($post['fUserType'] == 'Client')
-    {
-        $requete = "SELECT * FROM Users WHERE login= '".$post['fLogin']."' AND usrPassword='".$post['fPass']."' AND UserRole_idUserRole = 'client';";
-    }
-    else
-    {
-        $requete = "SELECT * FROM Users WHERE login= '".$post['fLogin']."' AND usrPassword='".$post['fPass']."';";
-    }
+
+    $requete = "SELECT * FROM users WHERE usrLogin= '" . $post['fLogin'] . "' AND usrPassword='" . $post['fPass'] . "';";
+
+
     // Exécution de la requête et renvoi des résultats
     $resultats = $connexion->query($requete);
     return $resultats;

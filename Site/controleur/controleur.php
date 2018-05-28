@@ -1,6 +1,7 @@
 <?php
 /**
  * User: Brian Rodrigues Fraga
+ * User: Alexandre.baseia
  * Date: 24.05.2018
  */
 
@@ -31,7 +32,7 @@ function login() //Fonction pour le login du formulaire
         // détruit la session de la personne connectée après appuyé sur Logout
         if (isset($_SESSION['login'])) {
             session_destroy();
-            require "vue/vue_accueil.php";
+            require "vue/accueil.php";
         } else
             require "vue/vue_login.php";
     }
