@@ -33,6 +33,6 @@ function login() //Fonction pour le login du formulaire
             session_destroy();
             require "vue/vue_accueil.php";
         } else
-            require "vue/vue_user_login.php";
+            require "vue/vue_login.php";
     }
 }
