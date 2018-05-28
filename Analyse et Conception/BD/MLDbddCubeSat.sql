@@ -8,21 +8,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema cubesat
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema cubesat
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `cubesat` DEFAULT CHARACTER SET utf8 ;
+USE `cubesat` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`UserRole`
+-- Table `cubesat`.`UserRole`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`UserRole` ;
+DROP TABLE IF EXISTS `cubesat`.`UserRole` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`UserRole` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`UserRole` (
   `idUserRole` INT NOT NULL AUTO_INCREMENT,
   `UserRolecol` VARCHAR(15) NULL,
   PRIMARY KEY (`idUserRole`),
@@ -31,11 +31,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Users`
+-- Table `cubesat`.`Users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Users` ;
+DROP TABLE IF EXISTS `cubesat`.`Users` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`Users` (
   `idUsers` INT NOT NULL AUTO_INCREMENT,
   `usrSurame` VARCHAR(50) NULL,
   `usrName` VARCHAR(50) NULL,
@@ -49,18 +49,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
   INDEX `fk_Users_UserRole_idx` (`UserRole_idUserRole` ASC),
   CONSTRAINT `fk_Users_UserRole`
     FOREIGN KEY (`UserRole_idUserRole`)
-    REFERENCES `mydb`.`UserRole` (`idUserRole`)
+    REFERENCES `cubesat`.`UserRole` (`idUserRole`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Statut`
+-- Table `cubesat`.`Statut`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Statut` ;
+DROP TABLE IF EXISTS `cubesat`.`Statut` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Statut` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`Statut` (
   `idStatut` INT NOT NULL AUTO_INCREMENT,
   `Type` VARCHAR(10) NULL,
   `Motif` VARCHAR(150) NULL,
@@ -70,11 +70,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Contract`
+-- Table `cubesat`.`Contract`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Contract` ;
+DROP TABLE IF EXISTS `cubesat`.`Contract` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Contract` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`Contract` (
   `idContract` INT NOT NULL AUTO_INCREMENT,
   `Description` VARCHAR(150) NULL,
   `BeginDate` DATE NULL,
@@ -87,23 +87,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Contract` (
   INDEX `fk_Contract_Users1_idx` (`Users_idUsers` ASC),
   CONSTRAINT `fk_Contract_Statut1`
     FOREIGN KEY (`Statut_idStatut`)
-    REFERENCES `mydb`.`Statut` (`idStatut`)
+    REFERENCES `cubesat`.`Statut` (`idStatut`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Contract_Users1`
     FOREIGN KEY (`Users_idUsers`)
-    REFERENCES `mydb`.`Users` (`idUsers`)
+    REFERENCES `cubesat`.`Users` (`idUsers`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`CubeSat`
+-- Table `cubesat`.`CubeSat`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`CubeSat` ;
+DROP TABLE IF EXISTS `cubesat`.`CubeSat` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`CubeSat` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`CubeSat` (
   `idCubeSat` INT NOT NULL AUTO_INCREMENT,
   `csName` VARCHAR(45) NULL,
   `csMass` FLOAT NULL,
@@ -121,11 +121,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Extensions`
+-- Table `cubesat`.`Extensions`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Extensions` ;
+DROP TABLE IF EXISTS `cubesat`.`Extensions` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Extensions` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`Extensions` (
   `idExtensions` INT NOT NULL AUTO_INCREMENT,
   `extDescription` VARCHAR(150) NULL,
   `Manufacturer` VARCHAR(45) NULL,
@@ -140,11 +140,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Battery`
+-- Table `cubesat`.`Battery`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Battery` ;
+DROP TABLE IF EXISTS `cubesat`.`Battery` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Battery` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`Battery` (
   `idBattery` INT NOT NULL AUTO_INCREMENT,
   `BatterySpace` INT NULL,
   `Capacity` FLOAT NULL,
@@ -156,11 +156,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`CubeSat_has_Extensions`
+-- Table `cubesat`.`CubeSat_has_Extensions`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`CubeSat_has_Extensions` ;
+DROP TABLE IF EXISTS `cubesat`.`CubeSat_has_Extensions` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`CubeSat_has_Extensions` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`CubeSat_has_Extensions` (
   `CubeSat_idCubeSat` INT NOT NULL,
   `Extensions_idExtensions` INT NOT NULL,
   PRIMARY KEY (`CubeSat_idCubeSat`, `Extensions_idExtensions`),
@@ -168,23 +168,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CubeSat_has_Extensions` (
   INDEX `fk_CubeSat_has_Extensions_CubeSat1_idx` (`CubeSat_idCubeSat` ASC),
   CONSTRAINT `fk_CubeSat_has_Extensions_CubeSat1`
     FOREIGN KEY (`CubeSat_idCubeSat`)
-    REFERENCES `mydb`.`CubeSat` (`idCubeSat`)
+    REFERENCES `cubesat`.`CubeSat` (`idCubeSat`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_CubeSat_has_Extensions_Extensions1`
     FOREIGN KEY (`Extensions_idExtensions`)
-    REFERENCES `mydb`.`Extensions` (`idExtensions`)
+    REFERENCES `cubesat`.`Extensions` (`idExtensions`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`CubeSat_has_Contract`
+-- Table `cubesat`.`CubeSat_has_Contract`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`CubeSat_has_Contract` ;
+DROP TABLE IF EXISTS `cubesat`.`CubeSat_has_Contract` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`CubeSat_has_Contract` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`CubeSat_has_Contract` (
   `CubeSat_idCubeSat` INT NOT NULL,
   `Contract_idContract` INT NOT NULL,
   PRIMARY KEY (`CubeSat_idCubeSat`, `Contract_idContract`),
@@ -192,23 +192,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CubeSat_has_Contract` (
   INDEX `fk_CubeSat_has_Contract_CubeSat1_idx` (`CubeSat_idCubeSat` ASC),
   CONSTRAINT `fk_CubeSat_has_Contract_CubeSat1`
     FOREIGN KEY (`CubeSat_idCubeSat`)
-    REFERENCES `mydb`.`CubeSat` (`idCubeSat`)
+    REFERENCES `cubesat`.`CubeSat` (`idCubeSat`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_CubeSat_has_Contract_Contract1`
     FOREIGN KEY (`Contract_idContract`)
-    REFERENCES `mydb`.`Contract` (`idContract`)
+    REFERENCES `cubesat`.`Contract` (`idContract`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Battery_has_CubeSat`
+-- Table `cubesat`.`Battery_has_CubeSat`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Battery_has_CubeSat` ;
+DROP TABLE IF EXISTS `cubesat`.`Battery_has_CubeSat` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Battery_has_CubeSat` (
+CREATE TABLE IF NOT EXISTS `cubesat`.`Battery_has_CubeSat` (
   `Battery_idBattery` INT NOT NULL,
   `CubeSat_idCubeSat` INT NOT NULL,
   PRIMARY KEY (`Battery_idBattery`, `CubeSat_idCubeSat`),
@@ -216,12 +216,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Battery_has_CubeSat` (
   INDEX `fk_Battery_has_CubeSat_Battery1_idx` (`Battery_idBattery` ASC),
   CONSTRAINT `fk_Battery_has_CubeSat_Battery1`
     FOREIGN KEY (`Battery_idBattery`)
-    REFERENCES `mydb`.`Battery` (`idBattery`)
+    REFERENCES `cubesat`.`Battery` (`idBattery`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Battery_has_CubeSat_CubeSat1`
     FOREIGN KEY (`CubeSat_idCubeSat`)
-    REFERENCES `mydb`.`CubeSat` (`idCubeSat`)
+    REFERENCES `cubesat`.`CubeSat` (`idCubeSat`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
