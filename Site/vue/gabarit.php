@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Squadfree - Free bootstrap 3 one page template</title>
+    <title>GalaxSat</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.html">
-                <h1>SQUAD FREE</h1>
+                <h1>GalaxSat</h1>
             </a>
         </div>
 
@@ -94,8 +94,8 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2>WELCOME TO <span class="text_color">SQUAD</span></h2>
-        <h4>WE ARE GROUP OF GENTLEMEN MAKING AWESOME WEB WITH BOOTSTRAP</h4>
+        <h2>BIENVENUE SUR <span class="text_color">GALAXSAT</span></h2>
+        <h4><i>Vous nous donnez vos idées, nous vous donnons les étoiles</i></h4>
     </div>
     <div class="page-scroll">
         <a href="#service" class="btn btn-circle">
@@ -118,7 +118,7 @@
                         </a>
                     </div>
                 </div>
-                <p>&copy;SquadFREE. All rights reserved.</p>
+                <p>Template original  par &copy;SquadFREE. All rights reserved.</p>
                 <div class="credits">
                     <!--
                       All the links in the footer should remain intact.
