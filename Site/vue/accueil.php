@@ -7,6 +7,9 @@
 // tampon de flux stocké en mémoire
 ob_start();
 $titre="GalaxSat - Accueil";
+$intitule="Binenvenue sur GalaxSat";
+$SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
+
 ?>
 
 <!-- Section: about -->

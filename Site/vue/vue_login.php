@@ -7,7 +7,8 @@
  */
 
 ob_start();
-$titre = "login";
+$titre = "Login";
+$intitule = "Formulaire de login";
 ?>
 
     <!-- ________________________ Gestion de la connection et du type d'utilisateur connecté ______________________________-->

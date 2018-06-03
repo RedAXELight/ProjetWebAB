@@ -8,6 +8,7 @@
 // Tampon de flux stocké en mémoire
 ob_start();
 $titre = "erreur";
+$intitule = "Oups... Il semblerais qu'il y a eu une erreur :(";
 ?>
 
     <article>

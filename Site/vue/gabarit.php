@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GalaxSat</title>
+    <title><?=$titre;?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -94,8 +94,8 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2>BIENVENUE SUR <span class="text_color">GALAXSAT</span></h2>
-        <h4><i>Vous nous donnez vos idées, nous vous donnons les étoiles</i></h4>
+        <h2><span class="text_color"><?=@$intitule;?></span></h2>
+        <h4><i><?=@$SousMenu;?></i></h4>
     </div>
     <div class="page-scroll">
         <a href="#service" class="btn btn-circle">
