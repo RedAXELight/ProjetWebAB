@@ -31,7 +31,7 @@ $titre="GalaxSat - inscription";
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-          <?php if ($erreur == ''){
+          <?php if (isset($erreur)){
           echo "<div class='alert alert-danger'>".$erreur."</div>";
           }
           ?>

@@ -17,7 +17,10 @@ try {
             case 'vue_login':
                 login();
                 break;
-           case 'enregistrer':
+            case 'inscription':
+                inscription();
+                break;
+            case 'enregistrer':
                 enregistrer();
                 break;
             default:

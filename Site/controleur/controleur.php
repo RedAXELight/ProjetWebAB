@@ -37,6 +37,10 @@ function login() //Fonction pour le login du formulaire
     }
 }
 
+function inscription(){
+    require "vue/inscription.php";
+}
+
 function enregistrer() {
       $nom = @$_POST['nom'];
       $prenom = @$_POST['prenom'];
@@ -62,8 +66,12 @@ function enregistrer() {
 
       if ($erreur == 0){
           $operation = enregistrer_user(@$_POST);
-          if ($operation == ''){
+          if ($operation == '2'){
               $erreur = 'ce login est déjà utilisé !';
+              require "vue/inscription.php";
+          }else if ($operation == '1') {
+              $erreur = 'cet email est déjà utilisé !';
+              require "vue/inscription.php";
           }else{
               $erreur = 'requête envoyé avec succès';
               require "vue/vue_login.php";
@@ -95,7 +103,7 @@ function enregistrer() {
                   $erreur = 'le champ mot de passe est incorrect !';
                   break;
               case '9':
-                  $erreur = 'le champ de la confimation du mot de passe ne correspond pas au champ au mot de passe';
+                  $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
                   break;
               default:
                   $erreur = 'une erreur inconnu est arrivé !';
