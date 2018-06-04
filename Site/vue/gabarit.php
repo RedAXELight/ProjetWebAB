@@ -55,7 +55,7 @@
                     <li><a href="index.php">Accueil</a></li>
                 <?php endif; ?>
 
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Nos produits</a></li>
 
                 <li><a href="#service">Service</a></li>
 
@@ -94,14 +94,14 @@
 
                 <?php endif; ?>
 
-                <li class="dropdown">
+                <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Example menu</a></li>
                         <li><a href="#">Example menu</a></li>
                         <li><a href="#">Example menu</a></li>
                     </ul>
-                </li>
+                </li>-->
 
             </ul>
         </div>
