@@ -32,6 +32,8 @@ if (isset($resultats)) {
         } else {
             if ($ligne['UserRole_idUserRole'] == '1') {
                 echo "Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant qu'administrateur";
+                //enregistrement du nom de l'administrateur connécté dans une variable globale
+                $_POST['NomAdmin'] = $ligne['usrName'];
                 // Création de la session
                 $_SESSION['login'] = $ligne['usrName'] . " " . $ligne['usrSurname'];
                 $_SESSION['typeUser'] = "Administrateur";

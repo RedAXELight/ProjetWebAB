@@ -18,6 +18,9 @@ try {
             case 'vue_login':
                 login();
                 break;
+            case 'vue_ajout_vendeur':
+                vendeur();
+                break;
 
             default:
                 throw new Exception("Action non valide");

@@ -74,6 +74,26 @@
                     <?php endif ?>
                 </li>
 
+                <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Vendeur"))://si une session vendeur est active, affiche "Ajouter un produit" dans le menu ?>
+
+                    <?php if(@$_GET['action']=="vue_ajout_produit" || @$_GET['action'] == "ajouter_produit") :?>
+                        <li class="active"><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                    <?php else : ?>
+                        <li><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+                <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Administrateur"))://si une session administrateur est active, affiche "Ajouter un vendeur" dans le menu ?>
+
+                    <?php if(@$_GET['action']=="vue_ajout_vendeur" || @$_GET['action'] == "ajouter_vendeur") :?>
+                        <li class="active"><a href="index.php?action=vue_ajout_vendeur">Ajouter un vendeur</a></li>
+                    <?php else : ?>
+                        <li><a href="index.php?action=vue_ajout_vendeur">Ajouter un vendeur</a></li>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">

@@ -38,3 +38,7 @@ function login() //Fonction pour le login du formulaire
             require "vue/vue_login.php";
     }
 }
+function vendeur()
+{
+    require "vue/vue_ajout_vendeur.php";
+}
