@@ -94,6 +94,14 @@
 
                 <?php endif; ?>
 
+                <?php if (!isset($_SESSION['active'])) { ?>
+                    <?php if (@$_GET['action']=="inscription") { ?>
+                        <li class="active"><a href="index.php?action=inscription">S'inscrire</a></li>
+                    <?php }else{ ?>
+                        <li><a href="index.php?action=inscription">S'inscrire</a></li>
+                    <?php } ?>
+                <?php } ?>
+
                 <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">

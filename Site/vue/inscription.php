@@ -7,6 +7,8 @@
 // tampon de flux stocké en mémoire
 ob_start();
 $titre="GalaxSat - inscription";
+$intitule = "Inscrivez-vous";
+$SousMenu="Afin de profiter de nos offres";
 ?>
 
 <section id="service" class="home-section text-center bg-gray">
@@ -35,7 +37,7 @@ $titre="GalaxSat - inscription";
           echo "<div class='alert alert-danger'>".$erreur."</div>";
           }
           ?>
-        <div class="form-group">
+        <div class="form-group wow bounceInDown" data-wow-delay="0.4s>
           <form class="form" role="form" data-toggle="validator" method="POST" action="index.php?action=enregistrer">
             <table class="table table-hover">
               <tr>
