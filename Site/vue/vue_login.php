@@ -48,29 +48,31 @@ if (isset($resultats)) {
 
     <!--_________________________________________Ci-dessous l'affichage du formulaire______________________________________-->
 
-
-    <form class='form' method='POST' action="index.php?action=vue_login">
-        <table class="table">
-            <tr>
-                <td>Login</td>
-                <td>
-                    <input type="text" placeholder="Entrez votre login" name="fLogin" value="<?= @$_POST['fLogin'] ?>"/>
-                    <!-- code php pour éviter de retaper le contenu en cas d'erreur -->
-                </td>
-            </tr>
-            <tr>
-                <td>Mot de passe</td>
-                <td>
-                    <input type="password" placeholder="Entrez votre mot de passe" name="fPass"
-                           value="<?= @$_POST['fPass'] ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td><input class="btn" type="submit" value="Login"></td>
-                <td><input class="btn" type="reset" value="Effacer"></td>
-            </tr>
-        </table>
-    </form>
+    <div class="form-group">
+        <form class='form' role="form" method='POST' action="index.php?action=vue_login">
+            <table class="table table-hover">
+                <tr>
+                    <td>Login</td>
+                    <td>
+                        <input type="text" placeholder="Entrez votre login" name="fLogin"
+                               value="<?= @$_POST['fLogin'] ?>"/>
+                        <!-- code php pour éviter de retaper le contenu en cas d'erreur -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mot de passe</td>
+                    <td>
+                        <input type="password" placeholder="Entrez votre mot de passe" name="fPass"
+                               value="<?= @$_POST['fPass'] ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input class="btn" type="submit" value="Login"></td>
+                    <td><input class="btn" type="reset" value="Effacer"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 
 <?php } ?>
     <hr/>

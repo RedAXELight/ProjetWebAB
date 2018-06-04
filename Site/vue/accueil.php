@@ -9,7 +9,7 @@ ob_start();
 $titre="GalaxSat - Accueil";
 $intitule="Binenvenue sur GalaxSat";
 $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
-
+$Credits="Icons made by Freepik from www.flaticon.com";
 ?>
 
 <!-- Section: about -->
@@ -20,7 +20,7 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="col-lg-8 col-lg-offset-2">
           <div class="wow bounceInDown" data-wow-delay="0.4s">
             <div class="section-heading">
-              <h2>About us</h2>
+              <h2>Nos produits</h2>
               <i class="fa fa-2x fa-angle-down"></i>
 
             </div>
@@ -41,9 +41,9 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="wow bounceInUp" data-wow-delay="0.2s">
           <div class="team boxed-grey">
             <div class="inner">
-              <h5>Anna Hanaceck</h5>
-              <p class="subtitle">Pixel Crafter</p>
-              <div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
+              <h5>Sample</h5>
+              <p class="subtitle">Sample</p>
+              <!--<div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>-->
             </div>
           </div>
         </div>
@@ -52,42 +52,42 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="wow bounceInUp" data-wow-delay="0.5s">
           <div class="team boxed-grey">
             <div class="inner">
-              <h5>Maura Daniels</h5>
-              <p class="subtitle">Ruby on Rails</p>
-              <div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>
+              <h5>Sample</h5>
+              <p class="subtitle">Sample</p>
+                <!--<div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>-->
 
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wow bounceInUp" data-wow-delay="0.8s">
-          <div class="team boxed-grey">
-            <div class="inner">
-              <h5>Jack Briane</h5>
-              <p class="subtitle">jQuery Ninja</p>
-              <div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>
+        <div class="col-md-3">
+          <div class="wow bounceInUp" data-wow-delay="0.8s">
+            <div class="team boxed-grey">
+              <div class="inner">
+                <h5>Sample</h5>
+                <p class="subtitle">Sample</p>
+                <!--<div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>-->
 
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wow bounceInUp" data-wow-delay="1s">
-          <div class="team boxed-grey">
-            <div class="inner">
-              <h5>Tom Petterson</h5>
-              <p class="subtitle">Typographer</p>
-              <div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive img-circle" /></div>
+        <div class="col-md-3">
+          <div class="wow bounceInUp" data-wow-delay="1s">
+            <div class="team boxed-grey">
+              <div class="inner">
+                <h5>Sample</h5>
+                <p class="subtitle">Sample</p>
+                <!--<div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive img-circle" /></div>-->
 
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- /Section: about -->
+  </section>
+  <!-- /Section: about -->
 
 
 <!-- Section: services -->
@@ -99,7 +99,7 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="col-lg-8 col-lg-offset-2">
           <div class="wow bounceInDown" data-wow-delay="0.4s">
             <div class="section-heading">
-              <h2>Our Services</h2>
+              <h2>Nos services</h2>
               <i class="fa fa-2x fa-angle-down"></i>
 
             </div>
@@ -119,11 +119,11 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="wow fadeInLeft" data-wow-delay="0.2s">
           <div class="service-box">
             <div class="service-icon">
-              <img src="img/icons/service-icon-1.png" alt="" />
+              <img class="icons" src="img/icons/service-icon-1.png" alt="" />
             </div>
             <div class="service-desc">
-              <h5>Print</h5>
-              <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+              <h5>ISS</h5>
+              <p>Nous vous offrons la possibilité de faire lancer, à la main, votre satellite par des astronautes</p>
             </div>
           </div>
         </div>
@@ -132,11 +132,11 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="wow fadeInUp" data-wow-delay="0.2s">
           <div class="service-box">
             <div class="service-icon">
-              <img src="img/icons/service-icon-2.png" alt="" />
+              <img class="icons" src="img/icons/service-icon-2.png" alt="" />
             </div>
             <div class="service-desc">
-              <h5>Web Design</h5>
-              <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+              <h5>CubeSat</h5>
+              <p>Nous vous assurons des satellites légers, fonctionnels et résistant. De nombreux tests en interne vous garantissent une qualité irréprochable de nos CubeSats</p>
             </div>
           </div>
         </div>
@@ -145,11 +145,11 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="wow fadeInUp" data-wow-delay="0.2s">
           <div class="service-box">
             <div class="service-icon">
-              <img src="img/icons/service-icon-3.png" alt="" />
+              <img class="icons" src="img/icons/service-icon-3.png" alt="" />
             </div>
             <div class="service-desc">
-              <h5>Photography</h5>
-              <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+              <h5>Lanceur</h5>
+              <p>Nous possédons des partenariats avec des entreprises de micro-lanceur</p>
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
         <div class="wow fadeInRight" data-wow-delay="0.2s">
           <div class="service-box">
             <div class="service-icon">
-              <img src="img/icons/service-icon-4.png" alt="" />
+              <img class="icons" src="img/icons/service-icon-4.png" alt="" />
             </div>
             <div class="service-desc">
               <h5>Cloud System</h5>

@@ -128,6 +128,9 @@
                     -->
                     <a href="https://bootstrapmade.com/bootstrap-one-page-templates/">Bootstrap One Page Templates</a>
                     by BootstrapMade
+                    <p>
+                        <?=@$Credits;?>
+                    </p>
                 </div>
             </div>
         </div>
