@@ -27,6 +27,9 @@ try {
             case 'vue_ajout_vendeur':
                 vendeur();
                 break;
+            case 'ajout_vendeur':
+                add_vendeur();
+                break;
 
             default:
             throw new Exception("Action non valide");

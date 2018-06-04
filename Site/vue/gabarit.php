@@ -94,7 +94,7 @@
 
                 <?php endif; ?>
 
-                <?php if (!isset($_SESSION['active'])) { ?>
+                <?php if (!isset($_SESSION['login'])) { ?>
                     <?php if (@$_GET['action']=="inscription") { ?>
                         <li class="active"><a href="index.php?action=inscription">S'inscrire</a></li>
                     <?php }else{ ?>
