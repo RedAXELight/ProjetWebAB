@@ -18,6 +18,12 @@ try {
             case 'vue_login':
                 login();
                 break;
+            case 'inscription':
+                inscription();
+                break;
+            case 'enregistrer':
+                enregistrer();
+                break;
             case 'vue_ajout_vendeur':
                 vendeur();
                 break;
