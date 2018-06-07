@@ -13,23 +13,33 @@ function accueil()
     require "vue/accueil.php";
 }
 
+// Si il y a une erreur, affiche la page d'erreur avec son message
 function erreur($e)
 {
     $_SESSION['erreur'] = $e;
     require "vue/vue_erreur.php";
 }
 
-//--------------------------USERS--------------------------------
-function login() //Fonction pour le login du formulaire
+//-------------------------- Utilisateurs --------------------------------
+
+// Fonction pour le login du formulaire
+function login()
 {
+    // Retire la faille XSS si il y en a
+    $_POST['fLogin'] = htmlspecialchars($_POST['fLogin']);
+    $_POST['fPass'] = htmlspecialchars($_POST['fPass']);
+
+    // Si la variable fLogin et fPass son set
     if (isset ($_POST['fLogin']) && isset ($_POST['fPass']))
     {
+        // On tente de se login à l'aide de la fonction dans modele.php
         $resultats = getLogin($_POST);
+        // On renvois la page vue_login
         require "vue/vue_login.php";
     }
     else
     {
-        // détruit la session de la personne connectée après appuyé sur Logout
+        // Détruit la session de la personne connectée après appuyé sur Logout
         if (isset($_SESSION['login'])) {
             session_destroy();
             $_SESSION = [];
@@ -39,11 +49,14 @@ function login() //Fonction pour le login du formulaire
     }
 }
 
+// Affiche la vue inscription
 function inscription(){
     require "vue/inscription.php";
 }
 
+// Fonction pour enregistrer un utilisateur
 function enregistrer() {
+      // Mettre les variables globales dans des variables locaux
       $nom = @$_POST['nom'];
       $prenom = @$_POST['prenom'];
       $adresse = @$_POST['adresse'];
@@ -54,8 +67,21 @@ function enregistrer() {
       $password = @$_POST['password'];
       $confirm_password = @$_POST['confirm_password'];
 
+      // Retire la faille XSS si il y en a
+      $nom = htmlspecialchars($nom);
+      $prenom = htmlspecialchars($prenom);
+      $adresse = htmlspecialchars($adresse);
+      $ville = htmlspecialchars($ville);
+      $npa = htmlspecialchars($npa);
+      $email = htmlspecialchars($email);
+      $login = htmlspecialchars($login);
+      $password = htmlspecialchars($password);
+      $confirm_password = htmlspecialchars($confirm_password);
+
+      //defini l'erreur à 0
       $erreur = 0;
 
+      //verifie si il y a des erreurs dans un ou plusieurs champs <input> et defini une erreur à la variable erreur
       if ($password != $confirm_password) {$erreur = 9;}
       if ($password == ''){$erreur = 8;}
       if ($login == ''){$erreur = 7;}
@@ -66,8 +92,11 @@ function enregistrer() {
       if ($prenom == ''){$erreur = 2;}
       if ($nom == ''){$erreur = 1;}
 
+      // Si il n'y a pas d'erreur
       if ($erreur == 0){
+          // On tente d'enregistrer à l'aide de la fonction dans modèle.php
           $operation = enregistrer_user(@$_POST);
+          // Verifie si l'opération est reussi
           if ($operation == '2'){
               $erreur = 'ce login est déjà utilisé !';
               require "vue/inscription.php";
@@ -78,6 +107,7 @@ function enregistrer() {
               $erreur = 'requête envoyé avec succès';
               require "vue/vue_login.php";
           }
+      // Sinon on envoie un message de l'erreur
       }else{
           switch ($erreur) {
               case '1':
@@ -115,12 +145,15 @@ function enregistrer() {
       }
 }
 
+// Affiche la vue vendeur
 function vendeur(){
     require "vue/vue_ajout_vendeur.php";
 }
 
+// Fonction permettant d'ajouter un utilisateur en tant que vendeur
 function add_vendeur()
 {
+    // Mettre les variables globales dans des variables locaux
     $nom = @$_POST['nom'];
     $prenom = @$_POST['prenom'];
     $adresse = @$_POST['adresse'];
@@ -131,8 +164,21 @@ function add_vendeur()
     $password = @$_POST['password'];
     $confirm_password = @$_POST['confirm_password'];
 
+    //Retire la faille XSS si il y en a
+    $nom = htmlspecialchars($nom);
+    $prenom = htmlspecialchars($prenom);
+    $adresse = htmlspecialchars($adresse);
+    $ville = htmlspecialchars($ville);
+    $npa = htmlspecialchars($npa);
+    $email = htmlspecialchars($email);
+    $login = htmlspecialchars($login);
+    $password = htmlspecialchars($password);
+    $confirm_password = htmlspecialchars($confirm_password);
+
+    // Defini l'erreur à 0
     $erreur = 0;
 
+    // Verifie si il y a des erreurs dans un ou plusieurs champs <input> et defini une erreur à la variable erreur
     if ($password != $confirm_password) {$erreur = 9;}
     if ($password == ''){$erreur = 8;}
     if ($login == ''){$erreur = 7;}
@@ -143,8 +189,13 @@ function add_vendeur()
     if ($prenom == ''){$erreur = 2;}
     if ($nom == ''){$erreur = 1;}
 
+    // Si il n'y a pas d'erreur
     if ($erreur == 0){
+
+        // On tente d'enregistrer à l'aide de la fonction dans modèle.php
         $operation = enregistrer_vendeur(@$_POST);
+
+        // Verifie si l'opération est reussi
         if ($operation == '2'){
             $erreur = 'ce login est déjà utilisé !';
             require "vue/vue_ajout_vendeur.php";
@@ -155,6 +206,7 @@ function add_vendeur()
             $erreur = 'requête envoyé avec succès';
             require "vue/vue_login.php";
         }
+    // Sinon on envoie un message de l'erreur
     }else{
         switch ($erreur) {
             case '1':
