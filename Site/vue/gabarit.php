@@ -55,10 +55,10 @@
                     <li><a href="index.php">Accueil</a></li>
                 <?php endif; ?>
 
-                <?php if (@$_GET['action'] == "vue_produits") : ?>
-                    <li class="active"><a href="index.php?action=vue_produit">Nos produits</a></li>
+                <?php if (@$_GET['action'] == "vue_liste_produits") : ?>
+                    <li class="active"><a href="index.php?action=vue_liste_produits">Nos produits</a></li>
                 <?php else : ?>
-                    <li><a href="index.php?action=vue_produits">Nos produits</a></li>
+                    <li><a href="index.php?action=vue_liste_produits">Nos produits</a></li>
                 <?php endif; ?>
 
                 <li><a href="#service">Service</a></li>
