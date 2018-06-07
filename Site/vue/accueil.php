@@ -149,7 +149,7 @@ $Credits="Icons made by Freepik from www.flaticon.com";
             </div>
             <div class="service-desc">
               <h5>Lanceur</h5>
-                <p>Nous possédons des partenariats avec des entreprises de micro-lanceur tel que <a href="https://www.rocketlabusa.com/">RocketLab</a> et leur fusée "<i>electron</i>"</p>
+                <p>Nous possédons des partenariats avec des entreprises de micro-lanceur tel que <a href="https://www.rocketlabusa.com/">RocketLab</a> et leur fusée "<i>Electron</i>"</p>
             </div>
           </div>
         </div>
