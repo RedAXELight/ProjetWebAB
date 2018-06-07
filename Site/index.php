@@ -30,6 +30,12 @@ try {
             case 'ajout_vendeur':
                 add_vendeur();
                 break;
+            case 'vue_ajout_produit':
+                form_produit();
+                break;
+            case 'ajout_produit':
+                add_produit();
+                break;
 
             default:
             throw new Exception("Action non valide");
