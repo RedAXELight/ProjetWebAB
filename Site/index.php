@@ -30,6 +30,9 @@ try {
             case 'ajout_vendeur':
                 add_vendeur();
                 break;
+            case 'vue_contact':
+                contact();
+                break;
 
             default:
             throw new Exception("Action non valide");
