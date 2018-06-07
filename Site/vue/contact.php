@@ -85,7 +85,7 @@ $titre="GalaxSat - Contact";
           <h5>Main Office</h5>
 
           <address>
-        <strong>Squas Design, Inc.</strong><br>
+        <strong>GalaxSat</strong><br>
         Tower 795 Folsom Ave, Beautiful Suite 600<br>
         San Francisco, CA 94107<br>
         <abbr title="Phone">P:</abbr> (123) 456-7890
@@ -96,12 +96,9 @@ $titre="GalaxSat - Contact";
         <a href="mailto:#">email.name@example.com</a>
       </address>
           <address>
-        <strong>We're on social networks</strong><br>
+        <strong>Trouvez-nous sur twitter</strong><br>
                       <ul class="company-social">
-                          <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
                           <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                          <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                          <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                       </ul>
       </address>
         </div>

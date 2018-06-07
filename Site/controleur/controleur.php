@@ -19,6 +19,11 @@ function erreur($e)
     require "vue/vue_erreur.php";
 }
 
+function contact()
+{
+    require "vue/contact.php";
+}
+
 //--------------------------USERS--------------------------------
 function login() //Fonction pour le login du formulaire
 {

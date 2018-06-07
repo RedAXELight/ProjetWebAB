@@ -18,6 +18,9 @@ try {
             case 'vue_login':
                 login();
                 break;
+            case 'contact':
+                contact();
+                break;
 
             default:
                 throw new Exception("Action non valide");

@@ -60,7 +60,7 @@
                 <li><a href="#service">Service</a></li>
 
                 <?php if (@$_GET['action'] == "vue_contact") : ?>
-                    <li class="active"><a href="index.php?action=vue_contact">Contact</a></li>
+                    <li class="active"><a href="index.php?action=contact">Contact</a></li>
                 <?php else : ?>
                     <li><a href="index.php?action=vue_contact">Contact</a></li>
                 <?php endif; ?>
