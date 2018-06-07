@@ -55,7 +55,7 @@
                     <li><a href="index.php">Accueil</a></li>
                 <?php endif; ?>
 
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Nos produits</a></li>
 
                 <li><a href="#service">Service</a></li>
 
@@ -74,14 +74,42 @@
                     <?php endif ?>
                 </li>
 
-                <li class="dropdown">
+                <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Vendeur"))://si une session vendeur est active, affiche "Ajouter un produit" dans le menu ?>
+
+                    <?php if(@$_GET['action']=="vue_ajout_produit" || @$_GET['action'] == "ajouter_produit") :?>
+                        <li class="active"><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                    <?php else : ?>
+                        <li><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+                <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Administrateur"))://si une session administrateur est active, affiche "Ajouter un vendeur" dans le menu ?>
+
+                    <?php if(@$_GET['action']=="vue_ajout_vendeur" || @$_GET['action'] == "ajouter_vendeur") :?>
+                        <li class="active"><a href="index.php?action=vue_ajout_vendeur">Ajouter un vendeur</a></li>
+                    <?php else : ?>
+                        <li><a href="index.php?action=vue_ajout_vendeur">Ajouter un vendeur</a></li>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+                <?php if (!isset($_SESSION['login'])) { ?>
+                    <?php if (@$_GET['action']=="inscription") { ?>
+                        <li class="active"><a href="index.php?action=inscription">S'inscrire</a></li>
+                    <?php }else{ ?>
+                        <li><a href="index.php?action=inscription">S'inscrire</a></li>
+                    <?php } ?>
+                <?php } ?>
+
+                <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Example menu</a></li>
                         <li><a href="#">Example menu</a></li>
                         <li><a href="#">Example menu</a></li>
                     </ul>
-                </li>
+                </li>-->
 
             </ul>
         </div>
@@ -128,6 +156,9 @@
                     -->
                     <a href="https://bootstrapmade.com/bootstrap-one-page-templates/">Bootstrap One Page Templates</a>
                     by BootstrapMade
+                    <p>
+                        <?=@$Credits;?>
+                    </p>
                 </div>
             </div>
         </div>

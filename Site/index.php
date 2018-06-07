@@ -1,9 +1,9 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * User: Alexandre.baseia
- * Date: 24.05.2018
- */
+* User: Brian Rodrigues Fraga
+* User: Alexandre.baseia
+* Date: 24.05.2018
+*/
 
 session_start();
 require "controleur/controleur.php";
@@ -18,15 +18,27 @@ try {
             case 'vue_login':
                 login();
                 break;
+            case 'inscription':
+                inscription();
+                break;
+            case 'enregistrer':
+                enregistrer();
+                break;
+            case 'vue_ajout_vendeur':
+                vendeur();
+                break;
+            case 'ajout_vendeur':
+                add_vendeur();
             case 'contact':
                 contact();
                 break;
 
             default:
-                throw new Exception("Action non valide");
+            throw new Exception("Action non valide");
         }
-    } else
-        accueil();
+    } else {
+    accueil();
+    }
 } catch (Exception $e) {
     erreur($e->getMessage());
 }
