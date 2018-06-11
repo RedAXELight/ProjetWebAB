@@ -9,7 +9,7 @@
 ob_start();
 $titre = "Ajouter un vendeur";
 $intitule = "Ajout d'un vendeur";
-$SousMenu = "Bonjour administrateur " .$_SESSION['login']. ", vous pouvez ajouter un vendeur";
+$SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez ajouter un vendeur";
 ?>
 
 <!-- Section: form inscription -->
