@@ -84,10 +84,10 @@
 
                 <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Vendeur"))://si une session vendeur est active, affiche "Ajouter un produit" dans le menu ?>
 
-                    <?php if (@$_GET['action'] == "vue_ajout_produit" || @$_GET['action'] == "ajouter_produit") : ?>
-                        <li class="active"><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                    <?php if (@$_GET['action'] == "ajout_produit" || @$_GET['action'] == "ajout_produit") : ?>
+                        <li class="active"><a href="index.php?action=ajout_produit">Ajouter un produit</a></li>
                     <?php else : ?>
-                        <li><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                        <li><a href="index.php?action=ajout_produit">Ajouter un produit</a></li>
                     <?php endif; ?>
 
                 <?php endif; ?>
