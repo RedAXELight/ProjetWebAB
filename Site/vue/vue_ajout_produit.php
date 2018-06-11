@@ -17,10 +17,6 @@ $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez ajouter un pr
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <?php if (isset($erreur)){
-                    echo "<div class='alert alert-danger'>".$erreur."</div>";
-                }
-                ?>
                 <div class="form-group wow bounceInDown" data-wow-delay="0.4s">
                     <form class="form" role="form" data-toggle="validator" method="POST" action="index.php?action=ajout_produit">
                         <table class="table table-hover">
