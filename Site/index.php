@@ -7,7 +7,7 @@
 
 session_start();
 require "controleur/controleur.php";
-
+//selection des possibilités
 try {
     if (isset($_GET['action'])) {
         $action = $_GET['action'];

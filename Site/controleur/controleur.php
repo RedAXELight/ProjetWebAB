@@ -231,7 +231,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
 
 //-----------------------PRODUITS-----------------------------------
 
-
+//ajout et affichage de la PAGE de produits
 function add_produit()
 {
     {

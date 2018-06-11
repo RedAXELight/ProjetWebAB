@@ -10,9 +10,10 @@ ob_start();
 $titre = "Ajouter un produit";
 $intitule = "Ajout d'un produit";
 $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez ajouter un produit";
+//Il semble que la description du produit ne se convertisse pas en UTF-8
 ?>
 
-<!-- Section: form choix et ajout de produit -->
+<!-- Section: form choix et ajout de produit -->+
 <section id="contact" class="home-section text-center">
     <div class="container">
         <div class="row">
