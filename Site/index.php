@@ -7,7 +7,7 @@
 
 session_start();
 require "controleur/controleur.php";
-
+//selection des possibilités
 try {
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
@@ -29,6 +29,9 @@ try {
                 break;
             case 'ajout_vendeur':
                 add_vendeur();
+                break;
+            case 'ajout_produit':
+                add_produit();
                 break;
 
             default:
