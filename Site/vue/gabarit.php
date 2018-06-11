@@ -75,7 +75,7 @@
 
                 <li <?php if (@$_GET['action'] == "vue_login") echo 'class="active"'; ?>>
                     <a href="index.php?action=vue_login">
-                        <?php if (isset($_SESSION['login'])) ://si la session login est active, affiche "logout" dans le menu                                    ?>
+                        <?php if (isset($_SESSION['login'])) ://si la session login est active, affiche "logout" dans le menu  ?>
                         Logout</a>
                     <?php else : ?>
                         Login</a>

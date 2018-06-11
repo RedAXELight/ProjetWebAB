@@ -233,7 +233,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
 
 function form_produit()
 {
-    require "vue/vue_ajout_vendeur.php";
+    require "vue/vue_ajout_produit.php";
 }
 
 function add_produit()
