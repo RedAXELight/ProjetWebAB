@@ -109,16 +109,7 @@
                         <li><a href="index.php?action=inscription">S'inscrire</a></li>
                     <?php } ?>
                 <?php } ?>
-
-                <!--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Example menu</a></li>
-                        <li><a href="#">Example menu</a></li>
-                        <li><a href="#">Example menu</a></li>
-                    </ul>
-                </li>-->
-
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
