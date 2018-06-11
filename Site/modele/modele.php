@@ -39,29 +39,28 @@ function getLogin($post)
 }
 
 //verifie si le login existe, si ce n'est pas le cas, il enregitre le nouvel utilisateur dans la BD
-function enregistrer_user($donnees)
-{
+function enregistrer_user($donnees) {
     //connexion à la BD
     $connexion = getBD();
     //Requête pour verifier si le login existe
-    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '" . @$donnees['login'] . "';";
+    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '".@$donnees['login']."';";
     $resultats = $connexion->query($requete_verify);
-    $ligne_login = $resultats->fetch();
+    $ligne_login=$resultats->fetch();
     //Requête pour verifier si le mail existe
-    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '" . @$donnees['login'] . "';";
+    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '".@$donnees['login']."';";
     $resultats = $connexion->query($requete_verify);
-    $ligne_email = $resultats->fetch();
+    $ligne_email=$resultats->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
-    if (($ligne_login == false) && ($ligne_email == false)) {
-        $requete = "INSERT INTO Users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('" . @$donnees['prenom'] . "', '" . $donnees['nom'] . "', '" . @$donnees['adresse'] . "', '" . @$donnees['npa'] . "', '" . @$donnees['ville'] . "', '" . $donnees['password'] . "', '3', '" . $donnees['login'] . "', '" . $donnees['email'] . "');";
+    if (($ligne_login == false) && ($ligne_email == false)){
+        $requete = "INSERT INTO Users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('".@$donnees['prenom']."', '".$donnees['nom']."', '".@$donnees['adresse']."', '".@$donnees['npa']."', '".@$donnees['ville']."', '".$donnees['password']."', '3', '".$donnees['login']."', '".$donnees['email']."');";
         $resultats = $connexion->query($requete);
-    } else {
+    }else{
         //si le login est bon, c'est que le mail existe déjà
-        if ($ligne_login == false) {
+        if ($ligne_login == false){
             $resultats = '1';
         }
         //si le mail est bon, c'est que le login existe déjà
-        if ($ligne_email == false) {
+        if ($ligne_email == false){
             $resultats = '2';
         }
     }
@@ -69,41 +68,30 @@ function enregistrer_user($donnees)
 }
 
 //verifie si le login existe, si ce n'est pas le cas, il enregitre le nouveau vendeur dans la BD
-function enregistrer_vendeur($donnees)
-{
+function enregistrer_vendeur($donnees) {
     //connexion à la BD
     $connexion = getBD();
     //Requête pour verifier si le login existe
-    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '" . @$donnees['login'] . "';";
+    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '".@$donnees['login']."';";
     $resultats = $connexion->query($requete_verify);
-    $ligne_login = $resultats->fetch();
+    $ligne_login=$resultats->fetch();
     //Requête pour verifier si le mail existe
-    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '" . @$donnees['login'] . "';";
+    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '".@$donnees['login']."';";
     $resultats = $connexion->query($requete_verify);
-    $ligne_email = $resultats->fetch();
+    $ligne_email=$resultats->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
-    if (($ligne_login == false) && ($ligne_email == false)) {
-        $requete = "INSERT INTO Users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('" . @$donnees['prenom'] . "', '" . $donnees['nom'] . "', '" . @$donnees['adresse'] . "', '" . @$donnees['npa'] . "', '" . @$donnees['ville'] . "', '" . $donnees['password'] . "', '2', '" . $donnees['login'] . "', '" . $donnees['email'] . "');";
+    if (($ligne_login == false) && ($ligne_email == false)){
+        $requete = "INSERT INTO Users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('".@$donnees['prenom']."', '".$donnees['nom']."', '".@$donnees['adresse']."', '".@$donnees['npa']."', '".@$donnees['ville']."', '".$donnees['password']."', '2', '".$donnees['login']."', '".$donnees['email']."');";
         $resultats = $connexion->query($requete);
-    } else {
+    }else{
         //si le login est bon, c'est que le mail existe déjà
-        if ($ligne_login == false) {
+        if ($ligne_login == false){
             $resultats = '1';
         }
         //si le mail est bon, c'est que le login existe déjà
-        if ($ligne_email == false) {
+        if ($ligne_email == false){
             $resultats = '2';
         }
     }
-    return $resultats;
-}
-
-function AddProduit($Sat)
-{
-    $Descr = $Sat['description'];
-    // connexion à la BD snows
-    $connexion = getBD();
-    $requete = "INSERT INTO cubesat (csName, csMass, csPrice, SolarPanel, Height, Width, Length, BatterySpace, Stock, Description) VALUES ('" . $Sat['cnom'] . "','" . $Sat['masse'] . "','" . $Sat['prix'] . "','" . $Sat['solar'] . "','" . $Sat['height'] . "','" . $Sat['width'] . "','" . $Sat['length'] . "','" . $Sat['battery'] . "','" . $Sat['stock'] . "','" . htmlentities($Descr, ENT_SUBSTITUTE, "UTF-8") . "');";
-    $resultats = $connexion->query($requete); //Permet de retourner le résultat de la requête (Si par exemple on voulait directement afficher le snow entré cela pourrait être utile)
     return $resultats;
 }

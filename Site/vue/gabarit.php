@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $titre; ?></title>
+    <title><?=$titre;?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -40,12 +40,8 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <?php if ((@$_GET['action'] == "vue_accueil") || (!isset($_GET['action']))) : ?>
-            <a class="navbar-brand" href="index.php">
-                <h1>GalaxSat</h1> </a>
-                <?php else : ?>
-                    <a class="navbar-brand" href="index.php"><h1>GalaxSat</h1></a>
-                <?php endif; ?>
+            <a class="navbar-brand" href="index.html">
+                <h1>GalaxSat</h1>
             </a>
         </div>
 
@@ -84,17 +80,17 @@
 
                 <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Vendeur"))://si une session vendeur est active, affiche "Ajouter un produit" dans le menu ?>
 
-                    <?php if (@$_GET['action'] == "ajout_produit" || @$_GET['action'] == "ajout_produit") : ?>
-                        <li class="active"><a href="index.php?action=ajout_produit">Ajouter un produit</a></li>
+                    <?php if(@$_GET['action']=="vue_ajout_produit" || @$_GET['action'] == "ajouter_produit") :?>
+                        <li class="active"><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
                     <?php else : ?>
-                        <li><a href="index.php?action=ajout_produit">Ajouter un produit</a></li>
+                        <li><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
                     <?php endif; ?>
 
                 <?php endif; ?>
 
                 <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Administrateur"))://si une session administrateur est active, affiche "Ajouter un vendeur" dans le menu ?>
 
-                    <?php if (@$_GET['action'] == "vue_ajout_vendeur" || @$_GET['action'] == "ajouter_vendeur") : ?>
+                    <?php if(@$_GET['action']=="vue_ajout_vendeur" || @$_GET['action'] == "ajouter_vendeur") :?>
                         <li class="active"><a href="index.php?action=vue_ajout_vendeur">Ajouter un vendeur</a></li>
                     <?php else : ?>
                         <li><a href="index.php?action=vue_ajout_vendeur">Ajouter un vendeur</a></li>
@@ -103,9 +99,9 @@
                 <?php endif; ?>
 
                 <?php if (!isset($_SESSION['login'])) { ?>
-                    <?php if (@$_GET['action'] == "inscription") { ?>
+                    <?php if (@$_GET['action']=="inscription") { ?>
                         <li class="active"><a href="index.php?action=inscription">S'inscrire</a></li>
-                    <?php } else { ?>
+                    <?php }else{ ?>
                         <li><a href="index.php?action=inscription">S'inscrire</a></li>
                     <?php } ?>
                 <?php } ?>
@@ -130,8 +126,8 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2><span class="text_color"><?= @$intitule; ?></span></h2>
-        <h4><i><?= @$SousMenu; ?></i></h4>
+        <h2><span class="text_color"><?=@$intitule;?></span></h2>
+        <h4><i><?=@$SousMenu;?></i></h4>
     </div>
     <div class="page-scroll">
         <a href="#service" class="btn btn-circle">
@@ -154,7 +150,7 @@
                         </a>
                     </div>
                 </div>
-                <p>Template original par &copy;SquadFREE. All rights reserved.</p>
+                <p>Template original  par &copy;SquadFREE. All rights reserved.</p>
                 <div class="credits">
                     <!--
                       All the links in the footer should remain intact.
@@ -165,7 +161,7 @@
                     <a href="https://bootstrapmade.com/bootstrap-one-page-templates/">Bootstrap One Page Templates</a>
                     by BootstrapMade
                     <p>
-                        <?= @$Credits; ?>
+                        <?=@$Credits;?>
                     </p>
                 </div>
             </div>
