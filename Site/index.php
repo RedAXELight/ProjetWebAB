@@ -33,7 +33,9 @@ try {
             case 'ajout_produit':
                 add_produit();
                 break;
-
+            case 'vue_contact':
+                contact();
+                break;
             default:
             throw new Exception("Action non valide");
         }

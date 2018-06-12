@@ -37,10 +37,10 @@ if (isset($resultats)) {
                 // Création de la session
                 $_SESSION['login'] = $ligne['usrName'] . " " . $ligne['usrSurname'];
                 $_SESSION['typeUser'] = "Administrateur";
-            } else
+            } else {
             echo "Erreur de login";
+            }
         }
-
     }
 } else {
     if (isset($_SESSION['login'])) {
@@ -50,7 +50,6 @@ if (isset($resultats)) {
 
     <!--_________________________________________Ci-dessous l'affichage du formulaire______________________________________-->
     <section id="service" class="home-section text-center bg-gray">
-
         <div class="heading-about">
             <div class="container">
                 <div class="row">

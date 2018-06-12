@@ -44,15 +44,15 @@ function inscription()
 
 function enregistrer()
 {
-    $nom = @$_POST['nom'];
-    $prenom = @$_POST['prenom'];
-    $adresse = @$_POST['adresse'];
-    $ville = @$_POST['ville'];
-    $npa = @$_POST['npa'];
-    $email = @$_POST['email'];
-    $login = @$_POST['login'];
-    $password = @$_POST['password'];
-    $confirm_password = @$_POST['confirm_password'];
+    $nom = htmlspecialchars(@$_POST['nom']);
+    $prenom = htmlspecialchars(@$_POST['prenom']);
+    $adresse = htmlspecialchars(@$_POST['adresse']);
+    $ville = htmlspecialchars(@$_POST['ville']);
+    $npa = htmlspecialchars(@$_POST['npa']);
+    $email = htmlspecialchars(@$_POST['email']);
+    $login = htmlspecialchars(@$_POST['login']);
+    $password = htmlspecialchars(@$_POST['password']);
+    $confirm_password = htmlspecialchars(@$_POST['confirm_password']);
 
     $erreur = 0;
 
@@ -140,15 +140,15 @@ function vendeur()
 
 function add_vendeur() //fonction d'ajout d'un vendeur
 {
-    $nom = @$_POST['nom'];
-    $prenom = @$_POST['prenom'];
-    $adresse = @$_POST['adresse'];
-    $ville = @$_POST['ville'];
-    $npa = @$_POST['npa'];
-    $email = @$_POST['email'];
-    $login = @$_POST['login'];
-    $password = @$_POST['password'];
-    $confirm_password = @$_POST['confirm_password'];
+    $nom = htmlspecialchars(@$_POST['nom']);
+    $prenom = htmlspecialchars(@$_POST['prenom']);
+    $adresse = htmlspecialchars(@$_POST['adresse']);
+    $ville = htmlspecialchars(@$_POST['ville']);
+    $npa = htmlspecialchars(@$_POST['npa']);
+    $email = htmlspecialchars(@$_POST['email']);
+    $login = htmlspecialchars(@$_POST['login']);
+    $password = htmlspecialchars(@$_POST['password']);
+    $confirm_password = htmlspecialchars(@$_POST['confirm_password']);
 
     $erreur = 0; //controle du type d'erreur
 
@@ -234,20 +234,17 @@ function add_vendeur() //fonction d'ajout d'un vendeur
 //ajout et affichage de la PAGE de produits
 function add_produit()
 {
-    {
         if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description']))
         {
             $resultats = AddProduit($_POST);
             require "vue/vue_ajout_produit.php";
-        }
-        else
-        {
+        }else{
             require "vue/vue_ajout_produit.php";
         }
-    }
 }
 
-
-
-
-
+//----------------------------CONTACT----------------------------------
+function contact()
+{
+    require "vue/contact.php";
+}
