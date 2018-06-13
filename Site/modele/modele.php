@@ -56,20 +56,20 @@ function enregistrer_user($donnees)
     $password = htmlspecialchars(@$donnees['password']);
     $email = htmlspecialchars(@$donnees['email']);
     // requête pour verifier si le login existe
-    $requete_verify = $connexion->prepare("SELECT usrLogin FROM Users WHERE usrLogin = :login");
+    $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
         ]);
     $ligne_login = $requete_verify->fetch();
     //Requête pour verifier si le mail existe
-    $requete_verify = $connexion->prepare("SELECT usrMail FROM Users WHERE usrLogin = :login");
+    $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
         ]);
     $ligne_email = $requete_verify->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
     if (($ligne_login == false) && ($ligne_email == false)) {
-        $resultats = $connexion->prepare("INSERT INTO Users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '3', :login, :email)");
+        $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '3', :login, :email)");
         $resultats->execute([
             'prenom' => $prenom,
             'nom' => $nom,
@@ -99,16 +99,16 @@ function enregistrer_vendeur($donnees)
     //connexion à la BD
     $connexion = getBD();
     //Requête pour verifier si le login existe
-    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '" . @$donnees['login'] . "';";
+    $requete_verify = "SELECT usrLogin FROM users WHERE usrLogin = '" . @$donnees['login'] . "';";
     $resultats = $connexion->query($requete_verify);
     $ligne_login = $resultats->fetch();
     //Requête pour verifier si le mail existe
-    $requete_verify = "SELECT usrLogin FROM Users WHERE usrLogin = '" . @$donnees['login'] . "';";
+    $requete_verify = "SELECT usrLogin FROM users WHERE usrLogin = '" . @$donnees['login'] . "';";
     $resultats = $connexion->query($requete_verify);
     $ligne_email = $resultats->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
     if (($ligne_login == false) && ($ligne_email == false)) {
-        $requete = "INSERT INTO Users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('" . @$donnees['prenom'] . "', '" . $donnees['nom'] . "', '" . @$donnees['adresse'] . "', '" . @$donnees['npa'] . "', '" . @$donnees['ville'] . "', '" . $donnees['password'] . "', '2', '" . $donnees['login'] . "', '" . $donnees['email'] . "');";
+        $requete = "INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('" . @$donnees['prenom'] . "', '" . $donnees['nom'] . "', '" . @$donnees['adresse'] . "', '" . @$donnees['npa'] . "', '" . @$donnees['ville'] . "', '" . $donnees['password'] . "', '2', '" . $donnees['login'] . "', '" . $donnees['email'] . "');";
         $resultats = $connexion->query($requete);
     } else {
         //si le login est bon, c'est que le mail existe déjà
