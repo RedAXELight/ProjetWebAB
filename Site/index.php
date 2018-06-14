@@ -42,6 +42,9 @@ try {
             case 'modifierproduit' :
                 modifierproduit($_POST); //cette partie là envoie un tableau POST avec les modification du formulaire
                 break;
+            case 'supprimer_produit':
+                suppr($_GET['id']);
+                break;
             default:
             throw new Exception("Action non valide");
         }

@@ -34,8 +34,8 @@ function getLogin($post)
     $resultats = $connexion->prepare("SELECT * FROM users WHERE usrLogin = :login AND usrPassword = :password");
     // execute la requête avec les variables et récupère les résultats dans la variable $resultats
     $resultats->execute([
-    'login' => $Login,
-    'password' => $Pass
+        'login' => $Login,
+        'password' => $Pass
     ]);
     //retourne la valeur de la variable résultat
     return $resultats;
@@ -59,13 +59,13 @@ function enregistrer_user($donnees)
     $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
-        ]);
+    ]);
     $ligne_login = $requete_verify->fetch();
     //Requête pour verifier si le mail existe
     $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
-        ]);
+    ]);
     $ligne_email = $requete_verify->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
     if (($ligne_login == false) && ($ligne_email == false)) {
@@ -79,7 +79,7 @@ function enregistrer_user($donnees)
             'password' => $password,
             'login' => $login,
             'email' => $email,
-            ]);
+        ]);
     } else {
         //si le login est bon, c'est que le mail existe déjà
         if ($ligne_login == false) {
@@ -140,16 +140,27 @@ function GetProduit($idcible)
 {
     //connexion à la bd
     $connexion = getBD();
-    $requete = "SELECT * FROM cubesat WHERE idCubeSat = '".$idcible."';";
+    $requete = "SELECT * FROM cubesat WHERE idCubeSat = '" . $idcible . "';";
     $resultats = $connexion->query($requete);
     return $resultats; //dans ce cas de figure il est utile de retourner la variable resultat
 }
+
 //fonction de modification d'un produit
 function UpdateProduit($ValModif)
 {
     //connexion à la bd
     $connexion = getBD();
-    $requete = "UPDATE cubesat SET csName = '".$ValModif['cnom']."', csMass = '".$ValModif['masse']."', csPrice = '".$ValModif['prix']."', SolarPanel = '".$ValModif['solar']."', Height = '".$ValModif['height']."', Width = '".$ValModif['width']."', Length = '".$ValModif['length']."', BatterySpace = '".$ValModif['battery']."', Stock = '".$ValModif['stock']."', Description = '". htmlentities($ValModif['description'], ENT_SUBSTITUTE, "UTF-8")."' WHERE idCubeSat = '".$ValModif['id']."' ;";
+    $requete = "UPDATE cubesat SET csName = '" . $ValModif['cnom'] . "', csMass = '" . $ValModif['masse'] . "', csPrice = '" . $ValModif['prix'] . "', SolarPanel = '" . $ValModif['solar'] . "', Height = '" . $ValModif['height'] . "', Width = '" . $ValModif['width'] . "', Length = '" . $ValModif['length'] . "', BatterySpace = '" . $ValModif['battery'] . "', Stock = '" . $ValModif['stock'] . "', Description = '" . htmlentities($ValModif['description'], ENT_SUBSTITUTE, "UTF-8") . "' WHERE idCubeSat = '" . $ValModif['id'] . "' ;";
+    $resultats = $connexion->query($requete);
+    return $resultats;
+}
+
+//Désactivation de l'affichage d'un produit
+function Suppression($idCible)
+{
+    //connexion à la bd
+    $connexion = getBD();
+    $requete = "UPDATE cubesat SET Disponible = 0 WHERE idCubeSat = '".$idCible."';";
     $resultats = $connexion->query($requete);
     return $resultats;
 }
