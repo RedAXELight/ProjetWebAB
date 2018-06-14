@@ -105,7 +105,7 @@
                         <li><a href="index.php?action=inscription">S'inscrire</a></li>
                     <?php } ?>
                 <?php } ?>
-                
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
