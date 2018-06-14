@@ -123,12 +123,33 @@ function enregistrer_vendeur($donnees)
     return $resultats;
 }
 
+
+//Fonction d'ajout du produit
 function AddProduit($Sat)
 {
     $Descr = $Sat['description'];
     // connexion à la BD snows
     $connexion = getBD();
     $requete = "INSERT INTO cubesat (csName, csMass, csPrice, SolarPanel, Height, Width, Length, BatterySpace, Stock, Description) VALUES ('" . $Sat['cnom'] . "','" . $Sat['masse'] . "','" . $Sat['prix'] . "','" . $Sat['solar'] . "','" . $Sat['height'] . "','" . $Sat['width'] . "','" . $Sat['length'] . "','" . $Sat['battery'] . "','" . $Sat['stock'] . "','" . htmlentities($Descr, ENT_SUBSTITUTE, "UTF-8") . "');";
-    $resultats = $connexion->query($requete); //Permet de retourner le résultat de la requête (Si par exemple on voulait directement afficher le snow entré cela pourrait être utile)
+    $resultats = $connexion->query($requete); //Permet de retourner le résultat de la requête (Si par exemple on voulait directement afficher le produit entré cela pourrait être utile)
+    return $resultats;
+}
+
+//Va chercher les infos d'un seul produit pour la modification
+function GetProduit($idcible)
+{
+    //connexion à la bd
+    $connexion = getBD();
+    $requete = "SELECT * FROM cubesat WHERE idCubeSat = '".$idcible."';";
+    $resultats = $connexion->query($requete);
+    return $resultats; //dans ce cas de figure il est utile de retourner la variable resultat
+}
+//fonction de modification d'un produit
+function UpdateProduit($ValModif)
+{
+    //connexion à la bd
+    $connexion = getBD();
+    $requete = "UPDATE cubesat SET csName = '".$ValModif['cnom']."', csMass = '".$ValModif['masse']."', csPrice = '".$ValModif['prix']."', SolarPanel = '".$ValModif['solar']."', Height = '".$ValModif['height']."', Width = '".$ValModif['width']."', Length = '".$ValModif['length']."', BatterySpace = '".$ValModif['battery']."', Stock = '".$ValModif['stock']."', Description = '". htmlentities($ValModif['description'], ENT_SUBSTITUTE, "UTF-8")."' WHERE idCubeSat = '".$ValModif['id']."' ;";
+    $resultats = $connexion->query($requete);
     return $resultats;
 }

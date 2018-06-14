@@ -36,6 +36,12 @@ try {
             case 'vue_contact':
                 contact();
                 break;
+            case 'vue_modifier' :
+                modifier_get($_GET['id']); //cette partie là va chercher le produit
+                break;
+            case 'modifierproduit' :
+                modifierproduit($_POST); //cette partie là envoie un tableau POST avec les modification du formulaire
+                break;
             default:
             throw new Exception("Action non valide");
         }
