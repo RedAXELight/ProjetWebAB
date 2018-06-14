@@ -123,7 +123,19 @@ function enregistrer_vendeur($donnees)
     return $resultats;
 }
 
+function sendMail($datamail)
+{
+    ini_set('SMTP', 'smtp.heavnwolf.ch');//remplacer le nom du smtp
+    $to = 'Alexandre.baseia@cpnv.ch'/*; Brian.rodrigues-fraga@cpnv.ch'*/;
+    $subject = $datamail['subject'];
+    $from = $datamail['email'];
+    $message = $datamail['message'];
+    $toSend = "Envoyé par : ".$from."\n..".$message;
+    $toSend = mb_convert_encoding($toSend, "UTF-8");
+    mail($to, $subject, $toSend);
+}
 
+//-----------------------Produits--------------------------
 //Fonction d'ajout du produit
 function AddProduit($Sat)
 {
@@ -160,7 +172,7 @@ function Suppression($idCible)
 {
     //connexion à la bd
     $connexion = getBD();
-    $requete = "UPDATE cubesat SET Disponible = 0 WHERE idCubeSat = '".$idCible."';";
+    $requete = "UPDATE cubesat SET Disponible = 0 WHERE idCubeSat = '" . $idCible . "';";
     $resultats = $connexion->query($requete);
     return $resultats;
 }

@@ -229,6 +229,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
     }
 }
 
+
 //-----------------------PRODUITS-----------------------------------
 
 //ajout et affichage de la PAGE de produits
@@ -268,6 +269,18 @@ function suppr($id)
 }
 
 //----------------------------CONTACT----------------------------------
+//Mail de contact
+function mailsend()
+{
+    if(isset($_POST['email']) && isset ($_POST['subject']) && isset ($_POST['message'])){
+        sendMail($_POST);
+        require "vue/contact.php";
+    }
+    else {
+        require "vue/contact.php";
+    }
+}
+
 function contact()
 {
     require "vue/contact.php";
