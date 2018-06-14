@@ -55,10 +55,10 @@
                     <li><a href="index.php">Accueil</a></li>
                 <?php endif; ?>
 
-                <?php if (@$_GET['action'] == "vue_liste_produits") : ?>
-                    <li class="active"><a href="index.php?action=vue_liste_produits">Nos produits</a></li>
+                <?php if (@$_GET['action'] == "vue_produits") : ?>
+                    <li class="active"><a href="index.php?action=vue_produit">Nos produits</a></li>
                 <?php else : ?>
-                    <li><a href="index.php?action=vue_liste_produits">Nos produits</a></li>
+                    <li><a href="index.php?action=vue_produits">Nos produits</a></li>
                 <?php endif; ?>
 
                 <li><a href="#service">Service</a></li>
@@ -80,10 +80,10 @@
 
                 <?php if ((isset($_SESSION['login'])) and ($_SESSION['typeUser'] == "Vendeur"))://si une session vendeur est active, affiche "Ajouter un produit" dans le menu ?>
 
-                    <?php if(@$_GET['action']=="vue_ajout_produit" || @$_GET['action'] == "ajouter_produit") :?>
-                        <li class="active"><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                    <?php if(@$_GET['action']=="ajout_produit" || @$_GET['action'] == "ajout_produit") :?>
+                        <li class="active"><a href="index.php?action=ajout_produit">Ajouter un produit</a></li>
                     <?php else : ?>
-                        <li><a href="index.php?action=vue_ajout_produit">Ajouter un produit</a></li>
+                        <li><a href="index.php?action=ajout_produit">Ajouter un produit</a></li>
                     <?php endif; ?>
 
                 <?php endif; ?>
@@ -105,15 +105,6 @@
                         <li><a href="index.php?action=inscription">S'inscrire</a></li>
                     <?php } ?>
                 <?php } ?>
-
-                <!--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Example menu</a></li>
-                        <li><a href="#">Example menu</a></li>
-                        <li><a href="#">Example menu</a></li>
-                    </ul>
-                </li>-->
 
             </ul>
         </div>

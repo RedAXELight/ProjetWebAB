@@ -13,6 +13,7 @@ function accueil()
     require "vue/accueil.php";
 }
 
+//affichage de la vue d'erreur
 function erreur($e)
 {
     $_SESSION['erreur'] = $e;
@@ -22,13 +23,10 @@ function erreur($e)
 //--------------------------USERS--------------------------------
 function login() //Fonction pour le login du formulaire
 {
-    if (isset ($_POST['fLogin']) && isset ($_POST['fPass']))
-    {
+    if (isset ($_POST['fLogin']) && isset ($_POST['fPass'])) {
         $resultats = getLogin($_POST);
         require "vue/vue_login.php";
-    }
-    else
-    {
+    } else {
         // détruit la session de la personne connectée après appuyé sur Logout
         if (isset($_SESSION['login'])) {
             session_destroy();
@@ -39,123 +37,162 @@ function login() //Fonction pour le login du formulaire
     }
 }
 
-function inscription(){
+function inscription()
+{
     require "vue/inscription.php";
 }
 
-function enregistrer() {
-      $nom = @$_POST['nom'];
-      $prenom = @$_POST['prenom'];
-      $adresse = @$_POST['adresse'];
-      $ville = @$_POST['ville'];
-      $npa = @$_POST['npa'];
-      $email = @$_POST['email'];
-      $login = @$_POST['login'];
-      $password = @$_POST['password'];
-      $confirm_password = @$_POST['confirm_password'];
-
-      $erreur = 0;
-
-      if ($password != $confirm_password) {$erreur = 9;}
-      if ($password == ''){$erreur = 8;}
-      if ($login == ''){$erreur = 7;}
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)){$erreur = 6;}
-      if (($npa < 999) || ($npa > 100000)){$erreur = 5;}
-      if ($ville == ''){$erreur = 4;}
-      if ($adresse == ''){$erreur = 3;}
-      if ($prenom == ''){$erreur = 2;}
-      if ($nom == ''){$erreur = 1;}
-
-      if ($erreur == 0){
-          $operation = enregistrer_user(@$_POST);
-          if ($operation == '2'){
-              $erreur = 'ce login est déjà utilisé !';
-              require "vue/inscription.php";
-          }else if ($operation == '1') {
-              $erreur = 'cet email est déjà utilisé !';
-              require "vue/inscription.php";
-          }else{
-              $erreur = 'requête envoyé avec succès';
-              require "vue/vue_login.php";
-          }
-      }else{
-          switch ($erreur) {
-              case '1':
-                  $erreur = 'le champ nom est incorrect !';
-                  break;
-              case '2':
-                  $erreur = 'le champ prénom est incorrect !';
-                  break;
-              case '3':
-                  $erreur = 'le champ adresse est incorrect !';
-                  break;
-              case '4':
-                  $erreur = 'le champ ville est incorrect !';
-                  break;
-              case '5':
-                  $erreur = 'le champ NPA est incorrect !';
-                  break;
-              case '6':
-                  $erreur = 'le champ Email est incorrect !';
-                  break;
-              case '7':
-                  $erreur = 'le champ login est incorrect !';
-                  break;
-              case '8':
-                  $erreur = 'le champ mot de passe est incorrect !';
-                  break;
-              case '9':
-                  $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-                  break;
-              default:
-                  $erreur = 'une erreur inconnu est arrivé !';
-                  break;
-          }
-          require "vue/inscription.php";
-      }
-}
-
-function vendeur(){
-    require "vue/vue_ajout_vendeur.php";
-}
-
-function add_vendeur()
+function enregistrer()
 {
-    $nom = @$_POST['nom'];
-    $prenom = @$_POST['prenom'];
-    $adresse = @$_POST['adresse'];
-    $ville = @$_POST['ville'];
-    $npa = @$_POST['npa'];
-    $email = @$_POST['email'];
-    $login = @$_POST['login'];
-    $password = @$_POST['password'];
-    $confirm_password = @$_POST['confirm_password'];
+    $nom = htmlspecialchars(@$_POST['nom']);
+    $prenom = htmlspecialchars(@$_POST['prenom']);
+    $adresse = htmlspecialchars(@$_POST['adresse']);
+    $ville = htmlspecialchars(@$_POST['ville']);
+    $npa = htmlspecialchars(@$_POST['npa']);
+    $email = htmlspecialchars(@$_POST['email']);
+    $login = htmlspecialchars(@$_POST['login']);
+    $password = htmlspecialchars(@$_POST['password']);
+    $confirm_password = htmlspecialchars(@$_POST['confirm_password']);
 
     $erreur = 0;
 
-    if ($password != $confirm_password) {$erreur = 9;}
-    if ($password == ''){$erreur = 8;}
-    if ($login == ''){$erreur = 7;}
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){$erreur = 6;}
-    if (($npa < 999) || ($npa > 100000)){$erreur = 5;}
-    if ($ville == ''){$erreur = 4;}
-    if ($adresse == ''){$erreur = 3;}
-    if ($prenom == ''){$erreur = 2;}
-    if ($nom == ''){$erreur = 1;}
+    if ($password != $confirm_password) {
+        $erreur = 9;
+    }
+    if ($password == '') {
+        $erreur = 8;
+    }
+    if ($login == '') {
+        $erreur = 7;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erreur = 6;
+    }
+    if (($npa < 999) || ($npa > 100000)) {
+        $erreur = 5;
+    }
+    if ($ville == '') {
+        $erreur = 4;
+    }
+    if ($adresse == '') {
+        $erreur = 3;
+    }
+    if ($prenom == '') {
+        $erreur = 2;
+    }
+    if ($nom == '') {
+        $erreur = 1;
+    }
 
-    if ($erreur == 0){
-        $operation = enregistrer_vendeur(@$_POST);
-        if ($operation == '2'){
+    if ($erreur == 0) {
+        $operation = enregistrer_user(@$_POST);
+        if ($operation == '2') {
             $erreur = 'ce login est déjà utilisé !';
-            require "vue/vue_ajout_vendeur.php";
-        }else if ($operation == '1') {
+            require "vue/inscription.php";
+        } else if ($operation == '1') {
             $erreur = 'cet email est déjà utilisé !';
-            require "vue/vue_ajout_vendeur.php";
-        }else{
+            require "vue/inscription.php";
+        } else {
             $erreur = 'requête envoyé avec succès';
             require "vue/vue_login.php";
         }
-    }else{
+    } else {
+        switch ($erreur) {
+            case '1':
+                $erreur = 'le champ nom est incorrect !';
+                break;
+            case '2':
+                $erreur = 'le champ prénom est incorrect !';
+                break;
+            case '3':
+                $erreur = 'le champ adresse est incorrect !';
+                break;
+            case '4':
+                $erreur = 'le champ ville est incorrect !';
+                break;
+            case '5':
+                $erreur = 'le champ NPA est incorrect !';
+                break;
+            case '6':
+                $erreur = 'le champ Email est incorrect !';
+                break;
+            case '7':
+                $erreur = 'le champ login est incorrect !';
+                break;
+            case '8':
+                $erreur = 'le champ mot de passe est incorrect !';
+                break;
+            case '9':
+                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+                break;
+            default:
+                $erreur = 'une erreur inconnu est arrivé !';
+                break;
+        }
+        require "vue/inscription.php";
+    }
+}
+
+function vendeur()
+{
+    require "vue/vue_ajout_vendeur.php";
+}
+
+function add_vendeur() //fonction d'ajout d'un vendeur
+{
+    $nom = htmlspecialchars(@$_POST['nom']);
+    $prenom = htmlspecialchars(@$_POST['prenom']);
+    $adresse = htmlspecialchars(@$_POST['adresse']);
+    $ville = htmlspecialchars(@$_POST['ville']);
+    $npa = htmlspecialchars(@$_POST['npa']);
+    $email = htmlspecialchars(@$_POST['email']);
+    $login = htmlspecialchars(@$_POST['login']);
+    $password = htmlspecialchars(@$_POST['password']);
+    $confirm_password = htmlspecialchars(@$_POST['confirm_password']);
+
+    $erreur = 0; //controle du type d'erreur
+
+    if ($password != $confirm_password) {
+        $erreur = 9;
+    }
+    if ($password == '') {
+        $erreur = 8;
+    }
+    if ($login == '') {
+        $erreur = 7;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erreur = 6;
+    }
+    if (($npa < 999) || ($npa > 100000)) {
+        $erreur = 5;
+    }
+    if ($ville == '') {
+        $erreur = 4;
+    }
+    if ($adresse == '') {
+        $erreur = 3;
+    }
+    if ($prenom == '') {
+        $erreur = 2;
+    }
+    if ($nom == '') {
+        $erreur = 1;
+    }
+
+    if ($erreur == 0) {
+        $operation = enregistrer_vendeur(@$_POST);
+        if ($operation == '2') {
+            $erreur = 'ce login est déjà utilisé !';
+            require "vue/vue_ajout_vendeur.php";
+        } else if ($operation == '1') {
+            $erreur = 'cet email est déjà utilisé !';
+            require "vue/vue_ajout_vendeur.php";
+        } else {
+            $erreur = 'requête envoyé avec succès';
+            require "vue/vue_login.php";
+        }
+    } else {
         switch ($erreur) {
             case '1':
                 $erreur = 'le champ nom est incorrect !';
@@ -190,4 +227,24 @@ function add_vendeur()
         }
         require "vue/vue_ajout_vendeur.php";
     }
+}
+
+//-----------------------PRODUITS-----------------------------------
+
+//ajout et affichage de la PAGE de produits
+function add_produit()
+{
+        if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description']))
+        {
+            $resultats = AddProduit($_POST);
+            require "vue/vue_ajout_produit.php";
+        }else{
+            require "vue/vue_ajout_produit.php";
+        }
+}
+
+//----------------------------CONTACT----------------------------------
+function contact()
+{
+    require "vue/contact.php";
 }

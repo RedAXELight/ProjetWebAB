@@ -7,7 +7,7 @@
 
 session_start();
 require "controleur/controleur.php";
-
+//selection des possibilités
 try {
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
@@ -30,7 +30,12 @@ try {
             case 'ajout_vendeur':
                 add_vendeur();
                 break;
-
+            case 'ajout_produit':
+                add_produit();
+                break;
+            case 'vue_contact':
+                contact();
+                break;
             default:
             throw new Exception("Action non valide");
         }
