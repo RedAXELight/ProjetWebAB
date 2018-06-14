@@ -30,6 +30,9 @@ try {
             case 'ajout_vendeur':
                 add_vendeur();
                 break;
+            case 'vue_produits':
+                produits();
+                break;
             case 'ajout_produit':
                 add_produit();
                 break;

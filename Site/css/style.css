@@ -315,16 +315,35 @@ hr {
     height: auto;
 }
 
+.intro-full {
+	width:100%;
+	position:relative;
+	background: url(../img/bg1.jpg) no-repeat top center;
+    background-size: cover;
+    height: auto;
+}
+
 #intro.intro {
+	padding:10% 0 0 0;
+}
+
+#intro-full.intro-full {
 	padding:20% 0 0 0;
 }
 
 .intro .slogan {
 	text-align: center;
+}
 
+.intro-full .slogan {
+	text-align: center;
 }
 
 .intro .page-scroll {
+	text-align: center;
+}
+
+.intro-full .page-scroll {
 	text-align: center;
 }
 
@@ -352,7 +371,28 @@ hr {
 	text-shadow: -1px 0 1px #000;
 }
 
+.intro-full .slogan h2 {
+	color: #FFF;
+	text-shadow: none;
+	font-size: 60px;
+	line-height: 60px;
+	font-weight: 700;
+	font-family: Montserrat, sans-serif;
+	background-color: rgba(0, 0, 0, 0);
+	text-decoration: none;
+	text-transform: uppercase;
+	border-width: 0px;
+	border-color: #000;
+	border-style: none;
+	text-shadow: -1px 0 1px #000;
+}
+
 .intro .slogan h4 {
+	color: #fff;
+	text-shadow: -1px 1px 1px #000;
+}
+
+.intro-full .slogan h4 {
 	color: #fff;
 	text-shadow: -1px 1px 1px #000;
 }
@@ -363,8 +403,20 @@ hr {
   }
 }
 
+@media (max-width: 768px) {
+  .intro-full .slogan h2 {
+    font-size: 48px;
+  }
+}
+
 @media (max-width: 600px) {
   .intro .slogan h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-full .slogan h2 {
     font-size: 36px;
   }
 }
@@ -791,6 +843,11 @@ Parallax
     }
 
     .intro {
+        height: 50%;
+        padding: 0;
+    }
+
+    .intro-full {
         height: 100%;
         padding: 0;
     }

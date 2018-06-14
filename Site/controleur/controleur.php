@@ -231,6 +231,12 @@ function add_vendeur() //fonction d'ajout d'un vendeur
 
 //-----------------------PRODUITS-----------------------------------
 
+//vue des produits
+function produits()
+{
+    require "vue/vue_liste_produits.php";
+}
+
 //ajout et affichage de la PAGE de produits
 function add_produit()
 {

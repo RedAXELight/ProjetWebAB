@@ -56,7 +56,7 @@
                 <?php endif; ?>
 
                 <?php if (@$_GET['action'] == "vue_produits") : ?>
-                    <li class="active"><a href="index.php?action=vue_produit">Nos produits</a></li>
+                    <li class="active"><a href="index.php?action=vue_produits">Nos produits</a></li>
                 <?php else : ?>
                     <li><a href="index.php?action=vue_produits">Nos produits</a></li>
                 <?php endif; ?>
@@ -114,7 +114,8 @@
 </nav>
 
 <!-- Section: intro -->
-<section id="intro" class="intro">
+<?php if ((@$_GET['action']=="") || (@$_GET['action']=="vue_accueil")) { ?>
+<section id="intro-full" class="intro-full">
 
     <div class="slogan">
         <h2><span class="text_color"><?=@$intitule;?></span></h2>
@@ -126,6 +127,20 @@
         </a>
     </div>
 </section>
+<?php }else{ ?>
+    <section id="intro" class="intro">
+
+        <div class="slogan">
+            <h2><span class="text_color"><?=@$intitule;?></span></h2>
+            <h4><i><?=@$SousMenu;?></i></h4>
+        </div>
+        <div class="page-scroll">
+            <a href="#service" class="btn btn-circle">
+                <i class="fa fa-angle-double-down animated"></i>
+            </a>
+        </div>
+    </section>
+<?php } ?>
 <!-- /Section: intro -->
 
 <?= $contenu; ?>
