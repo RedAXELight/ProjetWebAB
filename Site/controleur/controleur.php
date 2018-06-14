@@ -243,6 +243,22 @@ function add_produit()
         }
 }
 
+
+
+//Recherche des données de la page de modif
+function modifier_get($id)
+{
+    $resultats = GetProduit($id);
+    require 'vue/vue_modifier.php';
+}
+//Affichage de la page de modif
+function modifierproduit($ValModif)
+{
+    UpdateProduit($ValModif);
+    /*$resultats=getSnows(); // pour récupérer les données des produits dans la BD
+    require 'vue/vue_snows.php';*/
+}
+
 //----------------------------CONTACT----------------------------------
 function contact()
 {
