@@ -234,6 +234,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
 //vue des produits
 function produits()
 {
+    $resultats = get_produits();
     require "vue/vue_liste_produits.php";
 }
 

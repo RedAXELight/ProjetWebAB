@@ -10,7 +10,6 @@ $intitule="Liste de produits";
 $SousMenu="Made by GalaxSat";
 $Credits="Icons made by Freepik from www.flaticon.com";
 
-$nbr_produits = 21;
 ?>
 
 <!-- Section: about -->
@@ -37,24 +36,21 @@ $nbr_produits = 21;
       </div>
     </div>
     <!-- les produits -->
-
     <div class="row">
-    <?php for ($i=$nbr_produits;$i>0;$i--) {
-        if ($nbr_produits > 0) {?>
-      <div class="col-md-3" style="padding: 10px;">
+    <?php foreach ($resultats as $resultat) { ?>
+      <div class="col-md-3 team" style="padding: 10px;">
         <div class="wow bounceInUp" data-wow-delay="0.2s">
-          <div class="team boxed-grey">
+          <div class="team boxed-grey" style="background-color: rgb(235, 235, 235);">
             <div class="inner">
-              <h5>Sample</h5>
-              <p class="subtitle">Sample</p>
-              <!--<div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>-->
+              <h5><?=$resultat['csName'];?></h5>
+              <div class="avatar"><img src="img/cubesat/cubesat.gif" alt="" class="img-responsive img-circle" /></div>
+              <p class="subtitle"><?=$resultat['Description'];?></p>
             </div>
           </div>
         </div>
       </div>
-  <?php }
-} ?>
-    </div>
+    <?php } ?>
+  </div>
 </div>
 </section>
 <!-- /Section: about -->

@@ -123,6 +123,18 @@ function enregistrer_vendeur($donnees)
     return $resultats;
 }
 
+function get_produits()
+{
+    // connexion à la base de données
+    $connexion = getBD();
+    // definir la requête SQL
+    $requete = "SELECT * FROM cubesat WHERE Disponible = 1 ORDER BY idCubeSat;";
+    // permet d'exécuter la requête et de retourner les résultats de la requête
+    $resultats = $connexion->query($requete);
+    // retourne les résultats de la fonction
+    return $resultats;
+}
+
 function AddProduit($Sat)
 {
     $Descr = $Sat['description'];
