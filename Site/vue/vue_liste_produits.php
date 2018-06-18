@@ -40,7 +40,7 @@ $Credits="Icons made by Freepik from www.flaticon.com";
     <?php foreach ($resultats as $resultat) { ?>
       <div class="col-md-3 team" style="padding: 10px;">
         <div class="wow bounceInUp" data-wow-delay="0.2s">
-          <div class="team boxed-grey" style="background-color: rgb(235, 235, 235);">
+          <div class="team boxed-grey">
             <div class="inner">
               <h5><?=$resultat['csName'];?></h5>
               <div class="avatar"><img src="img/cubesat/cubesat.gif" alt="" class="img-responsive img-circle" /></div>

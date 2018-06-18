@@ -238,6 +238,13 @@ function produits()
     require "vue/vue_liste_produits.php";
 }
 
+function produit_detail()
+{
+    $idProduit = $_GET['idProduit'];
+    $resultats = get_produits($idProduit);
+    require "vue/vue_detail_produit.php";
+}
+
 //ajout et affichage de la PAGE de produits
 function add_produit()
 {

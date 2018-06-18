@@ -33,6 +33,9 @@ try {
             case 'vue_produits':
                 produits();
                 break;
+            case 'vue_detail_produit':
+                produit_detail();
+                break;
             case 'ajout_produit':
                 add_produit();
                 break;
