@@ -6,10 +6,9 @@
 
 // tampon de flux stocké en mémoire
 ob_start();
-$titre="GalaxSat - Accueil";
+$titre="GalaxSat - Produit en détail";
 $intitule=$resultat['csName'];
 $SousMenu=$resultat['Description'];;
-$Credits="Icons made by Freepik from www.flaticon.com";
 ?>
 
 

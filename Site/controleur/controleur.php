@@ -240,8 +240,8 @@ function produits()
 
 function produit_detail()
 {
-    $idProduit = $_GET['idProduit'];
-    $resultats = get_produits($idProduit);
+    $id = @$_GET['id'];
+    $resultats = get_produits($id);
     require "vue/vue_detail_produit.php";
 }
 
