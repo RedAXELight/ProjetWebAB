@@ -39,7 +39,7 @@ $titre="GalaxSat - Contact";
 
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form id="contact-form" action="" method="post" role="form" class="contactForm">
+          <form id="contact-form" action="index.php?action=contact" method="post" role="form" class="contactForm">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -93,23 +93,23 @@ $titre="GalaxSat - Contact";
 
           <address>
         <strong>Email</strong><br>
-        <a href="mailto:#">email.name@example.com</a>
+        <a href="mailto:#">Alexandre.baseia@cpnv.ch</a>
       </address>
-          <address>
-        <strong>We're on social networks</strong><br>
-                      <ul class="company-social">
-                          <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                          <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                          <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                          <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                      </ul>
-      </address>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /Section: contact -->
+            <!-- <address>
+           <strong>We're on social networks</strong><br>
+                         <ul class="company-social">
+                             <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                             <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                             <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                             <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                         </ul>
+         </address>-->
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   <!-- /Section: contact -->
 
 <?php
   $contenu = ob_get_clean();

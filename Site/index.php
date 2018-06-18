@@ -36,6 +36,9 @@ try {
             case 'vue_contact':
                 contact();
                 break;
+            case 'contact':
+                mailsend();
+                break;
             case 'vue_modifier' :
                 modifier_get($_GET['id']); //cette partie là va chercher le produit
                 break;

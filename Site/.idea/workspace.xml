@@ -11,41 +11,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+            <state relative-caret-position="397">
+              <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue_modifier.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/vue_modifier.php">
+      <file leaf-file-name="contact.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue/contact.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="44" column="61" lean-forward="false" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue_ajout_produit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/vue_ajout_produit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="72" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue_erreur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/vue_erreur.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="1874">
+              <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -54,8 +34,8 @@
       <file leaf-file-name="controleur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="259" column="0" lean-forward="true" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+            <state relative-caret-position="292">
+              <caret line="274" column="84" lean-forward="false" selection-start-line="274" selection-start-column="77" selection-end-line="274" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -64,33 +44,23 @@
       <file leaf-file-name="modele.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modele/modele.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="162" column="85" lean-forward="true" selection-start-line="162" selection-start-column="85" selection-end-line="162" selection-end-column="85" />
+            <state relative-caret-position="376">
+              <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
               <folding>
-                <marker date="1528960024577" expanded="true" signature="1045:1116" ph="SELECT * FRO... users" />
-                <marker date="1528960024577" expanded="true" signature="2138:2188" ph="SELECT usrLo... users" />
-                <marker date="1528960024577" expanded="true" signature="2392:2441" ph="SELECT usrMa... users" />
-                <marker date="1528960024577" expanded="true" signature="2721:2921" ph="INSERT INTO users... " />
-                <marker date="1528960024577" expanded="true" signature="3798:3870" ph="SELECT usrLo... users" />
-                <marker date="1528960024577" expanded="true" signature="4036:4108" ph="SELECT usrLo... users" />
-                <marker date="1528960024577" expanded="true" signature="4348:4720" ph="INSERT INTO users... " />
-                <marker date="1528960024577" expanded="true" signature="5261:5658" ph="INSERT INTO cubesat... " />
-                <marker date="1528960024577" expanded="true" signature="6034:6092" ph="SELECT * FRO... cubesat" />
-                <marker date="1528960024577" expanded="true" signature="6381:6556" ph="UPDATE cubesat... " />
-                <marker date="1528960024577" expanded="true" signature="6381:6777" ph="UPDATE cubesat... " />
-                <marker date="1528960024577" expanded="true" signature="6381:6893" ph="UPDATE cubesat... " />
-                <marker date="1528960024577" expanded="true" signature="7113:7179" ph="UPDATE cubesat... " />
+                <marker date="1528961460030" expanded="true" signature="1045:1116" ph="SELECT * FRO... users" />
+                <marker date="1528961460030" expanded="true" signature="2138:2188" ph="SELECT usrLo... users" />
+                <marker date="1528961460030" expanded="true" signature="2392:2441" ph="SELECT usrMa... users" />
+                <marker date="1528961460030" expanded="true" signature="2721:2921" ph="INSERT INTO users... " />
+                <marker date="1528961460030" expanded="true" signature="3798:3870" ph="SELECT usrLo... users" />
+                <marker date="1528961460030" expanded="true" signature="4036:4108" ph="SELECT usrLo... users" />
+                <marker date="1528961460030" expanded="true" signature="4348:4720" ph="INSERT INTO users... " />
+                <marker date="1528961460030" expanded="true" signature="5742:6139" ph="INSERT INTO cubesat... " />
+                <marker date="1528961460030" expanded="true" signature="6515:6573" ph="SELECT * FRO... cubesat" />
+                <marker date="1528961460030" expanded="true" signature="6862:7037" ph="UPDATE cubesat... " />
+                <marker date="1528961460030" expanded="true" signature="6862:7258" ph="UPDATE cubesat... " />
+                <marker date="1528961460030" expanded="true" signature="6862:7374" ph="UPDATE cubesat... " />
+                <marker date="1528961460030" expanded="true" signature="7594:7664" ph="UPDATE cubesat... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="accueil.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/accueil.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3108">
-              <caret line="151" column="170" lean-forward="false" selection-start-line="151" selection-start-column="170" selection-end-line="151" selection-end-column="170" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,8 +102,9 @@
         <option value="$PROJECT_DIR$/vue/vue_erreur.php" />
         <option value="$PROJECT_DIR$/vue/vue_modifier.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/modele/modele.php" />
         <option value="$PROJECT_DIR$/controleur/controleur.php" />
+        <option value="$PROJECT_DIR$/modele/modele.php" />
+        <option value="$PROJECT_DIR$/vue/contact.php" />
       </list>
     </option>
   </component>
@@ -150,7 +121,7 @@
   </component>
   <component name="PhpWebServerValidation" deployment_server_id="79d32485-467d-44ac-a3ed-b32af5e8d0c5" path_to_validation_script="P:\Second year\Projet Web\ProjetWebAB\Site" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost:1090" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="84" />
     <option name="y" value="-15" />
     <option name="width" value="960" />
@@ -209,7 +180,7 @@
             <path>
               <item name="Site" type="b2602c69:ProjectViewProjectNode" />
               <item name="Site" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modele" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vue" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -281,10 +252,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21171000" />
+    <option name="totallyTimeSpent" value="22210000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.110416666" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -534,13 +505,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/vue_login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -632,40 +596,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modele/modele.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="162" column="85" lean-forward="true" selection-start-line="162" selection-start-column="85" selection-end-line="162" selection-end-column="85" />
+        <state relative-caret-position="376">
+          <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
           <folding>
-            <marker date="1528960024577" expanded="true" signature="1045:1116" ph="SELECT * FRO... users" />
-            <marker date="1528960024577" expanded="true" signature="2138:2188" ph="SELECT usrLo... users" />
-            <marker date="1528960024577" expanded="true" signature="2392:2441" ph="SELECT usrMa... users" />
-            <marker date="1528960024577" expanded="true" signature="2721:2921" ph="INSERT INTO users... " />
-            <marker date="1528960024577" expanded="true" signature="3798:3870" ph="SELECT usrLo... users" />
-            <marker date="1528960024577" expanded="true" signature="4036:4108" ph="SELECT usrLo... users" />
-            <marker date="1528960024577" expanded="true" signature="4348:4720" ph="INSERT INTO users... " />
-            <marker date="1528960024577" expanded="true" signature="5261:5658" ph="INSERT INTO cubesat... " />
-            <marker date="1528960024577" expanded="true" signature="6034:6092" ph="SELECT * FRO... cubesat" />
-            <marker date="1528960024577" expanded="true" signature="6381:6556" ph="UPDATE cubesat... " />
-            <marker date="1528960024577" expanded="true" signature="6381:6777" ph="UPDATE cubesat... " />
-            <marker date="1528960024577" expanded="true" signature="6381:6893" ph="UPDATE cubesat... " />
-            <marker date="1528960024577" expanded="true" signature="7113:7179" ph="UPDATE cubesat... " />
+            <marker date="1528961460030" expanded="true" signature="1045:1116" ph="SELECT * FRO... users" />
+            <marker date="1528961460030" expanded="true" signature="2138:2188" ph="SELECT usrLo... users" />
+            <marker date="1528961460030" expanded="true" signature="2392:2441" ph="SELECT usrMa... users" />
+            <marker date="1528961460030" expanded="true" signature="2721:2921" ph="INSERT INTO users... " />
+            <marker date="1528961460030" expanded="true" signature="3798:3870" ph="SELECT usrLo... users" />
+            <marker date="1528961460030" expanded="true" signature="4036:4108" ph="SELECT usrLo... users" />
+            <marker date="1528961460030" expanded="true" signature="4348:4720" ph="INSERT INTO users... " />
+            <marker date="1528961460030" expanded="true" signature="5742:6139" ph="INSERT INTO cubesat... " />
+            <marker date="1528961460030" expanded="true" signature="6515:6573" ph="SELECT * FRO... cubesat" />
+            <marker date="1528961460030" expanded="true" signature="6862:7037" ph="UPDATE cubesat... " />
+            <marker date="1528961460030" expanded="true" signature="6862:7258" ph="UPDATE cubesat... " />
+            <marker date="1528961460030" expanded="true" signature="6862:7374" ph="UPDATE cubesat... " />
+            <marker date="1528961460030" expanded="true" signature="7594:7664" ph="UPDATE cubesat... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="259" column="0" lean-forward="true" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+        <state relative-caret-position="292">
+          <caret line="274" column="84" lean-forward="false" selection-start-line="274" selection-start-column="77" selection-end-line="274" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/vue/contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+        <state relative-caret-position="1874">
+          <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
           <folding />
         </state>
       </provider>
