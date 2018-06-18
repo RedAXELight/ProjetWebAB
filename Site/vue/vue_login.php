@@ -49,6 +49,31 @@ if (isset($resultats)) {
     ?>
 
     <!--_________________________________________Ci-dessous l'affichage du formulaire______________________________________-->
+<<<<<<< HEAD
+    <section id="service" class="home-section text-center">
+      <div class="heading-about">
+         <div class="container">
+           <div class="row">
+             <div class="col-lg-8 col-lg-offset-2">
+               <div class="wow bounceInDown" data-wow-delay="0.1s">
+                 <div class="section-heading">
+                   <h2>Login</h2>
+                   <i class="fa fa-2x fa-angle-down"></i>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-lg-2 col-lg-offset-5">
+           <hr class="marginbot-50">
+         </div>
+       </div>
+
+       <!-- Section: form connexion -->
+
+=======
     <section id="service" class="home-section text-center bg-gray">
         <div class="heading-about">
             <div class="container">
@@ -67,6 +92,7 @@ if (isset($resultats)) {
     </section>
     <!-- Section: form connexion -->
     <section id="contact" class="home-section text-center">
+>>>>>>> Sprint-2
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

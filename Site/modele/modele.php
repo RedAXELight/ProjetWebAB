@@ -34,8 +34,13 @@ function getLogin($post)
     $resultats = $connexion->prepare("SELECT * FROM users WHERE usrLogin = :login AND usrPassword = :password");
     // execute la requête avec les variables et récupère les résultats dans la variable $resultats
     $resultats->execute([
+<<<<<<< HEAD
+    'login' => $Login,
+    'password' => $Pass
+=======
         'login' => $Login,
         'password' => $Pass
+>>>>>>> Sprint-2
     ]);
     //retourne la valeur de la variable résultat
     return $resultats;
@@ -59,13 +64,21 @@ function enregistrer_user($donnees)
     $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
+<<<<<<< HEAD
+        ]);
+=======
     ]);
+>>>>>>> Sprint-2
     $ligne_login = $requete_verify->fetch();
     //Requête pour verifier si le mail existe
     $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
+<<<<<<< HEAD
+        ]);
+=======
     ]);
+>>>>>>> Sprint-2
     $ligne_email = $requete_verify->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
     if (($ligne_login == false) && ($ligne_email == false)) {
@@ -79,7 +92,11 @@ function enregistrer_user($donnees)
             'password' => $password,
             'login' => $login,
             'email' => $email,
+<<<<<<< HEAD
+            ]);
+=======
         ]);
+>>>>>>> Sprint-2
     } else {
         //si le login est bon, c'est que le mail existe déjà
         if ($ligne_login == false) {
@@ -123,6 +140,21 @@ function enregistrer_vendeur($donnees)
     return $resultats;
 }
 
+<<<<<<< HEAD
+function get_produits()
+{
+    // connexion à la base de données
+    $connexion = getBD();
+    // definir la requête SQL
+    $requete = "SELECT * FROM cubesat WHERE Disponible = 1 ORDER BY idCubeSat;";
+    // permet d'exécuter la requête et de retourner les résultats de la requête
+    $resultats = $connexion->query($requete);
+    // retourne les résultats de la fonction
+    return $resultats;
+}
+
+//Va chercher les infos d'un seul produit pour la modification ou l'affichage en détail d'un produit
+=======
 function sendMail($datamail)
 {
     ini_set('SMTP', 'smtp.heavnwolf.ch');//remplacer le nom du smtp
@@ -148,6 +180,7 @@ function AddProduit($Sat)
 }
 
 //Va chercher les infos d'un seul produit pour la modification
+>>>>>>> Sprint-2
 function GetProduit($idcible)
 {
     //connexion à la bd
@@ -157,6 +190,15 @@ function GetProduit($idcible)
     return $resultats; //dans ce cas de figure il est utile de retourner la variable resultat
 }
 
+<<<<<<< HEAD
+function AddProduit($Sat)
+{
+    $Descr = $Sat['description'];
+    // connexion à la BD snows
+    $connexion = getBD();
+    $requete = "INSERT INTO cubesat (csName, csMass, csPrice, SolarPanel, Height, Width, Length, BatterySpace, Stock, Description) VALUES ('" . $Sat['cnom'] . "','" . $Sat['masse'] . "','" . $Sat['prix'] . "','" . $Sat['solar'] . "','" . $Sat['height'] . "','" . $Sat['width'] . "','" . $Sat['length'] . "','" . $Sat['battery'] . "','" . $Sat['stock'] . "','" . htmlentities($Descr, ENT_SUBSTITUTE, "UTF-8") . "');";
+    $resultats = $connexion->query($requete); //Permet de retourner le résultat de la requête (Si par exemple on voulait directement afficher le snow entré cela pourrait être utile)
+=======
 //fonction de modification d'un produit
 function UpdateProduit($ValModif)
 {
@@ -174,5 +216,6 @@ function Suppression($idCible)
     $connexion = getBD();
     $requete = "UPDATE cubesat SET Disponible = 0 WHERE idCubeSat = '" . $idCible . "';";
     $resultats = $connexion->query($requete);
+>>>>>>> Sprint-2
     return $resultats;
 }
