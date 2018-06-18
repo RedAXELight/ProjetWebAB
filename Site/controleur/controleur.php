@@ -241,7 +241,7 @@ function produits()
 function produit_detail()
 {
     $id = @$_GET['id'];
-    $resultats = get_produits($id);
+    $resultats = GetProduit($id);
     require "vue/vue_detail_produit.php";
 }
 

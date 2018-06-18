@@ -135,6 +135,16 @@ function get_produits()
     return $resultats;
 }
 
+//Va chercher les infos d'un seul produit pour la modification ou l'affichage en détail d'un produit
+function GetProduit($idcible)
+{
+    //connexion à la bd
+    $connexion = getBD();
+    $requete = "SELECT * FROM cubesat WHERE idCubeSat = '" . $idcible . "';";
+    $resultats = $connexion->query($requete);
+    return $resultats; //dans ce cas de figure il est utile de retourner la variable resultat
+}
+
 function AddProduit($Sat)
 {
     $Descr = $Sat['description'];
