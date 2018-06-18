@@ -229,6 +229,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
     }
 }
 
+<<<<<<< HEAD
 //-----------------------PRODUITS-----------------------------------
 
 //vue des produits
@@ -258,6 +259,60 @@ function add_produit()
 }
 
 //----------------------------CONTACT----------------------------------
+=======
+
+//-----------------------PRODUITS-----------------------------------
+
+//ajout et affichage de la PAGE de produits
+function add_produit()
+{
+    if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
+        $resultats = AddProduit($_POST);
+        require "vue/vue_ajout_produit.php";
+    } else {
+        require "vue/vue_ajout_produit.php";
+    }
+}
+
+
+//Recherche des données de la page de modif
+function modifier_get($id)
+{
+    $resultats = GetProduit($id);
+    require 'vue/vue_modifier.php';
+}
+
+//Affichage de la page de modif
+function modifierproduit($ValModif)
+{
+    UpdateProduit($ValModif);
+    /*$resultats=getSnows(); // pour récupérer les données des produits dans la BD
+    require 'vue/vue_snows.php';*/
+}
+
+//Fonction de suppression
+function suppr($id)
+{
+    $idCible = $id;
+    Suppression($idCible);
+    //$resultats=getProduits(); // pour récupérer les données des produits dans la BD
+    /*require 'vue/vue_produit.php';*/
+}
+
+//----------------------------CONTACT----------------------------------
+//Mail de contact
+function mailsend()
+{
+    if(isset($_POST['email']) && isset ($_POST['subject']) && isset ($_POST['message'])){
+        sendMail($_POST);
+        require "vue/contact.php";
+    }
+    else {
+        require "vue/contact.php";
+    }
+}
+
+>>>>>>> Sprint-2
 function contact()
 {
     require "vue/contact.php";
