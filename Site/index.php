@@ -30,23 +30,19 @@ try {
             case 'ajout_vendeur':
                 add_vendeur();
                 break;
-<<<<<<< HEAD
             case 'vue_produits':
                 produits();
                 break;
             case 'vue_detail_produit':
                 produit_detail();
                 break;
-=======
->>>>>>> Sprint-2
             case 'ajout_produit':
                 add_produit();
                 break;
             case 'vue_contact':
                 contact();
                 break;
-<<<<<<< HEAD
-=======
+
             case 'contact':
                 mailsend();
                 break;
@@ -59,7 +55,7 @@ try {
             case 'supprimer_produit':
                 suppr($_GET['id']);
                 break;
->>>>>>> Sprint-2
+
             default:
             throw new Exception("Action non valide");
         }

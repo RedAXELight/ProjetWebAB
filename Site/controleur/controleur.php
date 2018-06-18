@@ -229,7 +229,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
     }
 }
 
-<<<<<<< HEAD
+
 //-----------------------PRODUITS-----------------------------------
 
 //vue des produits
@@ -258,21 +258,8 @@ function add_produit()
         }
 }
 
-//----------------------------CONTACT----------------------------------
-=======
 
-//-----------------------PRODUITS-----------------------------------
 
-//ajout et affichage de la PAGE de produits
-function add_produit()
-{
-    if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
-        $resultats = AddProduit($_POST);
-        require "vue/vue_ajout_produit.php";
-    } else {
-        require "vue/vue_ajout_produit.php";
-    }
-}
 
 
 //Recherche des données de la page de modif
@@ -312,7 +299,7 @@ function mailsend()
     }
 }
 
->>>>>>> Sprint-2
+
 function contact()
 {
     require "vue/contact.php";
