@@ -31,7 +31,7 @@ function getLogin($post)
 
     $dataAPI = json_decode($reponseAPI);
 
-    if(isset($dataAPI->success) AND $dataAPI->success==true){
+   /* if(isset($dataAPI->success) AND $dataAPI->success==true){*/
         // connexion à la BD GalaxSat
         $connexion = getBD();
         // passe les variables en local et sécurise la faille XSS
@@ -46,9 +46,9 @@ function getLogin($post)
         ]);
         //retourne la valeur de la variable résultat
         return $resultats;
-    }else{
+    /*}else{
         $erreur = "Le Recapcha n'a pas été validé !";
-    }
+    }*/
 }
 
 // verifie si le login existe, si ce n'est pas le cas, il enregitre le nouvel utilisateur dans la BD

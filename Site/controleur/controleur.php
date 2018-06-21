@@ -249,7 +249,8 @@ function add_produit()
 {
     if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
         $resultats = AddProduit($_POST);
-        require "vue/vue_ajout_produit.php";
+        $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+        require 'vue/vue_liste_produits.php';
     } else {
         require "vue/vue_ajout_produit.php";
     }
@@ -267,8 +268,8 @@ function modifier_get($id)
 function modifierproduit($ValModif)
 {
     UpdateProduit($ValModif);
-    /*$resultats=getSnows(); // pour récupérer les données des produits dans la BD
-    require 'vue/vue_snows.php';*/
+    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+    require 'vue/vue_liste_produits.php';
 }
 
 //Fonction de suppression
@@ -276,8 +277,8 @@ function suppr($id)
 {
     $idCible = $id;
     Suppression($idCible);
-    //$resultats=getProduits(); // pour récupérer les données des produits dans la BD
-    /*require 'vue/vue_produit.php';*/
+    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+    require 'vue/vue_liste_produits.php';
 }
 
 //----------------------------CONTACT----------------------------------
