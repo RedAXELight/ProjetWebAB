@@ -20,7 +20,7 @@ $Credits="Icons made by Freepik from www.flaticon.com";
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="wow bounceInDown" data-wow-delay="0.1s">
                         <div class="section-heading">
-                            <h2>Nos produits</h2>
+                            <h2><a href="index.php?action=vue_produits">Nos produits</a></a></h2>
                             <i class="fa fa-2x fa-angle-down"></i>
                         </div>
                     </div>
