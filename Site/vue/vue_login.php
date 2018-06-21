@@ -74,9 +74,6 @@ if (isset($resultats)) {
          </div>
        </div>
 
-    <!-- Section: form connexion -->
-    <section id="contact" class="home-section text-center">
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
