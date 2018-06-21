@@ -35,7 +35,7 @@ $SousMenu=$resultat['Description'];;
 
 
 <!-- Section: détails d'un produti -->+
-<section id="contact" class="home-section text-center">
+<section id="service" class="home-section text-center">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

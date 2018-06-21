@@ -12,7 +12,7 @@ $SousMenu = "Made by GalaxSat";
 ?>
 
 <!-- Section: about -->
-<section id="produits" class="home-section text-center">
+<section id="service" class="home-section text-center">
     <div class="heading-about">
         <div class="container">
             <div class="row">

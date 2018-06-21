@@ -11,7 +11,7 @@ $titre="GalaxSat - Contact";
 
 
 <!-- Section: contact -->
-<section id="contact" class="home-section text-center">
+<section id="service" class="home-section text-center">
   <div class="heading-contact">
     <div class="container">
       <div class="row">
