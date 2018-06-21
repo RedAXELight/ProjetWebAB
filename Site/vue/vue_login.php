@@ -39,6 +39,9 @@ if (isset($resultats)) {
                 $_SESSION['typeUser'] = "Administrateur";
             } else {
             echo "Erreur de login";
+            if ($erreur) {
+                echo $erreur;
+            }
             }
         }
     }
@@ -95,6 +98,10 @@ if (isset($resultats)) {
                                             <input type="password" class="form-control" placeholder="Entrez votre mot de passe" name="fPass"
                                             value="<?= @$_POST['fPass'] ?>"/>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>reCAPTCHA : </label></td>
+                                        <td><div class="g-recaptcha" data-sitekey="6LcU-F8UAAAAAMrWfGgpC51HFfbU0cqAMP_Mmp3w"></div></td>
                                     </tr>
                                     <tr>
                                         <td><input class="btn" type="reset" value="Effacer"></td>

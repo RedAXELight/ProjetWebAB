@@ -49,6 +49,11 @@ $Credits = "Icons made by Freepik from www.flaticon.com";
                                 <div class="avatar"><img src="img/cubesat/cubesat.gif" alt=""
                                                          class="img-responsive img-circle"/></div>
                                 <p class="subtitle"><?= $resultat['Description']; ?></p>
+                                <?php
+                                if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur")
+                                {
+                                echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
+                                }?>
                             </div>
                         </div>
                     </div>

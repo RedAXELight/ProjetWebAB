@@ -1,9 +1,9 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * User: Alexandre.baseia
- * Date: 24.05.2018
- */
+* User: Brian Rodrigues Fraga
+* User: Alexandre.baseia
+* Date: 24.05.2018
+*/
 
 require "modele/modele.php";
 
@@ -33,7 +33,7 @@ function login() //Fonction pour le login du formulaire
             $_SESSION = [];
             require "vue/accueil.php";
         } else
-            require "vue/vue_login.php";
+        require "vue/vue_login.php";
     }
 }
 
@@ -86,7 +86,11 @@ function enregistrer()
 
     if ($erreur == 0) {
         $operation = enregistrer_user(@$_POST);
-        if ($operation == '2') {
+        if ($operation == '3') {
+            $erreur = 'reCAPTCHA non validé';
+            require "vue/inscription.php";
+        }
+        else if ($operation == '2') {
             $erreur = 'ce login est déjà utilisé !';
             require "vue/inscription.php";
         } else if ($operation == '1') {
@@ -99,35 +103,35 @@ function enregistrer()
     } else {
         switch ($erreur) {
             case '1':
-                $erreur = 'le champ nom est incorrect !';
-                break;
+            $erreur = 'le champ nom est incorrect !';
+            break;
             case '2':
-                $erreur = 'le champ prénom est incorrect !';
-                break;
+            $erreur = 'le champ prénom est incorrect !';
+            break;
             case '3':
-                $erreur = 'le champ adresse est incorrect !';
-                break;
+            $erreur = 'le champ adresse est incorrect !';
+            break;
             case '4':
-                $erreur = 'le champ ville est incorrect !';
-                break;
+            $erreur = 'le champ ville est incorrect !';
+            break;
             case '5':
-                $erreur = 'le champ NPA est incorrect !';
-                break;
+            $erreur = 'le champ NPA est incorrect !';
+            break;
             case '6':
-                $erreur = 'le champ Email est incorrect !';
-                break;
+            $erreur = 'le champ Email est incorrect !';
+            break;
             case '7':
-                $erreur = 'le champ login est incorrect !';
-                break;
+            $erreur = 'le champ login est incorrect !';
+            break;
             case '8':
-                $erreur = 'le champ mot de passe est incorrect !';
-                break;
+            $erreur = 'le champ mot de passe est incorrect !';
+            break;
             case '9':
-                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-                break;
+            $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+            break;
             default:
-                $erreur = 'une erreur inconnu est arrivé !';
-                break;
+            $erreur = 'une erreur inconnu est arrivé !';
+            break;
         }
         require "vue/inscription.php";
     }
@@ -195,35 +199,35 @@ function add_vendeur() //fonction d'ajout d'un vendeur
     } else {
         switch ($erreur) {
             case '1':
-                $erreur = 'le champ nom est incorrect !';
-                break;
+            $erreur = 'le champ nom est incorrect !';
+            break;
             case '2':
-                $erreur = 'le champ prénom est incorrect !';
-                break;
+            $erreur = 'le champ prénom est incorrect !';
+            break;
             case '3':
-                $erreur = 'le champ adresse est incorrect !';
-                break;
+            $erreur = 'le champ adresse est incorrect !';
+            break;
             case '4':
-                $erreur = 'le champ ville est incorrect !';
-                break;
+            $erreur = 'le champ ville est incorrect !';
+            break;
             case '5':
-                $erreur = 'le champ NPA est incorrect !';
-                break;
+            $erreur = 'le champ NPA est incorrect !';
+            break;
             case '6':
-                $erreur = 'le champ Email est incorrect !';
-                break;
+            $erreur = 'le champ Email est incorrect !';
+            break;
             case '7':
-                $erreur = 'le champ login est incorrect !';
-                break;
+            $erreur = 'le champ login est incorrect !';
+            break;
             case '8':
-                $erreur = 'le champ mot de passe est incorrect !';
-                break;
+            $erreur = 'le champ mot de passe est incorrect !';
+            break;
             case '9':
-                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-                break;
+            $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+            break;
             default:
-                $erreur = 'une erreur inconnu est arrivé !';
-                break;
+            $erreur = 'une erreur inconnu est arrivé !';
+            break;
         }
         require "vue/vue_ajout_vendeur.php";
     }
@@ -231,7 +235,6 @@ function add_vendeur() //fonction d'ajout d'un vendeur
 
 
 //-----------------------PRODUITS-----------------------------------
-
 //vue des produits
 function produits()
 {
@@ -249,17 +252,14 @@ function produit_detail()
 //ajout et affichage de la PAGE de produits
 function add_produit()
 {
-        if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description']))
-        {
-            $resultats = AddProduit($_POST);
-            require "vue/vue_ajout_produit.php";
-        }else{
-            require "vue/vue_ajout_produit.php";
-        }
+    if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
+        $resultats = AddProduit($_POST);
+        $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+        require 'vue/vue_liste_produits.php';
+    } else {
+        require "vue/vue_ajout_produit.php";
+    }
 }
-
-
-
 
 
 //Recherche des données de la page de modif
@@ -273,8 +273,8 @@ function modifier_get($id)
 function modifierproduit($ValModif)
 {
     UpdateProduit($ValModif);
-    /*$resultats=getSnows(); // pour récupérer les données des produits dans la BD
-    require 'vue/vue_snows.php';*/
+    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+    require 'vue/vue_liste_produits.php';
 }
 
 //Fonction de suppression
@@ -282,8 +282,8 @@ function suppr($id)
 {
     $idCible = $id;
     Suppression($idCible);
-    //$resultats=getProduits(); // pour récupérer les données des produits dans la BD
-    /*require 'vue/vue_produit.php';*/
+    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+    require 'vue/vue_liste_produits.php';
 }
 
 //----------------------------CONTACT----------------------------------

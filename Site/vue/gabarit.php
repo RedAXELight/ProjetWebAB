@@ -26,6 +26,9 @@
       Author URL: https://bootstrapmade.com
     ======================================================= -->
 
+    <!-- Recapcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -61,7 +64,7 @@
                     <li><a href="index.php?action=vue_produits">Nos produits</a></li>
                 <?php endif; ?>
 
-                <li><a href="#service">Service</a></li>
+                <!-- <li><a href="#service">Service</a></li> -->
 
                 <?php if (@$_GET['action'] == "vue_contact") : ?>
                     <li class="active"><a href="index.php?action=vue_contact">Contact</a></li>

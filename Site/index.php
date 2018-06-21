@@ -42,7 +42,6 @@ try {
             case 'vue_contact':
                 contact();
                 break;
-
             case 'contact':
                 mailsend();
                 break;
@@ -55,7 +54,6 @@ try {
             case 'supprimer_produit':
                 suppr($_GET['id']);
                 break;
-
             default:
             throw new Exception("Action non valide");
         }
