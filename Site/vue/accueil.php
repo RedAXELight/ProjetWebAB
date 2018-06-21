@@ -12,82 +12,60 @@ $SousMenu="VOUS NOUS DONNEZ VOS IDÉES, NOUS VOUS DONNONS LES ÉTOILES";
 $Credits="Icons made by Freepik from www.flaticon.com";
 ?>
 
-<!-- Section: about -->
-<section id="about" class="home-section text-center">
-  <div class="heading-about">
+<!-- Section: products -->
+<section id="produits" class="home-section text-center">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.1s">
+                        <div class="section-heading">
+                            <h2>Nos produits</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- marge -->
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="wow bounceInDown" data-wow-delay="0.4s">
-            <div class="section-heading">
-              <h2>Nos produits</h2>
-              <i class="fa fa-2x fa-angle-down"></i>
-
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
             </div>
-          </div>
         </div>
-      </div>
+        <!-- les produits -->
+
+        <div class="row">
+            <?php
+            $showarticle=0;
+                foreach ($resultats as $resultat) { if(++$showarticle > 4)break; //limite le nombre d'affichage à 4 produit?>
+                <div class="col-md-3 team" style="padding: 10px;">
+                    <div class="wow bounceInUp" data-wow-delay="0.2s">
+                        <div class="team boxed-grey">
+                            <?php
+                            echo "<a href='index.php?action=vue_detail_produit&id=".$resultat['idCubeSat']."'>"
+                            ?>
+                            <div class="inner">
+                                <h5><?= $resultat['csName']; ?></h5>
+                                <div class="avatar"><img src="../img/cubesat/Cubesat.gif" alt=""
+                                                         class="img-responsive img-circle"/></div>
+                                <p class="subtitle"><?= $resultat['Description']; ?></p>
+                                <?php
+                                if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur")
+                                {
+                                    echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
+                                }?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php ; } ?>
+        </div>
     </div>
-  </div>
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-2 col-lg-offset-5">
-        <hr class="marginbot-50">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="wow bounceInUp" data-wow-delay="0.2s">
-          <div class="team boxed-grey">
-            <div class="inner">
-              <h5>Sample</h5>
-              <p class="subtitle">Sample</p>
-              <!--<div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="wow bounceInUp" data-wow-delay="0.5s">
-          <div class="team boxed-grey">
-            <div class="inner">
-              <h5>Sample</h5>
-              <p class="subtitle">Sample</p>
-                <!--<div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>-->
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="0.8s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <h5>Sample</h5>
-                <p class="subtitle">Sample</p>
-                <!--<div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>-->
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="1s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <h5>Sample</h5>
-                <p class="subtitle">Sample</p>
-                <!--<div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive img-circle" /></div>-->
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /Section: about -->
+</section>
+<!-- /Section: products -->
 
 
 <!-- Section: services -->

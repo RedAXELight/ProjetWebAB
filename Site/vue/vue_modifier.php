@@ -44,7 +44,7 @@ $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez modifier un p
                         <form class="form" role="form" data-toggle="validator" method="POST" action="index.php?action=modifierproduit">
                             <table class="table table-hover">
                                 <tr>
-                                    <td style="text-align: center;vertical-align: middle; width: 20%;">ID : </td>
+                                    <td style="text-align: center;vertical-align: middle; width: 20%;"></td>
                                     <td><input style="margin-bottom: 0px; width: 60%;" class="hidden" type="text" name="id" value="<?=@$Id?>"/></td>
                                     <td></td>
                                     <td></td>
