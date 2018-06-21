@@ -1,9 +1,9 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * User: Alexandre.baseia
- * Date: 24.05.2018
- */
+* User: Brian Rodrigues Fraga
+* User: Alexandre.baseia
+* Date: 24.05.2018
+*/
 
 require "modele/modele.php";
 
@@ -33,7 +33,7 @@ function login() //Fonction pour le login du formulaire
             $_SESSION = [];
             require "vue/accueil.php";
         } else
-            require "vue/vue_login.php";
+        require "vue/vue_login.php";
     }
 }
 
@@ -86,7 +86,11 @@ function enregistrer()
 
     if ($erreur == 0) {
         $operation = enregistrer_user(@$_POST);
-        if ($operation == '2') {
+        if ($operation == '3') {
+            $erreur = 'reCAPTCHA non validé';
+            require "vue/inscription.php";
+        }
+        else if ($operation == '2') {
             $erreur = 'ce login est déjà utilisé !';
             require "vue/inscription.php";
         } else if ($operation == '1') {
@@ -99,35 +103,35 @@ function enregistrer()
     } else {
         switch ($erreur) {
             case '1':
-                $erreur = 'le champ nom est incorrect !';
-                break;
+            $erreur = 'le champ nom est incorrect !';
+            break;
             case '2':
-                $erreur = 'le champ prénom est incorrect !';
-                break;
+            $erreur = 'le champ prénom est incorrect !';
+            break;
             case '3':
-                $erreur = 'le champ adresse est incorrect !';
-                break;
+            $erreur = 'le champ adresse est incorrect !';
+            break;
             case '4':
-                $erreur = 'le champ ville est incorrect !';
-                break;
+            $erreur = 'le champ ville est incorrect !';
+            break;
             case '5':
-                $erreur = 'le champ NPA est incorrect !';
-                break;
+            $erreur = 'le champ NPA est incorrect !';
+            break;
             case '6':
-                $erreur = 'le champ Email est incorrect !';
-                break;
+            $erreur = 'le champ Email est incorrect !';
+            break;
             case '7':
-                $erreur = 'le champ login est incorrect !';
-                break;
+            $erreur = 'le champ login est incorrect !';
+            break;
             case '8':
-                $erreur = 'le champ mot de passe est incorrect !';
-                break;
+            $erreur = 'le champ mot de passe est incorrect !';
+            break;
             case '9':
-                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-                break;
+            $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+            break;
             default:
-                $erreur = 'une erreur inconnu est arrivé !';
-                break;
+            $erreur = 'une erreur inconnu est arrivé !';
+            break;
         }
         require "vue/inscription.php";
     }
@@ -195,35 +199,35 @@ function add_vendeur() //fonction d'ajout d'un vendeur
     } else {
         switch ($erreur) {
             case '1':
-                $erreur = 'le champ nom est incorrect !';
-                break;
+            $erreur = 'le champ nom est incorrect !';
+            break;
             case '2':
-                $erreur = 'le champ prénom est incorrect !';
-                break;
+            $erreur = 'le champ prénom est incorrect !';
+            break;
             case '3':
-                $erreur = 'le champ adresse est incorrect !';
-                break;
+            $erreur = 'le champ adresse est incorrect !';
+            break;
             case '4':
-                $erreur = 'le champ ville est incorrect !';
-                break;
+            $erreur = 'le champ ville est incorrect !';
+            break;
             case '5':
-                $erreur = 'le champ NPA est incorrect !';
-                break;
+            $erreur = 'le champ NPA est incorrect !';
+            break;
             case '6':
-                $erreur = 'le champ Email est incorrect !';
-                break;
+            $erreur = 'le champ Email est incorrect !';
+            break;
             case '7':
-                $erreur = 'le champ login est incorrect !';
-                break;
+            $erreur = 'le champ login est incorrect !';
+            break;
             case '8':
-                $erreur = 'le champ mot de passe est incorrect !';
-                break;
+            $erreur = 'le champ mot de passe est incorrect !';
+            break;
             case '9':
-                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-                break;
+            $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+            break;
             default:
-                $erreur = 'une erreur inconnu est arrivé !';
-                break;
+            $erreur = 'une erreur inconnu est arrivé !';
+            break;
         }
         require "vue/vue_ajout_vendeur.php";
     }

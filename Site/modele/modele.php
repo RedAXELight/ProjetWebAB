@@ -1,9 +1,9 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * User: Alexandre.baseia
- * Date: 24.05.2018
- */
+* User: Brian Rodrigues Fraga
+* User: Alexandre.baseia
+* Date: 24.05.2018
+*/
 
 // ---------------------------------------------
 // getBD()
@@ -54,53 +54,63 @@ function getLogin($post)
 // verifie si le login existe, si ce n'est pas le cas, il enregitre le nouvel utilisateur dans la BD
 function enregistrer_user($donnees)
 {
-    // connexion à la BD
-    $connexion = getBD();
-    // passe les variables en local et sécurise la faille XSS
-    $login = htmlspecialchars(@$donnees['login']);
-    $prenom = htmlspecialchars(@$donnees['prenom']);
-    $nom = htmlspecialchars(@$donnees['nom']);
-    $adresse = htmlspecialchars(@$donnees['adresse']);
-    $npa = htmlspecialchars(@$donnees['npa']);
-    $ville = htmlspecialchars(@$donnees['ville']);
-    $password = htmlspecialchars(@$donnees['password']);
-    $email = htmlspecialchars(@$donnees['email']);
-    // requête pour verifier si le login existe
-    $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
-    $requete_verify->execute([
-        'login' => $login,
-    ]);
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $privatekey = "6LcU-F8UAAAAAIlo3VsLDyhiKIiJPd4lXJH3rKUN";
+    $reponseAPI = file_get_contents($url."?secret=".$privatekey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
 
-    $ligne_login = $requete_verify->fetch();
-    //Requête pour verifier si le mail existe
-    $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
-    $requete_verify->execute([
-        'login' => $login,
-    ]);
-    $ligne_email = $requete_verify->fetch();
-    //si ils n'existent pas, on va enregistrer l'utilisateur
-    if (($ligne_login == false) && ($ligne_email == false)) {
-        $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '3', :login, :email)");
-        $resultats->execute([
-            'prenom' => $prenom,
-            'nom' => $nom,
-            'adresse' => $adresse,
-            'npa' => $npa,
-            'ville' => $ville,
-            'password' => $password,
+    $dataAPI = json_decode($reponseAPI);
+
+    if(isset($dataAPI->success) AND $dataAPI->success==true){
+        // connexion à la BD
+        $connexion = getBD();
+        // passe les variables en local et sécurise la faille XSS
+        $login = htmlspecialchars(@$donnees['login']);
+        $prenom = htmlspecialchars(@$donnees['prenom']);
+        $nom = htmlspecialchars(@$donnees['nom']);
+        $adresse = htmlspecialchars(@$donnees['adresse']);
+        $npa = htmlspecialchars(@$donnees['npa']);
+        $ville = htmlspecialchars(@$donnees['ville']);
+        $password = htmlspecialchars(@$donnees['password']);
+        $email = htmlspecialchars(@$donnees['email']);
+        // requête pour verifier si le login existe
+        $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
+        $requete_verify->execute([
             'login' => $login,
-            'email' => $email,
-
         ]);
+
+        $ligne_login = $requete_verify->fetch();
+        //Requête pour verifier si le mail existe
+        $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
+        $requete_verify->execute([
+            'login' => $login,
+        ]);
+        $ligne_email = $requete_verify->fetch();
+        //si ils n'existent pas, on va enregistrer l'utilisateur
+        if (($ligne_login == false) && ($ligne_email == false)) {
+            $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '3', :login, :email)");
+            $resultats->execute([
+                'prenom' => $prenom,
+                'nom' => $nom,
+                'adresse' => $adresse,
+                'npa' => $npa,
+                'ville' => $ville,
+                'password' => $password,
+                'login' => $login,
+                'email' => $email,
+
+            ]);
+        } else {
+            //si le login est bon, c'est que le mail existe déjà
+            if ($ligne_login == false) {
+                $resultats = '1';
+            }
+            //si le mail est bon, c'est que le login existe déjà
+            if ($ligne_email == false) {
+                $resultats = '2';
+            }
+        }
     } else {
-        //si le login est bon, c'est que le mail existe déjà
-        if ($ligne_login == false) {
-            $resultats = '1';
-        }
-        //si le mail est bon, c'est que le login existe déjà
-        if ($ligne_email == false) {
-            $resultats = '2';
-        }
+        $resultats = '3';
     }
     return $resultats;
 }
