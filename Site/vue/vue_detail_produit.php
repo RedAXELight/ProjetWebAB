@@ -69,7 +69,7 @@ $SousMenu=$resultat['Description'];;
                             <tr>
                                 <td style="text-align: center; width: 20%;">Stock : </td>
                                 <td><?php echo @$Stock ?></td>
-                                <td style="text-align: center;padding-top: 10px;width: 20%;">Description du CubeSat : </td>
+                                <td style="text-align: center;padding-top: 10px;width: 20%;"></td>
                                 <td colspan="3"></td>
                             </tr>
                             <tr>

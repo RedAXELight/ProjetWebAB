@@ -145,6 +145,7 @@ function enregistrer_vendeur($donnees)
     return $resultats;
 }
 
+
 function get_produits()
 {
     // connexion à la base de données
@@ -158,6 +159,7 @@ function get_produits()
 }
 
 //Va chercher les infos d'un seul produit pour la modification ou l'affichage en détail d'un produit
+
 function sendMail($datamail)
 {
     ini_set('SMTP', 'smtp.heavnwolf.ch');//remplacer le nom du smtp
@@ -184,6 +186,7 @@ function AddProduit($Sat)
 }
 
 //Va chercher les infos d'un seul produit pour la modification
+
 function GetProduit($idcible)
 {
     //connexion à la bd
@@ -192,6 +195,7 @@ function GetProduit($idcible)
     $resultats = $connexion->query($requete);
     return $resultats; //dans ce cas de figure il est utile de retourner la variable resultat
 }
+
 
 //fonction de modification d'un produit
 function UpdateProduit($ValModif)

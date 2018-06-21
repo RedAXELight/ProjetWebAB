@@ -233,6 +233,7 @@ function add_vendeur() //fonction d'ajout d'un vendeur
     }
 }
 
+
 //-----------------------PRODUITS-----------------------------------
 //vue des produits
 function produits()
@@ -297,6 +298,7 @@ function mailsend()
         require "vue/contact.php";
     }
 }
+
 
 function contact()
 {
