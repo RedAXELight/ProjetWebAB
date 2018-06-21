@@ -80,6 +80,10 @@ if (isset($resultats)) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                  <?php if (isset($resultats)){
+                      echo "<div class='alert alert-danger'>".$erreur."</div>";
+                  }
+                  ?>
                     <div class="form-group wow bounceInDown" data-wow-delay="0.4s">
                         <div class="form-group">
                             <form class='form' role="form" method='POST' data-toggle="validator" action="index.php?action=vue_login">

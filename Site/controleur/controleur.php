@@ -26,6 +26,9 @@ function login() //Fonction pour le login du formulaire
 {
     if (isset ($_POST['fLogin']) && isset ($_POST['fPass'])) {
         $resultats = getLogin($_POST);
+        if (($resultats == "mot de passe incorrect") || ($resultats == "Le Recapcha n'a pas été validé !")) {
+            $erreur = $resultats;
+        }
         require "vue/vue_login.php";
     } else {
         // détruit la session de la personne connectée après appuyé sur Logout

@@ -50,12 +50,14 @@ function getLogin($post)
             //retourne la valeur de la variable résultat
             return $ligne;
         } else {
-            $resultats = 'mot de passe incorrect';
+            $resultats = "mot de passe incorrect";
+            return $resultats;
         }
 
 
     /*} else {
-        $erreur = "Le Recapcha n'a pas été validé !";
+        $resultats = "Le Recapcha n'a pas été validé !";
+        return $resultats;
     }*/
 }
 
