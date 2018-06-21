@@ -45,7 +45,7 @@ $SousMenu = "Made by GalaxSat";
                             ?>
                             <div class="inner">
                                 <h5><?= $resultat['csName']; ?></h5>
-                                <div class="avatar"><img src="img/cubesat/cubesat.gif" alt=""
+                                <div class="avatar"><img src="img/cubesat/Cubesat.gif" alt=""
                                                          class="img-responsive img-circle"/></div>
                                 <p class="subtitle"><?= $resultat['Description']; ?></p>
                                 <?php
