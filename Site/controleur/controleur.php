@@ -32,7 +32,7 @@ function login() //Fonction pour le login du formulaire
         if (isset($_SESSION['login'])) {
             session_destroy();
             $_SESSION = [];
-            require "vue/accueil.php";
+            require "vue/vue_login.php";
         } else
         require "vue/vue_login.php";
     }

@@ -53,7 +53,7 @@ $Credits="Icons made by Freepik from www.flaticon.com";
                                                          class="img-responsive img-circle"/></div>
                                 <p class="subtitle"><?= $resultat['Description']; ?></p>
                                 <?php
-                                if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur")
+                                if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur" || isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Administrateur")
                                 {
                                     echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
                                 }?>
