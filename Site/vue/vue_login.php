@@ -14,9 +14,9 @@ $intitule = "Formulaire de login";
 <!-- ________________________ Gestion de la connection et du type d'utilisateur connecté ______________________________-->
 
 <?php
+
 if (isset($resultats)) {
-    // les données dans le formulaire sont exactes
-    $ligne = $resultats->fetch();
+    $ligne = $resultats;
     // Test pour savoir si on est admin, vendeur ou client
     if ($ligne['UserRole_idUserRole'] == '3') {
         echo "Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant que client";
@@ -39,7 +39,7 @@ if (isset($resultats)) {
                 $_SESSION['typeUser'] = "Administrateur";
             } else {
             echo "Erreur de login";
-            if ($erreur) {
+            if (isset($erreur)) {
                 echo $erreur;
             }
             }

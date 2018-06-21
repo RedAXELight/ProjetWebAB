@@ -25,42 +25,50 @@ function getBD()
 //compare les données envoyées par le formulaire avec celle de la bd
 function getLogin($post)
 {
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    /*$url = 'https://www.google.com/recaptcha/api/siteverify';
     $privatekey = "6LcU-F8UAAAAAIlo3VsLDyhiKIiJPd4lXJH3rKUN";
     $reponseAPI = file_get_contents($url . "?secret=" . $privatekey . "&response=" . $_POST['g-recaptcha-response'] . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 
     $dataAPI = json_decode($reponseAPI);
 
-    if (isset($dataAPI->success) AND $dataAPI->success == true) {
+    if (isset($dataAPI->success) AND $dataAPI->success == true) {*/
         // connexion à la BD GalaxSat
         $connexion = getBD();
         // passe les variables en local et sécurise la faille XSS
         $Login = htmlspecialchars(@$_POST['fLogin']);
         $Pass = htmlspecialchars(@$_POST['fPass']);
         // prepare la requête à executer dans la base de données
-        $resultats = $connexion->prepare("SELECT * FROM users WHERE usrLogin = :login AND usrPassword = :password");
+        $resultats = $connexion->prepare("SELECT * FROM users WHERE usrLogin = :login");
         // execute la requête avec les variables et récupère les résultats dans la variable $resultats
         $resultats->execute([
             'login' => $Login,
-            'password' => $Pass
         ]);
-        //retourne la valeur de la variable résultat
-        return $resultats;
-    } else {
+        // les données dans le formulaire sont exactes
+        $ligne = $resultats->fetch();
+        $password_DB = $ligne['usrPassword'];
+        if (hash_equals($password_DB, crypt($Pass, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x'))){
+            //retourne la valeur de la variable résultat
+            return $ligne;
+        } else {
+            $resultats = 'mot de passe incorrect';
+        }
+
+
+    /*} else {
         $erreur = "Le Recapcha n'a pas été validé !";
-    }
+    }*/
 }
 
 // verifie si le login existe, si ce n'est pas le cas, il enregitre le nouvel utilisateur dans la BD
 function enregistrer_user($donnees)
 {
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    /*$url = 'https://www.google.com/recaptcha/api/siteverify';
     $privatekey = "6LcU-F8UAAAAAIlo3VsLDyhiKIiJPd4lXJH3rKUN";
     $reponseAPI = file_get_contents($url."?secret=".$privatekey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
 
     $dataAPI = json_decode($reponseAPI);
 
-    if(isset($dataAPI->success) AND $dataAPI->success==true){
+    if(isset($dataAPI->success) AND $dataAPI->success==true){*/
         // connexion à la BD
         $connexion = getBD();
         // passe les variables en local et sécurise la faille XSS
@@ -71,6 +79,7 @@ function enregistrer_user($donnees)
         $npa = htmlspecialchars(@$donnees['npa']);
         $ville = htmlspecialchars(@$donnees['ville']);
         $password = htmlspecialchars(@$donnees['password']);
+        $password = crypt($password, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x');
         $email = htmlspecialchars(@$donnees['email']);
         // requête pour verifier si le login existe
         $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
@@ -99,6 +108,7 @@ function enregistrer_user($donnees)
                 'email' => $email,
 
             ]);
+            $resultats = '0';
         } else {
             //si le login est bon, c'est que le mail existe déjà
             if ($ligne_login == false) {
@@ -109,9 +119,9 @@ function enregistrer_user($donnees)
                 $resultats = '2';
             }
         }
-    } else {
+    /*} else {
         $resultats = '3';
-    }
+    }*/
     return $resultats;
 }
 
