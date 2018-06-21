@@ -19,19 +19,19 @@ if (isset($resultats)) {
     $ligne = $resultats->fetch();
     // Test pour savoir si on est admin, vendeur ou client
     if ($ligne['UserRole_idUserRole'] == '3') {
-        echo "Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant que client";
+        echo "<h4>Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant que client</h4>";
         // Création de la session
         $_SESSION['login'] = $ligne['usrName'] . " " . $ligne['usrSurname'];
         $_SESSION['typeUser'] = "Client";
     } else {
         if ($ligne['UserRole_idUserRole'] == '2') {
-            echo "Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant que vendeur";
+            echo "<h4>Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant que vendeur</h4>";
             // Création de la session
             $_SESSION['login'] = $ligne['usrName'] . " " . $ligne['usrSurname'];
             $_SESSION['typeUser'] = "Vendeur";
         } else {
             if ($ligne['UserRole_idUserRole'] == '1') {
-                echo "Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant qu'administrateur";
+                echo "<h4>Bonjour " . $ligne['usrName'] . " " . $ligne['usrSurname'] . ". Vous êtes bien connecté en tant qu'administrateur</h4>";
                 //enregistrement du nom de l'administrateur connécté dans une variable globale
                 $_POST['NomAdmin'] = $ligne['usrName'];
                 // Création de la session

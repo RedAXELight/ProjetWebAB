@@ -10,6 +10,7 @@ require "modele/modele.php";
 // Affichage de la page de l'accueil
 function accueil()
 {
+    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
     require "vue/accueil.php";
 }
 

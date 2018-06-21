@@ -8,7 +8,6 @@ ob_start();
 $titre = "GalaxSat - Produits";
 $intitule = "Liste de produits";
 $SousMenu = "Made by GalaxSat";
-$Credits = "Icons made by Freepik from www.flaticon.com";
 
 ?>
 
