@@ -27,11 +27,11 @@ function getLogin($post)
 {
     $url = 'https://www.google.com/recaptcha/api/siteverify';
     $privatekey = "6LcU-F8UAAAAAIlo3VsLDyhiKIiJPd4lXJH3rKUN";
-    $reponseAPI = file_get_contents($url."?secret=".$privatekey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
+    $reponseAPI = file_get_contents($url . "?secret=" . $privatekey . "&response=" . $_POST['g-recaptcha-response'] . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 
     $dataAPI = json_decode($reponseAPI);
 
-   /* if(isset($dataAPI->success) AND $dataAPI->success==true){*/
+    if (isset($dataAPI->success) AND $dataAPI->success == true) {
         // connexion à la BD GalaxSat
         $connexion = getBD();
         // passe les variables en local et sécurise la faille XSS
@@ -46,9 +46,9 @@ function getLogin($post)
         ]);
         //retourne la valeur de la variable résultat
         return $resultats;
-    /*}else{
+    } else {
         $erreur = "Le Recapcha n'a pas été validé !";
-    }*/
+    }
 }
 
 // verifie si le login existe, si ce n'est pas le cas, il enregitre le nouvel utilisateur dans la BD
@@ -69,14 +69,14 @@ function enregistrer_user($donnees)
     $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
-        ]);
+    ]);
 
     $ligne_login = $requete_verify->fetch();
     //Requête pour verifier si le mail existe
     $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
     $requete_verify->execute([
         'login' => $login,
-        ]);
+    ]);
     $ligne_email = $requete_verify->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
     if (($ligne_login == false) && ($ligne_email == false)) {
@@ -91,7 +91,7 @@ function enregistrer_user($donnees)
             'login' => $login,
             'email' => $email,
 
-            ]);
+        ]);
     } else {
         //si le login est bon, c'est que le mail existe déjà
         if ($ligne_login == false) {
@@ -151,11 +151,12 @@ function get_produits()
 function sendMail($datamail)
 {
     ini_set('SMTP', 'smtp.heavnwolf.ch');//remplacer le nom du smtp
-    $to = 'Alexandre.baseia@cpnv.ch'/*; Brian.rodrigues-fraga@cpnv.ch'*/;
+    $to = 'Alexandre.baseia@cpnv.ch'/*; Brian.rodrigues-fraga@cpnv.ch'*/
+    ;
     $subject = $datamail['subject'];
     $from = $datamail['email'];
     $message = $datamail['message'];
-    $toSend = "Envoyé par : ".$from."\n..".$message;
+    $toSend = "Envoyé par : " . $from . "\n.." . $message;
     $toSend = mb_convert_encoding($toSend, "UTF-8");
     mail($to, $subject, $toSend);
 }

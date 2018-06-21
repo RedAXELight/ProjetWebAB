@@ -15,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
-              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -38,40 +38,40 @@
         <entry file="file://$PROJECT_DIR$/vue/vue_liste_produits.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="284">
-              <caret line="50" column="88" lean-forward="true" selection-start-line="50" selection-start-column="88" selection-end-line="50" selection-end-column="88" />
+              <caret line="50" column="88" lean-forward="false" selection-start-line="50" selection-start-column="88" selection-end-line="50" selection-end-column="88" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controleur.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controleur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="-204">
               <caret line="252" column="45" lean-forward="false" selection-start-line="252" selection-start-column="45" selection-end-line="252" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modele.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="modele.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modele/modele.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="137" column="21" lean-forward="false" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="21" />
+            <state relative-caret-position="105">
+              <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
               <folding>
-                <marker date="1529562358322" expanded="true" signature="1453:1524" ph="SELECT * FRO... users" />
-                <marker date="1529562358322" expanded="true" signature="2649:2699" ph="SELECT usrLo... users" />
-                <marker date="1529562358322" expanded="true" signature="2908:2957" ph="SELECT usrMa... users" />
-                <marker date="1529562358322" expanded="true" signature="3241:3441" ph="INSERT INTO users... " />
-                <marker date="1529562358322" expanded="true" signature="4323:4395" ph="SELECT usrLo... users" />
-                <marker date="1529562358322" expanded="true" signature="4561:4633" ph="SELECT usrLo... users" />
-                <marker date="1529562358322" expanded="true" signature="4873:5245" ph="INSERT INTO users... " />
-                <marker date="1529562358322" expanded="true" signature="5756:5817" ph="SELECT * FRO... cubesat" />
-                <marker date="1529562358322" expanded="true" signature="6766:7163" ph="INSERT INTO cubesat... " />
-                <marker date="1529562358322" expanded="true" signature="7539:7597" ph="SELECT * FRO... cubesat" />
-                <marker date="1529562358322" expanded="true" signature="7886:8398" ph="UPDATE cubesat... " />
-                <marker date="1529562358322" expanded="true" signature="8618:8688" ph="UPDATE cubesat... " />
+                <marker date="1529563237787" expanded="true" signature="1465:1536" ph="SELECT * FRO... users" />
+                <marker date="1529563237787" expanded="true" signature="2659:2709" ph="SELECT usrLo... users" />
+                <marker date="1529563237787" expanded="true" signature="2914:2963" ph="SELECT usrMa... users" />
+                <marker date="1529563237787" expanded="true" signature="3243:3443" ph="INSERT INTO users... " />
+                <marker date="1529563237787" expanded="true" signature="4321:4393" ph="SELECT usrLo... users" />
+                <marker date="1529563237787" expanded="true" signature="4559:4631" ph="SELECT usrLo... users" />
+                <marker date="1529563237787" expanded="true" signature="4871:5243" ph="INSERT INTO users... " />
+                <marker date="1529563237787" expanded="true" signature="5754:5815" ph="SELECT * FRO... cubesat" />
+                <marker date="1529563237787" expanded="true" signature="6775:7172" ph="INSERT INTO cubesat... " />
+                <marker date="1529563237787" expanded="true" signature="7548:7606" ph="SELECT * FRO... cubesat" />
+                <marker date="1529563237787" expanded="true" signature="7895:8407" ph="UPDATE cubesat... " />
+                <marker date="1529563237787" expanded="true" signature="8627:8697" ph="UPDATE cubesat... " />
               </folding>
             </state>
           </provider>
@@ -105,8 +105,8 @@
         <option value="$PROJECT_DIR$/vue/vue_erreur.php" />
         <option value="$PROJECT_DIR$/vue/vue_detail_produit.php" />
         <option value="$PROJECT_DIR$/vue/vue_liste_produits.php" />
-        <option value="$PROJECT_DIR$/modele/modele.php" />
         <option value="$PROJECT_DIR$/controleur/controleur.php" />
+        <option value="$PROJECT_DIR$/modele/modele.php" />
       </list>
     </option>
   </component>
@@ -263,7 +263,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23363000" />
+    <option name="totallyTimeSpent" value="23495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1040" extended-state="0" />
@@ -615,45 +615,45 @@
     <entry file="file://$PROJECT_DIR$/vue/vue_liste_produits.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
-          <caret line="50" column="88" lean-forward="true" selection-start-line="50" selection-start-column="88" selection-end-line="50" selection-end-column="88" />
+          <caret line="50" column="88" lean-forward="false" selection-start-line="50" selection-start-column="88" selection-end-line="50" selection-end-column="88" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/modele.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="137" column="21" lean-forward="false" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="21" />
-          <folding>
-            <marker date="1529562358322" expanded="true" signature="1453:1524" ph="SELECT * FRO... users" />
-            <marker date="1529562358322" expanded="true" signature="2649:2699" ph="SELECT usrLo... users" />
-            <marker date="1529562358322" expanded="true" signature="2908:2957" ph="SELECT usrMa... users" />
-            <marker date="1529562358322" expanded="true" signature="3241:3441" ph="INSERT INTO users... " />
-            <marker date="1529562358322" expanded="true" signature="4323:4395" ph="SELECT usrLo... users" />
-            <marker date="1529562358322" expanded="true" signature="4561:4633" ph="SELECT usrLo... users" />
-            <marker date="1529562358322" expanded="true" signature="4873:5245" ph="INSERT INTO users... " />
-            <marker date="1529562358322" expanded="true" signature="5756:5817" ph="SELECT * FRO... cubesat" />
-            <marker date="1529562358322" expanded="true" signature="6766:7163" ph="INSERT INTO cubesat... " />
-            <marker date="1529562358322" expanded="true" signature="7539:7597" ph="SELECT * FRO... cubesat" />
-            <marker date="1529562358322" expanded="true" signature="7886:8398" ph="UPDATE cubesat... " />
-            <marker date="1529562358322" expanded="true" signature="8618:8688" ph="UPDATE cubesat... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
-          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="-204">
           <caret line="252" column="45" lean-forward="false" selection-start-line="252" selection-start-column="45" selection-end-line="252" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/modele.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <marker date="1529563237787" expanded="true" signature="1465:1536" ph="SELECT * FRO... users" />
+            <marker date="1529563237787" expanded="true" signature="2659:2709" ph="SELECT usrLo... users" />
+            <marker date="1529563237787" expanded="true" signature="2914:2963" ph="SELECT usrMa... users" />
+            <marker date="1529563237787" expanded="true" signature="3243:3443" ph="INSERT INTO users... " />
+            <marker date="1529563237787" expanded="true" signature="4321:4393" ph="SELECT usrLo... users" />
+            <marker date="1529563237787" expanded="true" signature="4559:4631" ph="SELECT usrLo... users" />
+            <marker date="1529563237787" expanded="true" signature="4871:5243" ph="INSERT INTO users... " />
+            <marker date="1529563237787" expanded="true" signature="5754:5815" ph="SELECT * FRO... cubesat" />
+            <marker date="1529563237787" expanded="true" signature="6775:7172" ph="INSERT INTO cubesat... " />
+            <marker date="1529563237787" expanded="true" signature="7548:7606" ph="SELECT * FRO... cubesat" />
+            <marker date="1529563237787" expanded="true" signature="7895:8407" ph="UPDATE cubesat... " />
+            <marker date="1529563237787" expanded="true" signature="8627:8697" ph="UPDATE cubesat... " />
+          </folding>
         </state>
       </provider>
     </entry>
