@@ -18,12 +18,14 @@ $Credits="Icons made by Freepik from www.flaticon.com";
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
+                  <a href="index.php?action=vue_produits">
                     <div class="wow bounceInDown" data-wow-delay="0.1s">
                         <div class="section-heading">
-                            <h2><a href="index.php?action=vue_produits">Nos produits</a></a></h2>
+                            <h2>Nos produits</h2>
                             <i class="fa fa-2x fa-angle-down"></i>
                         </div>
                     </div>
+                  </a>
                 </div>
             </div>
         </div>
@@ -58,6 +60,7 @@ $Credits="Icons made by Freepik from www.flaticon.com";
                                     echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
                                 }?>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -43,7 +43,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <h1>GalaxSat</h1>
             </a>
         </div>
@@ -154,7 +154,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="wow shake" data-wow-delay="0.4s">
                     <div class="page-scroll marginbot-30">
-                        <a href="#intro" id="totop" class="btn btn-circle">
+                        <a href="#page-top" id="totop" class="btn btn-circle">
                             <i class="fa fa-angle-double-up animated"></i>
                         </a>
                     </div>

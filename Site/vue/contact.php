@@ -7,6 +7,7 @@
 // tampon de flux stocké en mémoire
 ob_start();
 $titre="GalaxSat - Contact";
+$intitule="Contact";
 ?>
 
 
