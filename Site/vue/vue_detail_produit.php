@@ -34,13 +34,13 @@ $SousMenu=$resultat['Description'];;
 <!--_________________________________________Ci-dessous l'affichage des détails______________________________________-->
 
 
-<!-- Section: détails d'un produti -->+
+<!-- Section: détails d'un produti -->
 <section id="service" class="home-section text-center">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group wow bounceInDown" data-wow-delay="0.4s">
-                    <form class="form" role="form" data-toggle="validator" method="POST" action="index.php?action=panier">
+                    <form class="form" role="form" data-toggle="validator" method="POST" action="index.php?action=ajout&amp;l=<?=$Nom ?>&amp;q=<?=$Stock ?>&amp;p=<?=$Prix ?>">
                         <table class="table table-hover">
                             <tr>
                                 <td style="text-align: center;vertical-align: middle; width: 20%;">Nom : </td>

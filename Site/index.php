@@ -54,6 +54,16 @@ try {
             case 'supprimer_produit':
                 suppr($_GET['id']);
                 break;
+        // ------- panier --------
+            case 'vue_panier':
+                panier();
+                break;
+            case 'ajout':
+                panier();
+                break;
+            case 'suppression':
+                panier();
+                break;
             default:
             throw new Exception("Action non valide");
         }
