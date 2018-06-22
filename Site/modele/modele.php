@@ -134,15 +134,30 @@ function enregistrer_vendeur($donnees)
 {
     //connexion à la BD
     $connexion = getBD();
-    //Requête pour verifier si le login existe
-    $requete_verify = "SELECT usrLogin FROM users WHERE usrLogin = '" . @$donnees['login'] . "';";
-    $resultats = $connexion->query($requete_verify);
-    $ligne_login = $resultats->fetch();
+    // passe les variables en local et sécurise la faille XSS
+    $login = htmlspecialchars(@$donnees['login']);
+    $prenom = htmlspecialchars(@$donnees['prenom']);
+    $nom = htmlspecialchars(@$donnees['nom']);
+    $adresse = htmlspecialchars(@$donnees['adresse']);
+    $npa = htmlspecialchars(@$donnees['npa']);
+    $ville = htmlspecialchars(@$donnees['ville']);
+    $password = htmlspecialchars(@$donnees['password']);
+    $password = crypt($password, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x');
+    $email = htmlspecialchars(@$donnees['email']);
+    // requête pour verifier si le login existe
+    $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
+    $requete_verify->execute([
+        'login' => $login,
+    ]);
+
+    $ligne_login = $requete_verify->fetch();
     //Requête pour verifier si le mail existe
-    $requete_verify = "SELECT usrLogin FROM users WHERE usrLogin = '" . @$donnees['login'] . "';";
-    $resultats = $connexion->query($requete_verify);
-    $ligne_email = $resultats->fetch();
-    //si ils n'existent pas, on va enregistrer l'utilisateur
+    $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
+    $requete_verify->execute([
+        'login' => $login,
+    ]);
+    $ligne_email = $requete_verify->fetch();
+    //si ils n'existent pas, on va enregistrer le vendeur
     if (($ligne_login == false) && ($ligne_email == false)) {
         if (($ligne_login == false) && ($ligne_email == false)) {
             $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '2', :login, :email)");
