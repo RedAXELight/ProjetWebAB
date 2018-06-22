@@ -144,9 +144,19 @@ function enregistrer_vendeur($donnees)
     $ligne_email = $resultats->fetch();
     //si ils n'existent pas, on va enregistrer l'utilisateur
     if (($ligne_login == false) && ($ligne_email == false)) {
-        $requete = "INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES ('" . @$donnees['prenom'] . "', '" . $donnees['nom'] . "', '" . @$donnees['adresse'] . "', '" . @$donnees['npa'] . "', '" . @$donnees['ville'] . "', '" . $donnees['password'] . "', '2', '" . $donnees['login'] . "', '" . $donnees['email'] . "');";
-        $resultats = $connexion->query($requete);
-    } else {
+        if (($ligne_login == false) && ($ligne_email == false)) {
+            $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '2', :login, :email)");
+            $resultats->execute([
+                'prenom' => $prenom,
+                'nom' => $nom,
+                'adresse' => $adresse,
+                'npa' => $npa,
+                'ville' => $ville,
+                'password' => $password,
+                'login' => $login,
+                'email' => $email,
+
+            ]); else {
         //si le login est bon, c'est que le mail existe déjà
         if ($ligne_login == false) {
             $resultats = '1';

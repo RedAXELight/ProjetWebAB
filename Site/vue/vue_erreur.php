@@ -14,8 +14,10 @@ $intitule = "Oups... Il semblerait qu'il y aie une erreur :(";
 <article>
     <header>
         <h2>Erreur</h2>
-        <p>L'action demandée est inconnue !</p>
-        <?=@$_SESSION['erreur'];?>
+        <?php if (!isset($_SESSION['erreur']) && ($_SESSION['erreur']== "Accès non autorisé !"))
+        echo "<p>L'action demandée est inconnue !</p>"
+            ?>
+        <h3><?=@$_SESSION['erreur'];?></h3>
     </header>
 </article>
 <hr/>
