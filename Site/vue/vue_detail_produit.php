@@ -1,7 +1,7 @@
 <?php
 /**
-* User: Brian Rodrigues Fraga
-* Date: 24.05.2018
+* User: Alexandre Baseia
+* Date: 22.06.2018
 */
 
 // tampon de flux stocké en mémoire
@@ -34,7 +34,7 @@ $SousMenu=$resultat['Description'];;
 <!--_________________________________________Ci-dessous l'affichage des détails______________________________________-->
 
 
-<!-- Section: détails d'un produti -->
+<!-- Section: détails d'un produit -->
 <section id="service" class="home-section text-center">
     <div class="container">
         <div class="row">
@@ -83,13 +83,9 @@ $SousMenu=$resultat['Description'];;
                 </div>
             </div>
         </div>
-
     </div>
 </section>
-
-
-
-
+<!-- Section: détails d'un produit -->
 
 <?php
 $contenu = ob_get_clean();
