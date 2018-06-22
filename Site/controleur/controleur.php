@@ -143,7 +143,12 @@ function enregistrer()
 
 function vendeur()
 {
+    if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur") || ($_SESSION['typeUser'] = "Vendeur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
     require "vue/vue_ajout_vendeur.php";
+    } else {
+        $_SESSION['erreur'] = "Erreur 403 : Accès non autorisé !";
+        require "vue/vue_erreur.php";
+    }
 }
 
 function add_vendeur() //fonction d'ajout d'un vendeur
