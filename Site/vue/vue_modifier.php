@@ -1,9 +1,8 @@
 <?php
 /**
-* Created by PhpStorm.
-* User: Alexandre.BASEIA
-* Date: 14.06.2018
-* Time: 08:08
+* User: Brian Rodrigues Fraga
+* User: Alexandre Baseia
+* Date: 22.06.2018
 */
 
 ob_start();
@@ -30,13 +29,11 @@ $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez modifier un p
         $Stock = $resultat['Stock'];
         $Description = $resultat['Description'];
         ?>
-
-
     <?php endforeach; ?>
 </table>
 
-<!-- Section: form choix et ajout de produit -->+
-<section id="contact" class="home-section text-center">
+<!-- Section: form choix et ajout de produit -->
+<section id="service" class="home-section text-center">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -90,10 +87,9 @@ $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez modifier un p
                 </div>
             </div>
         </div>
-
     </div>
 </section>
-
+<!-- /Section: form choix et ajout de produit -->
 
 <?php
 $contenu = ob_get_clean();

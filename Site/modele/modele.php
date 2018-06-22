@@ -1,12 +1,11 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * User: Alexandre.baseia
- * Date: 24.05.2018
- */
+* User: Brian Rodrigues Fraga
+* User: Alexandre Baseia
+* Date: 22.06.2018
+*/
 
-// ---------------------------------------------
-// getBD()
+// ------------------- Connexion à la base de données --------------------------
 // Fonction : connexion avec le serveur : instancie et renvoie l'objet PDO
 // Sortie : $connexion
 
@@ -19,9 +18,7 @@ function getBD()
     return $connexion;
 }
 
-//
 //-------------------------USERS-------------------------------
-
 //compare les données envoyées par le formulaire avec celle de la bd
 function getLogin($post)
 {
@@ -127,8 +124,6 @@ function enregistrer_user($donnees)
     return $resultats;
 }
 
-//-----------------------Produits--------------------------
-
 //verifie si le login existe, si ce n'est pas le cas, il enregitre le nouveau vendeur dans la BD
 function enregistrer_vendeur($donnees)
 {
@@ -176,7 +171,6 @@ function enregistrer_vendeur($donnees)
             'password' => $password,
             'login' => $login,
             'email' => $email,
-
         ]);
         $resultats = '0';
     } else {
@@ -189,11 +183,13 @@ function enregistrer_vendeur($donnees)
             $resultats = '2';
         }
     }
-    /*} else {
+  /*} else {
     $resultats = '3';
-}*/
+    }*/
     return $resultats;
-    }
+}
+
+//-----------------------Produits--------------------------
 
 //Va chercher tous les produits dans la base de données
     function get_produits()
@@ -207,8 +203,6 @@ function enregistrer_vendeur($donnees)
         // retourne les résultats de la fonction
         return $resultats;
     }
-
-//Va chercher les infos d'un seul produit pour la modification ou l'affichage en détail d'un produit
 
 //Fonction d'ajout du produit
     function AddProduit($Sat)
@@ -253,22 +247,21 @@ function enregistrer_vendeur($donnees)
     }
 
 //----------------------- Mail --------------------------
-
-    function sendMail($datamail)
-    {
-        ini_set('SMTP', 'smtp.heavnwolf.ch');//remplacer le nom du smtp
-        $to = 'Alexandre.baseia@cpnv.ch'/*; Brian.rodrigues-fraga@cpnv.ch'*/
-        ;
-        $subject = $datamail['subject'];
-        $from = $datamail['email'];
-        $message = $datamail['message'];
-        $toSend = "Envoyé par : " . $from . "\n.." . $message;
-        $toSend = mb_convert_encoding($toSend, "UTF-8");
-        mail($to, $subject, $toSend);
-    }
+// Fonction permetant d'envoyé un mail
+function sendMail($datamail)
+{
+    ini_set('SMTP', 'smtp.heavnwolf.ch');//remplacer le nom du smtp
+    $to = 'Alexandre.baseia@cpnv.ch'/*; Brian.rodrigues-fraga@cpnv.ch'*/
+    ;
+    $subject = $datamail['subject'];
+    $from = $datamail['email'];
+    $message = $datamail['message'];
+    $toSend = "Envoyé par : " . $from . "\n.." . $message;
+    $toSend = mb_convert_encoding($toSend, "UTF-8");
+    mail($to, $subject, $toSend);
+}
 
 //----------------------- Panier --------------------------
-
 //permet d'initialiser un panier (créer un panier)
     function creationPanier()
     {

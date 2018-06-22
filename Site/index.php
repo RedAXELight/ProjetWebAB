@@ -1,8 +1,8 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* User: Alexandre.baseia
-* Date: 24.05.2018
+* User: Alexandre Baseia
+* Date: 22.06.2018
 */
 
 session_start();
@@ -64,10 +64,6 @@ try {
             case 'suppression':
                 panier();
                 break;
-            case 'vue_contact':
-                contact();
-                break;
-
             default:
                 throw new Exception("Action non valide");
             }
