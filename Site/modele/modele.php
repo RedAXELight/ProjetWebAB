@@ -32,33 +32,33 @@ function getLogin($post)
     $dataAPI = json_decode($reponseAPI);
 
     if (isset($dataAPI->success) AND $dataAPI->success == true) {*/
-        // connexion à la BD GalaxSat
-        $connexion = getBD();
-        // passe les variables en local et sécurise la faille XSS
-        $Login = htmlspecialchars(@$_POST['fLogin']);
-        $Pass = htmlspecialchars(@$_POST['fPass']);
-        // prepare la requête à executer dans la base de données
-        $resultats = $connexion->prepare("SELECT * FROM users WHERE usrLogin = :login");
-        // execute la requête avec les variables et récupère les résultats dans la variable $resultats
-        $resultats->execute([
-            'login' => $Login,
-        ]);
-        // les données dans le formulaire sont exactes
-        $ligne = $resultats->fetch();
-        $password_DB = $ligne['usrPassword'];
-        if (hash_equals($password_DB, crypt($Pass, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x'))){
-            //retourne la valeur de la variable résultat
-            return $ligne;
-        } else {
-            $resultats = "mot de passe incorrect";
-            return $resultats;
-        }
+    // connexion à la BD GalaxSat
+    $connexion = getBD();
+    // passe les variables en local et sécurise la faille XSS
+    $Login = htmlspecialchars(@$_POST['fLogin']);
+    $Pass = htmlspecialchars(@$_POST['fPass']);
+    // prepare la requête à executer dans la base de données
+    $resultats = $connexion->prepare("SELECT * FROM users WHERE usrLogin = :login");
+    // execute la requête avec les variables et récupère les résultats dans la variable $resultats
+    $resultats->execute([
+        'login' => $Login,
+    ]);
+    // les données dans le formulaire sont exactes
+    $ligne = $resultats->fetch();
+    $password_DB = $ligne['usrPassword'];
+    if (hash_equals($password_DB, crypt($Pass, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x'))){
+        //retourne la valeur de la variable résultat
+        return $ligne;
+    } else {
+        $resultats = "mot de passe incorrect";
+        return $resultats;
+    }
 
 
     /*} else {
-        $resultats = "Le Recapcha n'a pas été validé !";
-        return $resultats;
-    }*/
+    $resultats = "Le Recapcha n'a pas été validé !";
+    return $resultats;
+}*/
 }
 
 // verifie si le login existe, si ce n'est pas le cas, il enregitre le nouvel utilisateur dans la BD
@@ -71,60 +71,60 @@ function enregistrer_user($donnees)
     $dataAPI = json_decode($reponseAPI);
 
     if(isset($dataAPI->success) AND $dataAPI->success==true){*/
-        // connexion à la BD
-        $connexion = getBD();
-        // passe les variables en local et sécurise la faille XSS
-        $login = htmlspecialchars(@$donnees['login']);
-        $prenom = htmlspecialchars(@$donnees['prenom']);
-        $nom = htmlspecialchars(@$donnees['nom']);
-        $adresse = htmlspecialchars(@$donnees['adresse']);
-        $npa = htmlspecialchars(@$donnees['npa']);
-        $ville = htmlspecialchars(@$donnees['ville']);
-        $password = htmlspecialchars(@$donnees['password']);
-        $password = crypt($password, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x');
-        $email = htmlspecialchars(@$donnees['email']);
-        // requête pour verifier si le login existe
-        $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
-        $requete_verify->execute([
-            'login' => $login,
-        ]);
+    // connexion à la BD
+    $connexion = getBD();
+    // passe les variables en local et sécurise la faille XSS
+    $login = htmlspecialchars(@$donnees['login']);
+    $prenom = htmlspecialchars(@$donnees['prenom']);
+    $nom = htmlspecialchars(@$donnees['nom']);
+    $adresse = htmlspecialchars(@$donnees['adresse']);
+    $npa = htmlspecialchars(@$donnees['npa']);
+    $ville = htmlspecialchars(@$donnees['ville']);
+    $password = htmlspecialchars(@$donnees['password']);
+    $password = crypt($password, '3alvMerHDtc0tYQfjf0Cv6RxHD1BtFRBtg8U5N8x');
+    $email = htmlspecialchars(@$donnees['email']);
+    // requête pour verifier si le login existe
+    $requete_verify = $connexion->prepare("SELECT usrLogin FROM users WHERE usrLogin = :login");
+    $requete_verify->execute([
+        'login' => $login,
+    ]);
 
-        $ligne_login = $requete_verify->fetch();
-        //Requête pour verifier si le mail existe
-        $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
-        $requete_verify->execute([
+    $ligne_login = $requete_verify->fetch();
+    //Requête pour verifier si le mail existe
+    $requete_verify = $connexion->prepare("SELECT usrMail FROM users WHERE usrLogin = :login");
+    $requete_verify->execute([
+        'login' => $login,
+    ]);
+    $ligne_email = $requete_verify->fetch();
+    //si ils n'existent pas, on va enregistrer l'utilisateur
+    if (($ligne_login == false) && ($ligne_email == false)) {
+        $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '3', :login, :email)");
+        $resultats->execute([
+            'prenom' => $prenom,
+            'nom' => $nom,
+            'adresse' => $adresse,
+            'npa' => $npa,
+            'ville' => $ville,
+            'password' => $password,
             'login' => $login,
-        ]);
-        $ligne_email = $requete_verify->fetch();
-        //si ils n'existent pas, on va enregistrer l'utilisateur
-        if (($ligne_login == false) && ($ligne_email == false)) {
-            $resultats = $connexion->prepare("INSERT INTO users (usrSurname, usrName, usrAddress, usrNPA, usrlieu, usrPassword, UserRole_idUserRole, usrLogin, usrMail) VALUES (:prenom, :nom, :adresse, :npa, :ville, :password, '3', :login, :email)");
-            $resultats->execute([
-                'prenom' => $prenom,
-                'nom' => $nom,
-                'adresse' => $adresse,
-                'npa' => $npa,
-                'ville' => $ville,
-                'password' => $password,
-                'login' => $login,
-                'email' => $email,
+            'email' => $email,
 
-            ]);
-            $resultats = '0';
-        } else {
-            //si le login est bon, c'est que le mail existe déjà
-            if ($ligne_login == false) {
-                $resultats = '1';
-            }
-            //si le mail est bon, c'est que le login existe déjà
-            if ($ligne_email == false) {
-                $resultats = '2';
-            }
+        ]);
+        $resultats = '0';
+    } else {
+        //si le login est bon, c'est que le mail existe déjà
+        if ($ligne_login == false) {
+            $resultats = '1';
         }
+        //si le mail est bon, c'est que le login existe déjà
+        if ($ligne_email == false) {
+            $resultats = '2';
+        }
+    }
     /*} else {
-        $resultats = '3';
-    }*/
-    return $resultats;
+    $resultats = '3';
+}*/
+return $resultats;
 }
 
 //-----------------------Produits--------------------------
@@ -339,11 +339,11 @@ function compterArticles()
     if (isset($_SESSION['panier'])){
         return count($_SESSION['panier']['libelleProduit']);
     } else {
-    return 0;
+        return 0;
     }
 }
 
 // cette fonction sert à supprimer le panier existant
 function supprimePanier(){
-   unset($_SESSION['panier']);
+    unset($_SESSION['panier']);
 }

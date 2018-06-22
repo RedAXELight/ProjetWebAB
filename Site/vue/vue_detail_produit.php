@@ -1,27 +1,27 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * Date: 24.05.2018
- */
+* User: Brian Rodrigues Fraga
+* Date: 24.05.2018
+*/
 
 // tampon de flux stocké en mémoire
 ob_start();
 
 foreach ($resultats as $resultat) : //Ici on utilise la variable $resultats retournée dans la fonction GetProd, cela permet de faire sortir les elements obtenus avec la requete afin de les utiliser ici-->
-//Variables pour récuperer le contenu du foreach
+    //Variables pour récuperer le contenu du foreach
 
-//Les différents elements sont donc "etalés" ici et attribués à un nom qui permet d'afficher dans les champs du formulaire le contenus du produit choisi
-$Id = $resultat['idCubeSat'];
-$Nom = $resultat['csName'];
-$Masse = $resultat['csMass'];
-$Prix = $resultat['csPrice'];
-$Solaire = $resultat['SolarPanel'];
-$Height = $resultat['Height'];
-$Width = $resultat['Width'];
-$Length = $resultat['Length'];
-$Batterie = $resultat['BatterySpace'];
-$Stock = $resultat['Stock'];
-$Description = $resultat['Description'];
+    //Les différents elements sont donc "etalés" ici et attribués à un nom qui permet d'afficher dans les champs du formulaire le contenus du produit choisi
+    $Id = $resultat['idCubeSat'];
+    $Nom = $resultat['csName'];
+    $Masse = $resultat['csMass'];
+    $Prix = $resultat['csPrice'];
+    $Solaire = $resultat['SolarPanel'];
+    $Height = $resultat['Height'];
+    $Width = $resultat['Width'];
+    $Length = $resultat['Length'];
+    $Batterie = $resultat['BatterySpace'];
+    $Stock = $resultat['Stock'];
+    $Description = $resultat['Description'];
 
 endforeach;
 
@@ -92,6 +92,6 @@ $SousMenu=$resultat['Description'];;
 
 
 <?php
-  $contenu = ob_get_clean();
-  require "gabarit.php";
+$contenu = ob_get_clean();
+require "gabarit.php";
 ?>

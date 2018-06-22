@@ -54,7 +54,7 @@ try {
             case 'supprimer_produit':
                 suppr($_GET['id']);
                 break;
-        // ------- panier --------
+            // ------- panier --------
             case 'vue_panier':
                 panier();
                 break;
@@ -65,11 +65,11 @@ try {
                 panier();
                 break;
             default:
-            throw new Exception("Action non valide");
+                throw new Exception("Action non valide");
+            }
+        } else {
+            accueil();
         }
-    } else {
-    accueil();
-    }
-} catch (Exception $e) {
-    erreur($e->getMessage());
+    } catch (Exception $e) {
+        erreur($e->getMessage());
 }

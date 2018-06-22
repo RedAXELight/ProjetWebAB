@@ -1,8 +1,8 @@
 <?php
 /**
- * User: Brian Rodrigues Fraga
- * Date: 14.06.2018
- */
+* User: Brian Rodrigues Fraga
+* Date: 14.06.2018
+*/
 // tampon de flux stocké en mémoire
 ob_start();
 $titre = "GalaxSat - Produits";
@@ -46,24 +46,24 @@ $SousMenu = "Made by GalaxSat";
                             <div class="inner">
                                 <h5><?= $resultat['csName']; ?></h5>
                                 <div class="avatar"><img src="img/cubesat/Cubesat.gif" alt=""
-                                                         class="img-responsive img-circle"/></div>
-                                <p class="subtitle"><?= $resultat['Description']; ?></p>
-                                <?php
-                                if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur" || isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Administrateur")
-                                {
-                                echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
-                                }?>
+                                    class="img-responsive img-circle"/></div>
+                                    <p class="subtitle"><?= $resultat['Description']; ?></p>
+                                    <?php
+                                    if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur" || isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Administrateur")
+                                    {
+                                        echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
+                                    }?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
-</section>
-<!-- /Section: about -->
+    </section>
+    <!-- /Section: about -->
 
-<?php
-$contenu = ob_get_clean();
-require "gabarit.php";
-?>
+    <?php
+    $contenu = ob_get_clean();
+    require "gabarit.php";
+    ?>

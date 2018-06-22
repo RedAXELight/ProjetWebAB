@@ -27,11 +27,11 @@ $SousMenu="Afin de profiter de nos offres";
         </div>
     </div>
     <div class="row">
-      <div class="col-lg-2 col-lg-offset-5">
-        <hr class="marginbot-50">
-      </div>
+        <div class="col-lg-2 col-lg-offset-5">
+            <hr class="marginbot-50">
+        </div>
     </div>
-<!-- Section: form inscription -->
+    <!-- Section: form inscription -->
 
     <div class="container">
         <div class="row">

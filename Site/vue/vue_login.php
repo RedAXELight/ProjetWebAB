@@ -38,10 +38,10 @@ if (isset($resultats)) {
                 $_SESSION['login'] = $ligne['usrName'] . " " . $ligne['usrSurname'];
                 $_SESSION['typeUser'] = "Administrateur";
             } else {
-            echo "Erreur de login";
-            if (isset($erreur)) {
-                echo $erreur;
-            }
+                echo "Erreur de login";
+                if (isset($erreur)) {
+                    echo $erreur;
+                }
             }
         }
     }
@@ -54,33 +54,33 @@ if (isset($resultats)) {
     <!--_________________________________________Ci-dessous l'affichage du formulaire______________________________________-->
 
     <section id="service" class="home-section text-center">
-      <div class="heading-about">
-         <div class="container">
-           <div class="row">
-             <div class="col-lg-8 col-lg-offset-2">
-               <div class="wow bounceInDown" data-wow-delay="0.1s">
-                 <div class="section-heading">
-                   <h2>Login</h2>
-                   <i class="fa fa-2x fa-angle-down"></i>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="row">
-         <div class="col-lg-2 col-lg-offset-5">
-           <hr class="marginbot-50">
-         </div>
-       </div>
+        <div class="heading-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.1s">
+                            <div class="section-heading">
+                                <h2>Login</h2>
+                                <i class="fa fa-2x fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                  <?php if (isset($resultats)){
-                      echo "<div class='alert alert-danger'>".$erreur."</div>";
-                  }
-                  ?>
+                    <?php if (isset($resultats)){
+                        echo "<div class='alert alert-danger'>".$erreur."</div>";
+                    }
+                    ?>
                     <div class="form-group wow bounceInDown" data-wow-delay="0.4s">
                         <div class="form-group">
                             <form class='form' role="form" method='POST' data-toggle="validator" action="index.php?action=vue_login">

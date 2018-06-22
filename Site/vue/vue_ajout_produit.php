@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Alexandre.BASEIA
- * Date: 07.06.2018
- * Time: 09:33
- */
+* Created by PhpStorm.
+* User: Alexandre.BASEIA
+* Date: 07.06.2018
+* Time: 09:33
+*/
 
 ob_start();
 $titre = "Ajouter un produit";
