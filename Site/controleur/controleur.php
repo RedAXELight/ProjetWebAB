@@ -11,7 +11,7 @@ require "modele/modele.php";
 // Affichage de la page de l'accueil
 function accueil()
 {
-    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+    $resultats = get_produits(); // pour récupérer les données des produits dans la BD
     require "vue/accueil.php";
 }
 
@@ -37,10 +37,10 @@ function login()
         if (isset($_SESSION['login'])) {
             session_destroy();
             $_SESSION = [];
-            $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+            $resultats = get_produits(); // pour récupérer les données des produits dans la BD
             require "vue/accueil.php";
         } else
-        require "vue/vue_login.php";
+            require "vue/vue_login.php";
     }
 }
 
@@ -99,8 +99,7 @@ function enregistrer()
         if ($operation == '3') {
             $erreur = 'reCAPTCHA non validé';
             require "vue/inscription.php";
-        }
-        else if ($operation == '2') {
+        } else if ($operation == '2') {
             $erreur = 'ce login est déjà utilisé !';
             require "vue/inscription.php";
         } else if ($operation == '1') {
@@ -114,35 +113,35 @@ function enregistrer()
     } else {
         switch ($erreur) {
             case '1':
-            $erreur = 'le champ nom est incorrect !';
-            break;
+                $erreur = 'le champ nom est incorrect !';
+                break;
             case '2':
-            $erreur = 'le champ prénom est incorrect !';
-            break;
+                $erreur = 'le champ prénom est incorrect !';
+                break;
             case '3':
-            $erreur = 'le champ adresse est incorrect !';
-            break;
+                $erreur = 'le champ adresse est incorrect !';
+                break;
             case '4':
-            $erreur = 'le champ ville est incorrect !';
-            break;
+                $erreur = 'le champ ville est incorrect !';
+                break;
             case '5':
-            $erreur = 'le champ NPA est incorrect !';
-            break;
+                $erreur = 'le champ NPA est incorrect !';
+                break;
             case '6':
-            $erreur = 'le champ Email est incorrect !';
-            break;
+                $erreur = 'le champ Email est incorrect !';
+                break;
             case '7':
-            $erreur = 'le champ login est incorrect !';
-            break;
+                $erreur = 'le champ login est incorrect !';
+                break;
             case '8':
-            $erreur = 'le champ mot de passe est incorrect !';
-            break;
+                $erreur = 'le champ mot de passe est incorrect !';
+                break;
             case '9':
-            $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-            break;
+                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+                break;
             default:
-            $erreur = 'une erreur inconnu est arrivé !';
-            break;
+                $erreur = 'une erreur inconnu est arrivé !';
+                break;
         }
         require "vue/inscription.php";
     }
@@ -214,35 +213,35 @@ function add_vendeur()
     } else {
         switch ($erreur) {
             case '1':
-            $erreur = 'le champ nom est incorrect !';
-            break;
+                $erreur = 'le champ nom est incorrect !';
+                break;
             case '2':
-            $erreur = 'le champ prénom est incorrect !';
-            break;
+                $erreur = 'le champ prénom est incorrect !';
+                break;
             case '3':
-            $erreur = 'le champ adresse est incorrect !';
-            break;
+                $erreur = 'le champ adresse est incorrect !';
+                break;
             case '4':
-            $erreur = 'le champ ville est incorrect !';
-            break;
+                $erreur = 'le champ ville est incorrect !';
+                break;
             case '5':
-            $erreur = 'le champ NPA est incorrect !';
-            break;
+                $erreur = 'le champ NPA est incorrect !';
+                break;
             case '6':
-            $erreur = 'le champ Email est incorrect !';
-            break;
+                $erreur = 'le champ Email est incorrect !';
+                break;
             case '7':
-            $erreur = 'le champ login est incorrect !';
-            break;
+                $erreur = 'le champ login est incorrect !';
+                break;
             case '8':
-            $erreur = 'le champ mot de passe est incorrect !';
-            break;
+                $erreur = 'le champ mot de passe est incorrect !';
+                break;
             case '9':
-            $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
-            break;
+                $erreur = 'le champ de confimation du mot de passe ne correspond pas au champ au mot de passe';
+                break;
             default:
-            $erreur = 'une erreur inconnu est arrivé !';
-            break;
+                $erreur = 'une erreur inconnu est arrivé !';
+                break;
         }
         require "vue/vue_ajout_vendeur.php";
     }
@@ -269,7 +268,7 @@ function add_produit()
 {
     if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
         $resultats = AddProduit($_POST);
-        $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+        $resultats = get_produits(); // pour récupérer les données des produits dans la BD
         require 'vue/vue_liste_produits.php';
     } else {
         require "vue/vue_ajout_produit.php";
@@ -280,36 +279,48 @@ function add_produit()
 // Fonction permetant de rechercher des données de la page de modif
 function modifier_get($id)
 {
-    $resultats = GetProduit($id);
-    require 'vue/vue_modifier.php';
+    if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur") || ($_SESSION['typeUser'] = "Vendeur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
+        $resultats = GetProduit($id);
+        require 'vue/vue_modifier.php';
+    } else {
+        $_SESSION['erreur'] = "Erreur 403 : Accès non autorisé !";
+        require "vue/vue_erreur.php";
+    }
+
 }
 
 // Fonction pour Afficher la page de modif
 function modifierproduit($ValModif)
 {
+
     UpdateProduit($ValModif);
-    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
+    $resultats = get_produits(); // pour récupérer les données des produits dans la BD
     require 'vue/vue_liste_produits.php';
+
 }
 
 // Fonction de suppression d'un produit
 function suppr($id)
 {
-    $idCible = $id;
-    Suppression($idCible);
-    $resultats=get_produits(); // pour récupérer les données des produits dans la BD
-    require 'vue/vue_liste_produits.php';
+    if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur") || ($_SESSION['typeUser'] = "Vendeur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
+        $idCible = $id;
+        Suppression($idCible);
+        $resultats = get_produits(); // pour récupérer les données des produits dans la BD
+        require 'vue/vue_liste_produits.php';
+    } else {
+        $_SESSION['erreur'] = "Erreur 403 : Accès non autorisé !";
+        require "vue/vue_erreur.php";
+    }
 }
 
 //----------------------------CONTACT----------------------------------
 // Fonction pour envoyé un mail de contact (non fonctionnel :( ))
 function mailsend()
 {
-    if(isset($_POST['email']) && isset ($_POST['subject']) && isset ($_POST['message'])){
+    if (isset($_POST['email']) && isset ($_POST['subject']) && isset ($_POST['message'])) {
         sendMail($_POST);
         require "vue/contact.php";
-    }
-    else {
+    } else {
         require "vue/contact.php";
     }
 }
@@ -326,22 +337,22 @@ function panier()
 {
     $erreur = false;
 
-    $action = (isset($_POST['action'])? $_POST['action']: (isset($_GET['action'])? $_GET['action']:null ));
-    if($action !== null) {
-        if(!in_array($action,array('ajout', 'suppression', 'refresh')))
-        $erreur=true;
+    $action = (isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : null));
+    if ($action !== null) {
+        if (!in_array($action, array('ajout', 'suppression', 'refresh')))
+            $erreur = true;
         //récuperation des variables en POST ou GET
-        $l = (isset($_POST['l'])? $_POST['l']: (isset($_GET['l'])? $_GET['l']:null )) ;
-        $p = (isset($_POST['p'])? $_POST['p']: (isset($_GET['p'])? $_GET['p']:null )) ;
-        $q = (isset($_POST['q'])? $_POST['q']: (isset($_GET['q'])? $_GET['q']:null )) ;
+        $l = (isset($_POST['l']) ? $_POST['l'] : (isset($_GET['l']) ? $_GET['l'] : null));
+        $p = (isset($_POST['p']) ? $_POST['p'] : (isset($_GET['p']) ? $_GET['p'] : null));
+        $q = (isset($_POST['q']) ? $_POST['q'] : (isset($_GET['q']) ? $_GET['q'] : null));
         //Suppression des espaces verticaux
-        $l = preg_replace('#\v#', '',$l);
+        $l = preg_replace('#\v#', '', $l);
         //On verifie que $p soit un float
         $p = floatval($p);
         //On traite $q qui peut etre un entier simple ou un tableau d'entier
         if (is_array($q)) {
             $QteArticle = array();
-            $i=0;
+            $i = 0;
             foreach ($q as $contenu) {
                 $QteArticle[$i++] = intval($contenu);
             }
@@ -350,21 +361,21 @@ function panier()
         }
     }
 
-    if (!$erreur){
-        switch($action){
+    if (!$erreur) {
+        switch ($action) {
             Case "ajout":
-            ajouterArticle($l,$q,$p);
-            break;
+                ajouterArticle($l, $q, $p);
+                break;
             Case "suppression":
-            supprimerArticle($l);
-            break;
+                supprimerArticle($l);
+                break;
             Case "refresh" :
-            for ($i = 0 ; $i < count($QteArticle) ; $i++) {
-                modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
-            }
-            break;
+                for ($i = 0; $i < count($QteArticle); $i++) {
+                    modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i], round($QteArticle[$i]));
+                }
+                break;
             Default:
-            break;
+                break;
         }
     }
     require "vue/vue_panier.php";
