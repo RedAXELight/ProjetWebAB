@@ -197,6 +197,34 @@ function add_vendeur()
     }
 
     // Si il y a pas d'erreur
+    if ($password != $confirm_password) {
+        $erreur = 9;
+    }
+    if ($password == '') {
+        $erreur = 8;
+    }
+    if ($login == '') {
+        $erreur = 7;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erreur = 6;
+    }
+    if (($npa < 999) || ($npa > 100000)) {
+        $erreur = 5;
+    }
+    if ($ville == '') {
+        $erreur = 4;
+    }
+    if ($adresse == '') {
+        $erreur = 3;
+    }
+    if ($prenom == '') {
+        $erreur = 2;
+    }
+    if ($nom == '') {
+        $erreur = 1;
+    }
+
     if ($erreur == 0) {
         $operation = enregistrer_vendeur(@$_POST);
         if ($operation == '2') {

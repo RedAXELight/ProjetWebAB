@@ -64,6 +64,10 @@ try {
             case 'suppression':
                 panier();
                 break;
+            case 'vue_contact':
+                contact();
+                break;
+
             default:
                 throw new Exception("Action non valide");
             }

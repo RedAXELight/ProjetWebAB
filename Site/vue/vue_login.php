@@ -6,7 +6,7 @@
 */
 
 ob_start();
-$titre = "Login";
+$titre = "GalaxSat - Login";
 $intitule = "Formulaire de login";
 ?>
 
