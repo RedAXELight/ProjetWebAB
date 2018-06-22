@@ -1,8 +1,7 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* User: Alexandre Baseia
-* Date: 22.06.2018
+* Date: 24.05.2018
 */
 
 // tampon de flux stocké en mémoire

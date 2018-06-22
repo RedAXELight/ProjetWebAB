@@ -1,7 +1,7 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* Date: 22.06.2018
+* Date: 24.05.2018
 */
 
 // tampon de flux stocké en mémoire
@@ -11,7 +11,6 @@ $intitule="Votre panier";
 
 ?>
 
-<!-- Section: Panier -->
 <section id="service" class="home-section text-center">
     <div class="heading-about">
         <div class="container">
@@ -87,10 +86,9 @@ $intitule="Votre panier";
             </div>
         </div>
     </div>
-</section>
-<!-- /Section: form choix et ajout de produit -->
 
-<!-- script paypal-->
+</section>
+
 <script>
 paypal.Button.render({
 
@@ -133,6 +131,9 @@ paypal.Button.render({
 }, '#paypal-button-container');
 
 </script>
+
+
+
 
 <?php
 $contenu = ob_get_clean();

@@ -1,8 +1,7 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* User: Alexandre Baseia
-* Date: 22.06.2018
+* Date: 14.06.2018
 */
 // tampon de flux stocké en mémoire
 ob_start();
@@ -12,7 +11,7 @@ $SousMenu = "Made by GalaxSat";
 
 ?>
 
-<!-- Section: liste_produits -->
+<!-- Section: about -->
 <section id="service" class="home-section text-center">
     <div class="heading-about">
         <div class="container">
@@ -38,33 +37,33 @@ $SousMenu = "Made by GalaxSat";
         <!-- les produits -->
         <div class="row">
             <?php foreach ($resultats as $resultat) { ?>
-            <div class="col-md-3 team" style="padding: 10px;">
-                <div class="wow bounceInUp" data-wow-delay="0.2s">
-                    <div class="team boxed-grey">
-                        <?php
-                        echo "<a href='index.php?action=vue_detail_produit&id=".$resultat['idCubeSat']."'>"
-                        ?>
-                        <div class="inner">
-                            <h5><?= $resultat['csName']; ?></h5>
-                            <div class="avatar"><img src="img/cubesat/Cubesat.gif" alt=""
-                                class="img-responsive img-circle"/></div>
-                                <p class="subtitle"><?= $resultat['Description']; ?></p>
-                                <?php
-                                if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur" || isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Administrateur")
-                                {
-                                    echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
-                                }?>
+                <div class="col-md-3 team" style="padding: 10px;">
+                    <div class="wow bounceInUp" data-wow-delay="0.2s">
+                        <div class="team boxed-grey">
+                            <?php
+                            echo "<a href='index.php?action=vue_detail_produit&id=".$resultat['idCubeSat']."'>"
+                            ?>
+                            <div class="inner">
+                                <h5><?= $resultat['csName']; ?></h5>
+                                <div class="avatar"><img src="img/cubesat/Cubesat.gif" alt=""
+                                    class="img-responsive img-circle"/></div>
+                                    <p class="subtitle"><?= $resultat['Description']; ?></p>
+                                    <?php
+                                    if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Vendeur" || isset($_SESSION['typeUser']) && $_SESSION['typeUser'] == "Administrateur")
+                                    {
+                                        echo "<a href='index.php?action=vue_modifier&id=".$resultat['idCubeSat']."'><img src='../img/modif.png'></a> - <a href='index.php?action=supprimer_produit&id=".$resultat['idCubeSat']."'><img src='../img/delete.png'></a>";
+                                    }?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
-</section>
-<!-- /Section: liste_produits -->
+    </section>
+    <!-- /Section: about -->
 
-<?php
-$contenu = ob_get_clean();
-require "gabarit.php";
-?>
+    <?php
+    $contenu = ob_get_clean();
+    require "gabarit.php";
+    ?>

@@ -1,7 +1,9 @@
 <?php
 /**
-* User: Alexandre Baseia
-* Date: 22.06.2018
+* Created by PhpStorm.
+* User: Alexandre.baseia
+* Date: 04.06.2018
+* Time: 10:04
 */
 
 ob_start();
@@ -69,27 +71,27 @@ $SousMenu = "Bonjour administrateur " .$_SESSION['login']. ", vous pouvez ajoute
                                 </td>
                                 <td><label>Confirmer le mot de passe : </label></td>
                                 <td><input type="password" class="form-control" placeholder="Répétez le mot de passe" name="confirm_password" required>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><div class="g-recaptcha" data-sitekey="6Lc6L08UAAAAALOJt6xF1OIQY9AvrJ6_7H0K6a3Y"></div></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input class="btn" type="reset" value="Effacer"/></td>
-                                <td><input class="btn btn-skin" type="submit" value="Confirmer"/></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </form>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><div class="g-recaptcha" data-sitekey="6Lc6L08UAAAAALOJt6xF1OIQY9AvrJ6_7H0K6a3Y"></div></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="btn" type="reset" value="Effacer"/></td>
+                                    <td><input class="btn btn-skin" type="submit" value="Confirmer"/></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
-    </div>
-</section>
-<!-- /Section: form inscription -->
+    </section>
 
     <?php
     $contenu = ob_get_clean();

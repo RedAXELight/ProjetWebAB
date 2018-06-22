@@ -1,8 +1,7 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* User: Alexandre Baseia
-* Date: 22.06.2018
+* Date: 28.05.2018
 */
 
 // tampon de flux stocké en mémoire
@@ -12,7 +11,6 @@ $intitule = "Inscrivez-vous";
 $SousMenu="Afin de profiter de nos offres";
 ?>
 
-<!-- Section: inscription -->
 <section id="service" class="home-section text-center">
     <div class="heading-about">
         <div class="container">
@@ -34,6 +32,7 @@ $SousMenu="Afin de profiter de nos offres";
         </div>
     </div>
     <!-- Section: form inscription -->
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -109,10 +108,9 @@ $SousMenu="Afin de profiter de nos offres";
                     </div>
                 </div>
             </div>
+
         </div>
-        <!-- /Section: form inscription -->
     </section>
-<!-- /Section: inscription -->
 
     <?php
     $contenu = ob_get_clean();

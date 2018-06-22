@@ -1,11 +1,10 @@
 <?php
 /**
-* User: Brian Rodrigues Fraga
-* User: Alexandre Baseia
-* Date: 22.06.2018
-*/
+ * User: Brian Rodrigues Fraga
+ * User: Alexandre.baseia
+ * Date: 24.05.2018
+ */
 
-// pour aller chercher les fonctions qu'on a besoin
 require "modele/modele.php";
 
 // Affichage de la page de l'accueil
@@ -15,16 +14,15 @@ function accueil()
     require "vue/accueil.php";
 }
 
-// Affichage de la vue d'erreur
+//affichage de la vue d'erreur
 function erreur($e)
 {
     $_SESSION['erreur'] = $e;
     require "vue/vue_erreur.php";
 }
 
-//-------------------------- USERS --------------------------------
-// Fonction pour le login du formulaire
-function login()
+//--------------------------USERS--------------------------------
+function login() //Fonction pour le login du formulaire
 {
     if (isset ($_POST['fLogin']) && isset ($_POST['fPass'])) {
         $resultats = getLogin($_POST);
@@ -44,13 +42,11 @@ function login()
     }
 }
 
-// Fonction qui renvoie à la vue inscription
 function inscription()
 {
     require "vue/inscription.php";
 }
 
-// Fonction qui permet d'enregistrer les utilisateurs dans la base de données
 function enregistrer()
 {
     $nom = htmlspecialchars(@$_POST['nom']);
@@ -64,7 +60,7 @@ function enregistrer()
     $confirm_password = htmlspecialchars(@$_POST['confirm_password']);
 
     $erreur = 0;
-    // Verification des erreurs
+
     if ($password != $confirm_password) {
         $erreur = 9;
     }
@@ -93,7 +89,6 @@ function enregistrer()
         $erreur = 1;
     }
 
-    // Si il n'y a pas d'erreur
     if ($erreur == 0) {
         $operation = enregistrer_user(@$_POST);
         if ($operation == '3') {
@@ -109,7 +104,6 @@ function enregistrer()
             $erreur = 'requête envoyé avec succès';
             require "vue/vue_login.php";
         }
-    // Si il y a une erreur
     } else {
         switch ($erreur) {
             case '1':
@@ -147,14 +141,12 @@ function enregistrer()
     }
 }
 
-// Fonction pour envoyé à la vue ajout vendeur
 function vendeur()
 {
     require "vue/vue_ajout_vendeur.php";
 }
 
-// Fonction permetant d'ajouter un nouveau vendeur dans la base de données
-function add_vendeur()
+function add_vendeur() //fonction d'ajout d'un vendeur
 {
     $nom = htmlspecialchars(@$_POST['nom']);
     $prenom = htmlspecialchars(@$_POST['prenom']);
@@ -237,7 +229,6 @@ function add_vendeur()
             $erreur = 'requête envoyé avec succès';
             require "vue/vue_login.php";
         }
-    // Si il y a une erreur
     } else {
         switch ($erreur) {
             case '1':
@@ -275,15 +266,15 @@ function add_vendeur()
     }
 }
 
+
 //-----------------------PRODUITS-----------------------------------
-// Fonction pour afficher la vue de la liste des produits
+//vue des produits
 function produits()
 {
     $resultats = get_produits();
     require "vue/vue_liste_produits.php";
 }
 
-// Function permetant d'afficher tout les détails d'un produit dans la vue detail produit
 function produit_detail()
 {
     $id = @$_GET['id'];
@@ -291,7 +282,7 @@ function produit_detail()
     require "vue/vue_detail_produit.php";
 }
 
-// Fonction ajouter et afficher la PAGE de produits
+//ajout et affichage de la PAGE de produits
 function add_produit()
 {
     if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
@@ -304,7 +295,7 @@ function add_produit()
 }
 
 
-// Fonction permetant de rechercher des données de la page de modif
+//Recherche des données de la page de modif
 function modifier_get($id)
 {
     if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur") || ($_SESSION['typeUser'] = "Vendeur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
@@ -317,7 +308,7 @@ function modifier_get($id)
 
 }
 
-// Fonction pour Afficher la page de modif
+//Affichage de la page de modif
 function modifierproduit($ValModif)
 {
 
@@ -327,7 +318,7 @@ function modifierproduit($ValModif)
 
 }
 
-// Fonction de suppression d'un produit
+//Fonction de suppression
 function suppr($id)
 {
     if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur") || ($_SESSION['typeUser'] = "Vendeur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
@@ -342,7 +333,7 @@ function suppr($id)
 }
 
 //----------------------------CONTACT----------------------------------
-// Fonction pour envoyé un mail de contact (non fonctionnel :( ))
+//Mail de contact
 function mailsend()
 {
     if (isset($_POST['email']) && isset ($_POST['subject']) && isset ($_POST['message'])) {
@@ -353,14 +344,14 @@ function mailsend()
     }
 }
 
-// Fonction permetant d'afficher la vue de contact
+
 function contact()
 {
     require "vue/contact.php";
 }
 
 //----------------------------PANIER----------------------------------
-// Fonction pour gérer un panier
+
 function panier()
 {
     $erreur = false;
