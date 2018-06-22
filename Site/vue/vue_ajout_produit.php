@@ -1,9 +1,7 @@
 <?php
 /**
-* Created by PhpStorm.
-* User: Alexandre.BASEIA
-* Date: 07.06.2018
-* Time: 09:33
+* User: Alexandre Baseia
+* Date: 22.06.2018
 */
 
 ob_start();
@@ -13,8 +11,8 @@ $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez ajouter un pr
 //Il semble que la description du produit ne se convertisse pas en UTF-8
 ?>
 
-<!-- Section: form choix et ajout de produit -->+
-<section id="contact" class="home-section text-center">
+<!-- Section: form choix et ajout de produit -->
+<section id="service" class="home-section text-center">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -62,10 +60,9 @@ $SousMenu = "Bonjour vendeur " .$_SESSION['login']. ", vous pouvez ajouter un pr
                 </div>
             </div>
         </div>
-
     </div>
 </section>
-
+<!-- /Section: form choix et ajout de produit -->
 
 <?php
 $contenu = ob_get_clean();
