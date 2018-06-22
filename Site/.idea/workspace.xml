@@ -14,8 +14,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="30" />
+            <state relative-caret-position="945">
+              <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -24,18 +24,18 @@
       <file leaf-file-name="vue_ajout_vendeur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/vue_ajout_vendeur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="441">
+              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controleur.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controleur.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-37">
-              <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
+            <state relative-caret-position="378">
+              <caret line="152" column="41" lean-forward="true" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -44,31 +44,31 @@
       <file leaf-file-name="vue_login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/vue_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="57" />
+            <state relative-caret-position="756">
+              <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modele.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modele.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modele/modele.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="168" column="224" lean-forward="false" selection-start-line="168" selection-start-column="224" selection-end-line="168" selection-end-column="224" />
+            <state relative-caret-position="712">
+              <caret line="163" column="224" lean-forward="false" selection-start-line="163" selection-start-column="224" selection-end-line="163" selection-end-column="224" />
               <folding>
-                <marker date="1529670930341" expanded="true" signature="1441:1484" ph="SELECT * FRO... users" />
-                <marker date="1529670930341" expanded="true" signature="3352:3402" ph="SELECT usrLo... users" />
-                <marker date="1529670930341" expanded="true" signature="3607:3656" ph="SELECT usrMa... users" />
-                <marker date="1529670930341" expanded="true" signature="3936:4136" ph="INSERT INTO users... " />
-                <marker date="1529670930341" expanded="true" signature="6096:6146" ph="SELECT usrLo... users" />
-                <marker date="1529670930341" expanded="true" signature="6351:6400" ph="SELECT usrMa... users" />
-                <marker date="1529670930341" expanded="true" signature="6680:6880" ph="INSERT INTO users... " />
-                <marker date="1529670930341" expanded="true" signature="7787:7848" ph="SELECT * FRO... cubesat" />
-                <marker date="1529670930341" expanded="true" signature="8360:8757" ph="INSERT INTO cubesat... " />
-                <marker date="1529670930341" expanded="true" signature="9165:9223" ph="SELECT * FRO... cubesat" />
-                <marker date="1529670930341" expanded="true" signature="9545:10057" ph="UPDATE cubesat... " />
-                <marker date="1529670930341" expanded="true" signature="10309:10379" ph="UPDATE cubesat... " />
+                <marker date="1529677445410" expanded="true" signature="1454:1497" ph="SELECT * FRO... users" />
+                <marker date="1529677445410" expanded="true" signature="3365:3415" ph="SELECT usrLo... users" />
+                <marker date="1529677445410" expanded="true" signature="3620:3669" ph="SELECT usrMa... users" />
+                <marker date="1529677445410" expanded="true" signature="3949:4149" ph="INSERT INTO users... " />
+                <marker date="1529677445410" expanded="true" signature="6048:6098" ph="SELECT usrLo... users" />
+                <marker date="1529677445410" expanded="true" signature="6303:6352" ph="SELECT usrMa... users" />
+                <marker date="1529677445410" expanded="true" signature="6632:6832" ph="INSERT INTO users... " />
+                <marker date="1529677445410" expanded="true" signature="7797:7858" ph="SELECT * FRO... cubesat" />
+                <marker date="1529677445410" expanded="true" signature="8268:8665" ph="INSERT INTO cubesat... " />
+                <marker date="1529677445410" expanded="true" signature="9073:9131" ph="SELECT * FRO... cubesat" />
+                <marker date="1529677445410" expanded="true" signature="9453:9965" ph="UPDATE cubesat... " />
+                <marker date="1529677445410" expanded="true" signature="10217:10287" ph="UPDATE cubesat... " />
               </folding>
             </state>
           </provider>
@@ -104,8 +104,8 @@
         <option value="$PROJECT_DIR$/vue/accueil.php" />
         <option value="$PROJECT_DIR$/vue/vue_liste_produits.php" />
         <option value="$PROJECT_DIR$/vue/vue_erreur.php" />
-        <option value="$PROJECT_DIR$/controleur/controleur.php" />
         <option value="$PROJECT_DIR$/modele/modele.php" />
+        <option value="$PROJECT_DIR$/controleur/controleur.php" />
       </list>
     </option>
   </component>
@@ -166,8 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,6 +192,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,15 +255,15 @@
       <workItem from="1528721988539" duration="674000" />
       <workItem from="1528956050135" duration="157000" />
       <workItem from="1529667836954" duration="3091000" />
+      <workItem from="1529677477671" duration="44000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34416000" />
+    <option name="totallyTimeSpent" value="34460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -271,7 +271,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32805908" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805908" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -572,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/vue_ajout_vendeur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="441">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -588,46 +588,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/vue_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="57" />
+        <state relative-caret-position="756">
+          <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
+        <state relative-caret-position="945">
+          <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modele/modele.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="168" column="224" lean-forward="false" selection-start-line="168" selection-start-column="224" selection-end-line="168" selection-end-column="224" />
+        <state relative-caret-position="712">
+          <caret line="163" column="224" lean-forward="false" selection-start-line="163" selection-start-column="224" selection-end-line="163" selection-end-column="224" />
           <folding>
-            <marker date="1529670930341" expanded="true" signature="1441:1484" ph="SELECT * FRO... users" />
-            <marker date="1529670930341" expanded="true" signature="3352:3402" ph="SELECT usrLo... users" />
-            <marker date="1529670930341" expanded="true" signature="3607:3656" ph="SELECT usrMa... users" />
-            <marker date="1529670930341" expanded="true" signature="3936:4136" ph="INSERT INTO users... " />
-            <marker date="1529670930341" expanded="true" signature="6096:6146" ph="SELECT usrLo... users" />
-            <marker date="1529670930341" expanded="true" signature="6351:6400" ph="SELECT usrMa... users" />
-            <marker date="1529670930341" expanded="true" signature="6680:6880" ph="INSERT INTO users... " />
-            <marker date="1529670930341" expanded="true" signature="7787:7848" ph="SELECT * FRO... cubesat" />
-            <marker date="1529670930341" expanded="true" signature="8360:8757" ph="INSERT INTO cubesat... " />
-            <marker date="1529670930341" expanded="true" signature="9165:9223" ph="SELECT * FRO... cubesat" />
-            <marker date="1529670930341" expanded="true" signature="9545:10057" ph="UPDATE cubesat... " />
-            <marker date="1529670930341" expanded="true" signature="10309:10379" ph="UPDATE cubesat... " />
+            <marker date="1529677445410" expanded="true" signature="1454:1497" ph="SELECT * FRO... users" />
+            <marker date="1529677445410" expanded="true" signature="3365:3415" ph="SELECT usrLo... users" />
+            <marker date="1529677445410" expanded="true" signature="3620:3669" ph="SELECT usrMa... users" />
+            <marker date="1529677445410" expanded="true" signature="3949:4149" ph="INSERT INTO users... " />
+            <marker date="1529677445410" expanded="true" signature="6048:6098" ph="SELECT usrLo... users" />
+            <marker date="1529677445410" expanded="true" signature="6303:6352" ph="SELECT usrMa... users" />
+            <marker date="1529677445410" expanded="true" signature="6632:6832" ph="INSERT INTO users... " />
+            <marker date="1529677445410" expanded="true" signature="7797:7858" ph="SELECT * FRO... cubesat" />
+            <marker date="1529677445410" expanded="true" signature="8268:8665" ph="INSERT INTO cubesat... " />
+            <marker date="1529677445410" expanded="true" signature="9073:9131" ph="SELECT * FRO... cubesat" />
+            <marker date="1529677445410" expanded="true" signature="9453:9965" ph="UPDATE cubesat... " />
+            <marker date="1529677445410" expanded="true" signature="10217:10287" ph="UPDATE cubesat... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleur/controleur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="152" column="41" lean-forward="true" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

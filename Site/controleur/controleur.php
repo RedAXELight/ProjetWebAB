@@ -150,7 +150,7 @@ function enregistrer()
 // Fonction pour envoyé à la vue ajout vendeur
 function vendeur()
 {
-    if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur") || ($_SESSION['typeUser'] = "Vendeur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
+    if (isset($_SESSION['typeUser']) && (($_SESSION['typeUser'] = "Administrateur"))) { //sécurise les pages et les fonctions réservées à certains utilisateurs
     require "vue/vue_ajout_vendeur.php";
     } else {
         $_SESSION['erreur'] = "Erreur 403 : Accès non autorisé !";
