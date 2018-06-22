@@ -267,7 +267,7 @@ function produit_detail()
 function add_produit()
 {
     if (isset ($_POST['cnom']) && isset ($_POST['masse']) && isset ($_POST['prix']) && isset ($_POST['solar']) && isset ($_POST['height']) && isset ($_POST['width']) && isset ($_POST['length']) && isset ($_POST['battery']) && isset ($_POST['stock']) && isset ($_POST['description'])) {
-        $resultats = AddProduit($_POST);
+        AddProduit($_POST);
         $resultats = get_produits(); // pour récupérer les données des produits dans la BD
         require 'vue/vue_liste_produits.php';
     } else {

@@ -207,12 +207,32 @@ function enregistrer_vendeur($donnees)
 //Fonction d'ajout du produit
     function AddProduit($Sat)
     {
-        $Descr = $Sat['description'];
+        $cnom = htmlspecialchars($Sat['cnom']);
+        $masse = htmlspecialchars($Sat['masse']);
+        $prix = htmlspecialchars($Sat['prix']);
+        $solar = htmlspecialchars($Sat['solar']);
+        $height = htmlspecialchars($Sat['height']);
+        $width = htmlspecialchars($Sat['width']);
+        $length = htmlspecialchars($Sat['length']);
+        $battery = htmlspecialchars($Sat['battery']);
+        $stock = htmlspecialchars($Sat['stock']);
+        $description = htmlspecialchars($Sat['description']);
+
         // connexion à la BD snows
         $connexion = getBD();
-        $requete = "INSERT INTO cubesat (csName, csMass, csPrice, SolarPanel, Height, Width, Length, BatterySpace, Stock, Description) VALUES ('" . $Sat['cnom'] . "','" . $Sat['masse'] . "','" . $Sat['prix'] . "','" . $Sat['solar'] . "','" . $Sat['height'] . "','" . $Sat['width'] . "','" . $Sat['length'] . "','" . $Sat['battery'] . "','" . $Sat['stock'] . "','" . htmlentities($Descr, ENT_SUBSTITUTE, "UTF-8") . "');";
-        $resultats = $connexion->query($requete); //Permet de retourner le résultat de la requête (Si par exemple on voulait directement afficher le produit entré cela pourrait être utile)
-        return $resultats;
+        $requete = $connexion->prepare("INSERT INTO cubesat (csName, csMass, csPrice, SolarPanel, Height, Width, Length, BatterySpace, Stock, Description) VALUES (:cnom, :masse, :prix, :solar, :height, :width, :length, :battery, :stock, :description);");
+        $requete->execute([
+            'cnom' => $cnom,
+            'masse' => $masse,
+            'prix' => $prix,
+            'solar' => $solar,
+            'height' => $height,
+            'width' => $width,
+            'length' => $length,
+            'battery' => $battery,
+            'stock' => $stock,
+            'description' => $description,
+        ]);
     }
 
 //Va chercher les infos d'un seul produit pour la modification
