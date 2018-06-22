@@ -1,7 +1,8 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* Date: 28.05.2018
+* User: Alexandre Baseia
+* Date: 22.06.2018
 */
 
 // tampon de flux stocké en mémoire
@@ -11,13 +12,13 @@ $intitule = "Inscrivez-vous";
 $SousMenu="Afin de profiter de nos offres";
 ?>
 
-<section id="service" class="home-section text-center bg-gray">
-
+<!-- Section: inscription -->
+<section id="service" class="home-section text-center">
     <div class="heading-about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                    <div class="wow bounceInDown" data-wow-delay="0.1s">
                         <div class="section-heading">
                             <h2>Inscription</h2>
                             <i class="fa fa-2x fa-angle-down"></i>
@@ -27,9 +28,12 @@ $SousMenu="Afin de profiter de nos offres";
             </div>
         </div>
     </div>
-</section>
-<!-- Section: form inscription -->
-<section id="contact" class="home-section text-center">
+    <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+            <hr class="marginbot-50">
+        </div>
+    </div>
+    <!-- Section: form inscription -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -89,8 +93,8 @@ $SousMenu="Afin de profiter de nos offres";
                                 <td><input type="password" class="form-control" placeholder="Répétez le mot de passe" name="confirm_password" required>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td><div class="g-recaptcha" data-sitekey="6Lc6L08UAAAAALOJt6xF1OIQY9AvrJ6_7H0K6a3Y"></div></td>
+                                    <td><label>reCAPTCHA : </label></td>
+                                    <td><div style="margin: auto; width: 75%;" class="g-recaptcha" data-sitekey="6LcU-F8UAAAAAMrWfGgpC51HFfbU0cqAMP_Mmp3w"></div></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -105,9 +109,10 @@ $SousMenu="Afin de profiter de nos offres";
                     </div>
                 </div>
             </div>
-
         </div>
+        <!-- /Section: form inscription -->
     </section>
+<!-- /Section: inscription -->
 
     <?php
     $contenu = ob_get_clean();

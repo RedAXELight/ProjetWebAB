@@ -1,13 +1,13 @@
 <?php
 /**
 * User: Brian Rodrigues Fraga
-* User: Alexandre.baseia
-* Date: 24.05.2018
+* User: Alexandre Baseia
+* Date: 22.06.2018
 */
 
 session_start();
 require "controleur/controleur.php";
-
+//selection des possibilités
 try {
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
@@ -30,16 +30,50 @@ try {
             case 'ajout_vendeur':
                 add_vendeur();
                 break;
+            case 'vue_produits':
+                produits();
+                break;
+            case 'vue_detail_produit':
+                produit_detail();
+                break;
+            case 'ajout_produit':
+                add_produit();
+                break;
+            case 'vue_contact':
+                contact();
+                break;
+            case 'contact':
+                mailsend();
+                break;
+            case 'vue_modifier' :
+                modifier_get($_GET['id']); //cette partie là va chercher le produit
+                break;
+            case 'modifierproduit' :
+                modifierproduit($_POST); //cette partie là envoie un tableau POST avec les modification du formulaire
+                break;
+            case 'supprimer_produit':
+                suppr($_GET['id']);
+                break;
+            // ------- panier --------
+            case 'vue_panier':
+                panier();
+                break;
+            case 'ajout':
+                panier();
+                break;
+            case 'suppression':
+                panier();
+                break;
             case 'vue_contact':
                 contact();
                 break;
 
             default:
-            throw new Exception("Action non valide");
+                throw new Exception("Action non valide");
+            }
+        } else {
+            accueil();
         }
-    } else {
-    accueil();
-    }
-} catch (Exception $e) {
-    erreur($e->getMessage());
+    } catch (Exception $e) {
+        erreur($e->getMessage());
 }
